@@ -47,7 +47,7 @@ Meals are only considered if their total macros fall within these thresholds.
 
 The algorithm is separated into its own file for easy editing:
 
-1. **Filters meals** by location and cuisine preferences
+1. **Filters meals** by location preference
 2. **Separates meals** by time (breakfast, lunch, dinner)
 3. **Checks all combinations** of 3 meals (one for each time)
 4. **Validates** each combination against:
@@ -65,10 +65,16 @@ The algorithm is separated into its own file for easy editing:
 
 ## Mock Data Structure
 
-Each meal in `/data/mockData.ts` now includes:
-- `paymentOptions`: Array of payment types accepted and their costs
-- `mealTime`: 'breakfast', 'lunch', or 'dinner'
-- `isDiningHall`: Boolean flag for unlimited access meals
+### Retail Dishes (Restaurants)
+Each dish in `/data/mockData.ts` now includes:
+- `paymentCosts`: Object with costs for each payment type accepted (diningDollars, realDollars, maroonMeal)
+- `mealTimes`: Array of meal times when available (e.g., ['breakfast', 'lunch', 'dinner'])
+  - Most retail items are available at all meal times by default
+
+### Dining Halls
+- `isDiningHall`: Boolean flag (true for dining halls)
+- `stations`: Organized by meal time (breakfast, lunch, dinner), each with components
+- `paymentCosts`: Dining hall access costs (mealSwipe, diningDollars, realDollars)
 
 Example:
 ```typescript
@@ -90,7 +96,7 @@ Example:
 - Macro goals input
 - Macro threshold sliders (5-50% range, 5% steps)
 - Budget inputs for all 4 payment types
-- Location and cuisine preferences
+- Location preference
 
 ### Results (`/components/DailyMealPlan.tsx`)
 - Daily totals with macro goal comparison

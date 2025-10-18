@@ -6,8 +6,8 @@ import { Button } from './ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Slider } from './ui/slider';
 import { UserPreferences } from '../types';
-import { cuisineTypes, locations } from '../data/mockData';
-import { Target, MapPin, Utensils, Wallet, SlidersHorizontal } from 'lucide-react';
+import { locations } from '../data/mockData';
+import { Target, MapPin, Wallet, SlidersHorizontal } from 'lucide-react';
 
 interface DietGoalsFormProps {
   onSubmit: (preferences: UserPreferences) => void;
@@ -29,9 +29,6 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
   );
   const [location, setLocation] = useState<string>(
     initialPreferences?.location || 'No Preference'
-  );
-  const [mood, setMood] = useState<string>(
-    initialPreferences?.mood || 'All Cuisines'
   );
 
   // Budget states
@@ -84,8 +81,7 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
         diningDollars: parseFloat(diningDollars) || 0,
         realDollars: parseFloat(realDollars) || 0
       },
-      location,
-      mood
+      location
     };
     
     onSubmit(preferences);
@@ -280,25 +276,6 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
               {locations.map((loc) => (
                 <SelectItem key={loc} value={loc}>
                   {loc}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div>
-          <h2 className="flex items-center gap-2 mb-4">
-            <Utensils className="w-5 h-5" />
-            Cuisine Mood
-          </h2>
-          <Select value={mood} onValueChange={setMood}>
-            <SelectTrigger>
-              <SelectValue placeholder="Select cuisine type" />
-            </SelectTrigger>
-            <SelectContent>
-              {cuisineTypes.map((cuisine) => (
-                <SelectItem key={cuisine} value={cuisine}>
-                  {cuisine}
                 </SelectItem>
               ))}
             </SelectContent>

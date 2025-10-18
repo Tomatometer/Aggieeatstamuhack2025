@@ -1,64 +1,56 @@
-import { UserPreferences, DailyMealPlan, Meal, MealWithPayment, Budget, PaymentOption } from '../types';
-import { mockRestaurants } from '../data/mockData';
+import {
+  UserPreferences,
+  DailyMealPlan,
+  Budget,
+  SelectedMeal,
+  DiningLocation,
+  Restaurant,
+  DiningHall,
+  MealComponent,
+  Macros,
+  MealTime
+} from '../types';
+import { mockDiningLocations } from '../data/mockData';
 
 /**
  * Finds the optimal combination of 3 meals (breakfast, lunch, dinner) 
  * that matches the user's diet goals, macro thresholds, and budget constraints.
  */
 export function findOptimalMealPlan(preferences: UserPreferences): DailyMealPlan | null {
-  // Get all meals from restaurants
-  let allMeals: Meal[] = [];
-  mockRestaurants.forEach((restaurant) => {
-    restaurant.meals.forEach((meal) => {
-      allMeals.push({
-        ...meal,
-        restaurantName: restaurant.name
-      });
-    });
-  });
+  // Filter locations by user preferences
+  let filteredLocations = [...mockDiningLocations];
 
-  // Filter by location if not "No Preference"
+  // Filter by location
   if (preferences.location !== 'No Preference') {
-    const restaurantIds = mockRestaurants
-      .filter((r) => r.location === preferences.location)
-      .map((r) => r.id);
-    allMeals = allMeals.filter((meal) => {
-      const restaurantId = meal.id.split('-')[0];
-      return restaurantIds.includes(restaurantId);
-    });
+    filteredLocations = filteredLocations.filter(
+      (loc) => loc.location === preferences.location
+    );
   }
 
-  // Filter by cuisine if not "All Cuisines"
-  if (preferences.mood !== 'All Cuisines') {
-    const restaurantIds = mockRestaurants
-      .filter((r) => r.cuisine === preferences.mood)
-      .map((r) => r.id);
-    allMeals = allMeals.filter((meal) => {
-      const restaurantId = meal.id.split('-')[0];
-      return restaurantIds.includes(restaurantId);
-    });
+  if (filteredLocations.length === 0) {
+    return null;
   }
 
-  // Separate meals by time
-  const breakfastMeals = allMeals.filter((m) => m.mealTime === 'breakfast');
-  const lunchMeals = allMeals.filter((m) => m.mealTime === 'lunch');
-  const dinnerMeals = allMeals.filter((m) => m.mealTime === 'dinner');
+  // Generate meal options for each meal time
+  const breakfastOptions = generateMealOptions(filteredLocations, 'breakfast', preferences);
+  const lunchOptions = generateMealOptions(filteredLocations, 'lunch', preferences);
+  const dinnerOptions = generateMealOptions(filteredLocations, 'dinner', preferences);
 
-  if (breakfastMeals.length === 0 || lunchMeals.length === 0 || dinnerMeals.length === 0) {
+  if (breakfastOptions.length === 0 || lunchOptions.length === 0 || dinnerOptions.length === 0) {
     return null;
   }
 
   // Find all valid combinations that meet macro thresholds and budget
   let validPlans: DailyMealPlan[] = [];
 
-  for (const breakfast of breakfastMeals) {
-    for (const lunch of lunchMeals) {
-      for (const dinner of dinnerMeals) {
+  for (const breakfast of breakfastOptions) {
+    for (const lunch of lunchOptions) {
+      for (const dinner of dinnerOptions) {
         // Calculate totals
-        const totalCalories = breakfast.calories + lunch.calories + dinner.calories;
-        const totalProtein = breakfast.protein + lunch.protein + dinner.protein;
-        const totalCarbs = breakfast.carbs + lunch.carbs + dinner.carbs;
-        const totalFats = breakfast.fats + lunch.fats + dinner.fats;
+        const totalCalories = breakfast.totalMacros.calories + lunch.totalMacros.calories + dinner.totalMacros.calories;
+        const totalProtein = breakfast.totalMacros.protein + lunch.totalMacros.protein + dinner.totalMacros.protein;
+        const totalCarbs = breakfast.totalMacros.carbs + lunch.totalMacros.carbs + dinner.totalMacros.carbs;
+        const totalFats = breakfast.totalMacros.fats + lunch.totalMacros.fats + dinner.totalMacros.fats;
 
         // Check if within macro thresholds
         if (!isWithinThreshold(totalCalories, preferences.dietGoals.calories, preferences.macroThresholds.calories)) continue;
@@ -66,28 +58,24 @@ export function findOptimalMealPlan(preferences: UserPreferences): DailyMealPlan
         if (!isWithinThreshold(totalCarbs, preferences.dietGoals.carbs, preferences.macroThresholds.carbs)) continue;
         if (!isWithinThreshold(totalFats, preferences.dietGoals.fats, preferences.macroThresholds.fats)) continue;
 
-        // Try to find a valid payment combination within budget
-        const paymentCombination = findValidPaymentCombination(
-          [breakfast, lunch, dinner],
-          preferences.budget
-        );
+        // Calculate budget used
+        const budgetUsed = calculateBudgetUsed([breakfast, lunch, dinner]);
 
-        if (paymentCombination) {
-          const [breakfastPayment, lunchPayment, dinnerPayment] = paymentCombination.payments;
-          
-          const plan: DailyMealPlan = {
-            breakfast: { ...breakfast, selectedPayment: breakfastPayment },
-            lunch: { ...lunch, selectedPayment: lunchPayment },
-            dinner: { ...dinner, selectedPayment: dinnerPayment },
-            totalCalories,
-            totalProtein,
-            totalCarbs,
-            totalFats,
-            budgetUsed: paymentCombination.budgetUsed
-          };
+        // Check if within budget
+        if (!isWithinBudget(budgetUsed, preferences.budget)) continue;
 
-          validPlans.push(plan);
-        }
+        const plan: DailyMealPlan = {
+          breakfast,
+          lunch,
+          dinner,
+          totalCalories,
+          totalProtein,
+          totalCarbs,
+          totalFats,
+          budgetUsed
+        };
+
+        validPlans.push(plan);
       }
     }
   }
@@ -104,6 +92,201 @@ export function findOptimalMealPlan(preferences: UserPreferences): DailyMealPlan
   });
 
   return validPlans[0];
+}
+
+/**
+ * Generate meal options for a specific meal time
+ */
+function generateMealOptions(
+  locations: DiningLocation[],
+  mealTime: MealTime,
+  preferences: UserPreferences
+): SelectedMeal[] {
+  const options: SelectedMeal[] = [];
+
+  for (const location of locations) {
+    if (location.isDiningHall) {
+      // Dining Hall - generate component combinations
+      const diningHall = location as DiningHall;
+      const stations = diningHall.stations[mealTime];
+
+      if (!stations || stations.length === 0) continue;
+
+      // Generate multiple component combinations for this dining hall
+      const combinations = generateDiningHallCombinations(
+        diningHall,
+        stations,
+        mealTime,
+        preferences
+      );
+
+      options.push(...combinations);
+    } else {
+      // Restaurant - add individual dishes
+      const restaurant = location as Restaurant;
+      const dishes = restaurant.dishes.filter((d) => d.mealTimes.includes(mealTime));
+
+      for (const dish of dishes) {
+        // Try each available payment option
+        const paymentTypes = Object.keys(dish.paymentCosts) as Array<'diningDollars' | 'realDollars' | 'maroonMeal'>;
+
+        for (const paymentType of paymentTypes) {
+          const cost = dish.paymentCosts[paymentType];
+          if (cost === undefined) continue;
+
+          options.push({
+            location: restaurant,
+            mealTime,
+            dish,
+            dishPaymentType: paymentType,
+            totalMacros: { ...dish.macros },
+            cost: {
+              type: paymentType,
+              amount: cost
+            }
+          });
+        }
+      }
+    }
+  }
+
+  return options;
+}
+
+/**
+ * Generate component combinations for dining hall meals
+ */
+function generateDiningHallCombinations(
+  diningHall: DiningHall,
+  stations: any[],
+  mealTime: MealTime,
+  preferences: UserPreferences
+): SelectedMeal[] {
+  const combinations: SelectedMeal[] = [];
+
+  // Get target macros for this meal (roughly 1/3 of daily goals)
+  const targetMacros: Macros = {
+    calories: preferences.dietGoals.calories / 3,
+    protein: preferences.dietGoals.protein / 3,
+    carbs: preferences.dietGoals.carbs / 3,
+    fats: preferences.dietGoals.fats / 3
+  };
+
+  // Generate a few different combinations with different strategies
+  const strategies = [
+    { caloriesMult: 1.0, proteinMult: 1.2, carbsMult: 0.8, fatsMult: 1.0 }, // High protein
+    { caloriesMult: 1.0, proteinMult: 1.0, carbsMult: 1.0, fatsMult: 1.0 }, // Balanced
+    { caloriesMult: 1.0, proteinMult: 0.8, carbsMult: 1.3, fatsMult: 1.0 }, // Higher carbs
+  ];
+
+  for (const strategy of strategies) {
+    const adjustedTarget: Macros = {
+      calories: targetMacros.calories * strategy.caloriesMult,
+      protein: targetMacros.protein * strategy.proteinMult,
+      carbs: targetMacros.carbs * strategy.carbsMult,
+      fats: targetMacros.fats * strategy.fatsMult
+    };
+
+    const components = selectComponentsForTarget(stations, adjustedTarget);
+
+    if (components.length > 0) {
+      const totalMacros = calculateMealTotals(components);
+
+      // Try each payment option for the dining hall
+      const paymentOptions: Array<'mealSwipe' | 'diningDollars' | 'realDollars'> = [
+        'mealSwipe',
+        'diningDollars',
+        'realDollars'
+      ];
+
+      for (const paymentType of paymentOptions) {
+        combinations.push({
+          location: diningHall,
+          mealTime,
+          selectedComponents: components,
+          diningHallPaymentType: paymentType,
+          totalMacros,
+          cost: {
+            type: paymentType,
+            amount: diningHall.paymentCosts[paymentType]
+          }
+        });
+      }
+    }
+  }
+
+  return combinations;
+}
+
+/**
+ * Select components from stations to match target macros
+ * Uses a greedy algorithm to build a reasonable meal
+ */
+function selectComponentsForTarget(
+  stations: Array<{ name: string; components: MealComponent[] }>,
+  target: Macros
+): MealComponent[] {
+  const selected: MealComponent[] = [];
+  let totals: Macros = { calories: 0, protein: 0, carbs: 0, fats: 0 };
+
+  // Try to get at least one item from each station
+  for (const station of stations) {
+    if (station.components.length === 0) continue;
+
+    // Find the component that best matches our remaining needs
+    let bestComponent: MealComponent | null = null;
+    let bestScore = Infinity;
+
+    for (const component of station.components) {
+      // Calculate how this would affect our distance from target
+      const newTotals: Macros = {
+        calories: totals.calories + component.macros.calories,
+        protein: totals.protein + component.macros.protein,
+        carbs: totals.carbs + component.macros.carbs,
+        fats: totals.fats + component.macros.fats
+      };
+
+      // Score based on distance from target (lower is better)
+      const score =
+        Math.abs(newTotals.calories - target.calories) * 0.3 +
+        Math.abs(newTotals.protein - target.protein) * 2 +
+        Math.abs(newTotals.carbs - target.carbs) * 0.5 +
+        Math.abs(newTotals.fats - target.fats) * 1;
+
+      // Don't overshoot calories too much
+      if (newTotals.calories > target.calories * 1.3) continue;
+
+      if (score < bestScore) {
+        bestScore = score;
+        bestComponent = component;
+      }
+    }
+
+    if (bestComponent) {
+      selected.push(bestComponent);
+      totals.calories += bestComponent.macros.calories;
+      totals.protein += bestComponent.macros.protein;
+      totals.carbs += bestComponent.macros.carbs;
+      totals.fats += bestComponent.macros.fats;
+    }
+  }
+
+  return selected;
+}
+
+/**
+ * Calculate total macros from selected components
+ */
+function calculateMealTotals(components: MealComponent[]): Macros {
+  return components.reduce(
+    (totals, component) => ({
+      calories: totals.calories + component.macros.calories,
+      protein: totals.protein + component.macros.protein,
+      carbs: totals.carbs + component.macros.carbs,
+      fats: totals.fats + component.macros.fats
+    }),
+    { calories: 0, protein: 0, carbs: 0, fats: 0 }
+  );
 }
 
 /**
@@ -128,37 +311,9 @@ function calculateMacroScore(plan: DailyMealPlan, preferences: UserPreferences):
 }
 
 /**
- * Find a valid payment combination for the three meals within budget
+ * Calculate the budget used by a set of selected meals
  */
-function findValidPaymentCombination(
-  meals: [Meal, Meal, Meal],
-  budget: Budget
-): { payments: [PaymentOption, PaymentOption, PaymentOption]; budgetUsed: Budget } | null {
-  const [meal1, meal2, meal3] = meals;
-
-  // Try all payment option combinations
-  for (const payment1 of meal1.paymentOptions) {
-    for (const payment2 of meal2.paymentOptions) {
-      for (const payment3 of meal3.paymentOptions) {
-        const budgetUsed = calculateBudgetUsed([payment1, payment2, payment3]);
-        
-        if (isWithinBudget(budgetUsed, budget)) {
-          return {
-            payments: [payment1, payment2, payment3],
-            budgetUsed
-          };
-        }
-      }
-    }
-  }
-
-  return null;
-}
-
-/**
- * Calculate the budget used by a set of payment options
- */
-function calculateBudgetUsed(payments: PaymentOption[]): Budget {
+function calculateBudgetUsed(meals: SelectedMeal[]): Budget {
   const budgetUsed: Budget = {
     mealSwipes: 0,
     maroonMeals: 0,
@@ -166,19 +321,19 @@ function calculateBudgetUsed(payments: PaymentOption[]): Budget {
     realDollars: 0
   };
 
-  for (const payment of payments) {
-    switch (payment.type) {
+  for (const meal of meals) {
+    switch (meal.cost.type) {
       case 'mealSwipe':
-        budgetUsed.mealSwipes += payment.cost;
+        budgetUsed.mealSwipes += meal.cost.amount;
         break;
       case 'maroonMeal':
-        budgetUsed.maroonMeals += payment.cost;
+        budgetUsed.maroonMeals += meal.cost.amount;
         break;
       case 'diningDollars':
-        budgetUsed.diningDollars += payment.cost;
+        budgetUsed.diningDollars += meal.cost.amount;
         break;
       case 'realDollars':
-        budgetUsed.realDollars += payment.cost;
+        budgetUsed.realDollars += meal.cost.amount;
         break;
     }
   }

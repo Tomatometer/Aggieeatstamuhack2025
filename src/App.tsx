@@ -73,7 +73,6 @@ export default function App() {
                 <li>Increase your macro thresholds to allow more flexibility</li>
                 <li>Adjust your budget to include more payment options</li>
                 <li>Change your location preference to "No Preference"</li>
-                <li>Select "All Cuisines" for more meal options</li>
               </ul>
             </div>
             <Button onClick={handleBack}>

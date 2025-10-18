@@ -1,7 +1,7 @@
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
-import { DailyMealPlan, DietGoals, PaymentType } from '../types';
-import { Sunrise, Sun, Moon, Check, AlertCircle, CreditCard } from 'lucide-react';
+import { DailyMealPlan, DietGoals, PaymentType, MealComponent, SelectedMeal } from '../types';
+import { Sunrise, Sun, Moon, Check, AlertCircle, CreditCard, UtensilsCrossed } from 'lucide-react';
 import { Button } from './ui/button';
 
 interface DailyMealPlanProps {
@@ -42,11 +42,68 @@ export function DailyMealPlanComponent({ mealPlan, dietGoals, onBack }: DailyMea
     }
   };
 
-  const meals = [
+  const meals: Array<{ time: string; meal: SelectedMeal }> = [
     { time: 'breakfast', meal: mealPlan.breakfast },
     { time: 'lunch', meal: mealPlan.lunch },
     { time: 'dinner', meal: mealPlan.dinner }
   ];
+
+  // Group components by station for dining hall meals
+  const groupComponentsByStation = (components: MealComponent[]) => {
+    const grouped: Record<string, MealComponent[]> = {};
+    components.forEach(component => {
+      if (!grouped[component.station]) {
+        grouped[component.station] = [];
+      }
+      grouped[component.station].push(component);
+    });
+    return grouped;
+  };
+
+  const renderMealContent = (meal: SelectedMeal) => {
+    if (meal.location.isDiningHall && meal.selectedComponents) {
+      // Dining Hall meal with components
+      return (
+        <>
+          <h4>Build Your {meal.mealTime.charAt(0).toUpperCase() + meal.mealTime.slice(1)}</h4>
+          <div className="mt-4 p-4 bg-muted/50 rounded-lg">
+            <h5 className="text-sm mb-3 flex items-center gap-2">
+              <UtensilsCrossed className="w-4 h-4" />
+              Your Selections
+            </h5>
+            <div className="space-y-3">
+              {Object.entries(groupComponentsByStation(meal.selectedComponents)).map(([station, components]) => (
+                <div key={station}>
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1.5">
+                    {station}
+                  </p>
+                  <div className="space-y-1">
+                    {components.map(component => (
+                      <div key={component.id} className="flex justify-between items-center text-sm">
+                        <span>{component.name}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {component.macros.calories}cal • {component.macros.protein}p • {component.macros.carbs}c • {component.macros.fats}f
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      );
+    } else if (meal.dish) {
+      // Restaurant dish
+      return (
+        <>
+          <h4>{meal.dish.name}</h4>
+          <p className="text-sm text-muted-foreground mt-1">{meal.dish.description}</p>
+        </>
+      );
+    }
+    return null;
+  };
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -160,16 +217,21 @@ export function DailyMealPlanComponent({ mealPlan, dietGoals, onBack }: DailyMea
                   <div className="flex items-center gap-2 mb-1">
                     <h3 className="capitalize">{time}</h3>
                     <Badge variant="secondary" className="text-xs">
-                      {meal.restaurantName}
+                      {meal.location.name}
                     </Badge>
+                    {meal.location.isDiningHall && (
+                      <Badge variant="outline" className="text-xs">
+                        <UtensilsCrossed className="w-3 h-3 mr-1" />
+                        Dining Hall
+                      </Badge>
+                    )}
                   </div>
-                  <h4>{meal.name}</h4>
-                  <p className="text-sm text-muted-foreground mt-1">{meal.description}</p>
+                  {renderMealContent(meal)}
                 </div>
               </div>
               <div className="text-right ml-4">
                 <Badge variant="outline" className="whitespace-nowrap">
-                  {getPaymentLabel(meal.selectedPayment.type, meal.selectedPayment.cost)}
+                  {getPaymentLabel(meal.cost.type, meal.cost.amount)}
                 </Badge>
               </div>
             </div>
@@ -177,19 +239,19 @@ export function DailyMealPlanComponent({ mealPlan, dietGoals, onBack }: DailyMea
             <div className="grid grid-cols-4 gap-3 mt-4">
               <div className="text-center p-3 bg-muted rounded">
                 <p className="text-xs text-muted-foreground mb-1">Calories</p>
-                <p className="text-sm">{meal.calories}</p>
+                <p className="text-sm">{meal.totalMacros.calories}</p>
               </div>
               <div className="text-center p-3 bg-muted rounded">
                 <p className="text-xs text-muted-foreground mb-1">Protein</p>
-                <p className="text-sm">{meal.protein}g</p>
+                <p className="text-sm">{meal.totalMacros.protein}g</p>
               </div>
               <div className="text-center p-3 bg-muted rounded">
                 <p className="text-xs text-muted-foreground mb-1">Carbs</p>
-                <p className="text-sm">{meal.carbs}g</p>
+                <p className="text-sm">{meal.totalMacros.carbs}g</p>
               </div>
               <div className="text-center p-3 bg-muted rounded">
                 <p className="text-xs text-muted-foreground mb-1">Fats</p>
-                <p className="text-sm">{meal.fats}g</p>
+                <p className="text-sm">{meal.totalMacros.fats}g</p>
               </div>
             </div>
           </Card>

@@ -7,11 +7,6 @@ export interface DietGoals {
 
 export type PaymentType = 'mealSwipe' | 'diningDollars' | 'maroonMeal' | 'realDollars';
 
-export interface PaymentOption {
-  type: PaymentType;
-  cost: number;
-}
-
 export interface Budget {
   mealSwipes: number;
   maroonMeals: number;
@@ -31,49 +26,117 @@ export interface UserPreferences {
   macroThresholds: MacroThresholds;
   budget: Budget;
   location: string;
-  mood: string;
   radius?: number;
 }
 
 export type MealTime = 'breakfast' | 'lunch' | 'dinner';
 
-export interface Meal {
-  id: string;
-  name: string;
-  description: string;
+export type DietaryPreference = 'vegetarian' | 'vegan' | 'halal' | 'glutenFree';
+
+export type Allergen = 'dairy' | 'eggs' | 'fish' | 'shellfish' | 'treeNuts' | 'peanuts' | 'wheat' | 'soy';
+
+// Macros for both dishes and meal components
+export interface Macros {
   calories: number;
   protein: number;
   carbs: number;
   fats: number;
-  paymentOptions: PaymentOption[];
-  mealTime: MealTime;
-  restaurantName?: string;
-  isDiningHall?: boolean;
-  image?: string;
 }
 
-export interface MealWithPayment extends Meal {
-  selectedPayment: PaymentOption;
+// Payment costs for restaurant dishes
+export interface DishPaymentCosts {
+  diningDollars?: number;
+  realDollars?: number;
+  maroonMeal?: number; // Cost in maroon meals (usually 1 or not available)
+}
+
+// Restaurant Dish (individual meals at retail locations)
+export interface Dish {
+  id: string;
+  name: string;
+  description: string;
+  macros: Macros;
+  allergens: Allergen[];
+  dietaryPreferences: DietaryPreference[];
+  paymentCosts: DishPaymentCosts;
+  mealTimes: MealTime[]; // Can be available at multiple meal times
+}
+
+// Meal Component (parts of a dining hall meal)
+export interface MealComponent {
+  id: string;
+  name: string;
+  station: string;
+  macros: Macros;
+  allergens: Allergen[];
+  dietaryPreferences: DietaryPreference[];
+}
+
+// Dining Hall Station
+export interface DiningHallStation {
+  id: string;
+  name: string;
+  components: MealComponent[];
+}
+
+// Payment costs for dining hall access
+export interface DiningHallPaymentCosts {
+  mealSwipe: number; // Usually 1
+  diningDollars: number; // Dollar amount for unlimited access
+  realDollars: number; // Dollar amount for unlimited access
+}
+
+// Restaurant (retail location - isDiningHall = false)
+export interface Restaurant {
+  id: string;
+  name: string;
+  location: string;
+  isDiningHall: false;
+  dishes: Dish[];
+}
+
+// Dining Hall (buffet-style - isDiningHall = true)
+export interface DiningHall {
+  id: string;
+  name: string;
+  location: string;
+  isDiningHall: true;
+  stations: {
+    breakfast?: DiningHallStation[];
+    lunch?: DiningHallStation[];
+    dinner?: DiningHallStation[];
+  };
+  paymentCosts: DiningHallPaymentCosts;
+}
+
+// Union type for all dining locations
+export type DiningLocation = Restaurant | DiningHall;
+
+// Selected meal with payment information
+export interface SelectedMeal {
+  location: DiningLocation;
+  mealTime: MealTime;
+  // For restaurants
+  dish?: Dish;
+  dishPaymentType?: 'diningDollars' | 'realDollars' | 'maroonMeal';
+  // For dining halls
+  selectedComponents?: MealComponent[];
+  diningHallPaymentType?: 'mealSwipe' | 'diningDollars' | 'realDollars';
+  // Calculated totals
+  totalMacros: Macros;
+  cost: {
+    type: PaymentType;
+    amount: number;
+  };
 }
 
 export interface DailyMealPlan {
-  breakfast: MealWithPayment;
-  lunch: MealWithPayment;
-  dinner: MealWithPayment;
+  breakfast: SelectedMeal;
+  lunch: SelectedMeal;
+  dinner: SelectedMeal;
   totalCalories: number;
   totalProtein: number;
   totalCarbs: number;
   totalFats: number;
   budgetUsed: Budget;
-}
-
-export interface Restaurant {
-  id: string;
-  name: string;
-  cuisine: string;
-  location: string;
-  distance: number;
-  rating: number;
-  priceRange: string;
-  meals: Meal[];
 }

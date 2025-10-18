@@ -1,405 +1,735 @@
-import { Restaurant } from '../types';
+import { Restaurant, DiningHall, DiningLocation } from '../types';
 
-export const mockRestaurants: Restaurant[] = [
+// Mock data following the database schema
+
+export const mockDiningLocations: DiningLocation[] = [
+  // DINING HALL: Sbisa
   {
-    id: '1',
-    name: 'Main Dining Hall',
-    cuisine: 'American',
-    location: 'Downtown',
-    distance: 0.5,
-    rating: 4.8,
-    priceRange: '$$',
-    meals: [
-      {
-        id: '1-1',
-        name: 'Breakfast Buffet',
-        description: 'Unlimited access to eggs, pancakes, fruits, yogurt, and more',
-        calories: 650,
-        protein: 35,
-        carbs: 75,
-        fats: 22,
-        isDiningHall: true,
-        paymentOptions: [
-          { type: 'mealSwipe', cost: 1 },
-          { type: 'diningDollars', cost: 12 },
-          { type: 'realDollars', cost: 12 }
-        ],
-        mealTime: 'breakfast'
-      },
-      {
-        id: '1-2',
-        name: 'Lunch Buffet',
-        description: 'Unlimited access to salad bar, entrees, sides, and desserts',
-        calories: 750,
-        protein: 45,
-        carbs: 80,
-        fats: 28,
-        isDiningHall: true,
-        paymentOptions: [
-          { type: 'mealSwipe', cost: 1 },
-          { type: 'diningDollars', cost: 12 },
-          { type: 'realDollars', cost: 12 }
-        ],
-        mealTime: 'lunch'
-      },
-      {
-        id: '1-3',
-        name: 'Dinner Buffet',
-        description: 'Unlimited access to pasta station, grill items, vegetables, and more',
-        calories: 800,
-        protein: 50,
-        carbs: 85,
-        fats: 30,
-        isDiningHall: true,
-        paymentOptions: [
-          { type: 'mealSwipe', cost: 1 },
-          { type: 'diningDollars', cost: 12 },
-          { type: 'realDollars', cost: 12 }
-        ],
-        mealTime: 'dinner'
-      }
-    ]
+    id: 'dh-1',
+    name: 'Sbisa Dining Hall',
+    location: 'Sbisa',
+    isDiningHall: true,
+    paymentCosts: {
+      mealSwipe: 1,
+      diningDollars: 12,
+      realDollars: 12
+    },
+    stations: {
+      breakfast: [
+        {
+          id: 'sbisa-b-egg',
+          name: 'Egg Station',
+          components: [
+            {
+              id: 'sbisa-b-egg-1',
+              name: 'Scrambled Eggs (2)',
+              station: 'Egg Station',
+              macros: { calories: 180, protein: 12, carbs: 2, fats: 12 },
+              allergens: ['eggs', 'dairy'],
+              dietaryPreferences: ['vegetarian']
+            },
+            {
+              id: 'sbisa-b-egg-2',
+              name: 'Egg Whites (3)',
+              station: 'Egg Station',
+              macros: { calories: 75, protein: 15, carbs: 1, fats: 0 },
+              allergens: ['eggs'],
+              dietaryPreferences: ['vegetarian']
+            },
+            {
+              id: 'sbisa-b-egg-3',
+              name: 'Omelet with Veggies',
+              station: 'Egg Station',
+              macros: { calories: 220, protein: 18, carbs: 8, fats: 14 },
+              allergens: ['eggs', 'dairy'],
+              dietaryPreferences: ['vegetarian']
+            }
+          ]
+        },
+        {
+          id: 'sbisa-b-protein',
+          name: 'Protein Station',
+          components: [
+            {
+              id: 'sbisa-b-prot-1',
+              name: 'Turkey Sausage (2 links)',
+              station: 'Protein Station',
+              macros: { calories: 130, protein: 14, carbs: 1, fats: 8 },
+              allergens: [],
+              dietaryPreferences: ['halal']
+            },
+            {
+              id: 'sbisa-b-prot-2',
+              name: 'Bacon (3 strips)',
+              station: 'Protein Station',
+              macros: { calories: 120, protein: 9, carbs: 0, fats: 9 },
+              allergens: [],
+              dietaryPreferences: []
+            },
+            {
+              id: 'sbisa-b-prot-3',
+              name: 'Grilled Chicken Breast',
+              station: 'Protein Station',
+              macros: { calories: 165, protein: 31, carbs: 0, fats: 4 },
+              allergens: [],
+              dietaryPreferences: ['halal']
+            }
+          ]
+        },
+        {
+          id: 'sbisa-b-carbs',
+          name: 'Carbs Station',
+          components: [
+            {
+              id: 'sbisa-b-carb-1',
+              name: 'Whole Wheat Toast (2 slices)',
+              station: 'Carbs Station',
+              macros: { calories: 160, protein: 8, carbs: 28, fats: 2 },
+              allergens: ['wheat'],
+              dietaryPreferences: ['vegan']
+            },
+            {
+              id: 'sbisa-b-carb-2',
+              name: 'Oatmeal (1 cup)',
+              station: 'Carbs Station',
+              macros: { calories: 150, protein: 5, carbs: 27, fats: 3 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-b-carb-3',
+              name: 'Pancakes (2)',
+              station: 'Carbs Station',
+              macros: { calories: 220, protein: 6, carbs: 44, fats: 2.5 },
+              allergens: ['wheat', 'eggs', 'dairy'],
+              dietaryPreferences: ['vegetarian']
+            },
+            {
+              id: 'sbisa-b-carb-4',
+              name: 'Hash Browns',
+              station: 'Carbs Station',
+              macros: { calories: 150, protein: 2, carbs: 18, fats: 8 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            }
+          ]
+        },
+        {
+          id: 'sbisa-b-fruit',
+          name: 'Fruit & Yogurt',
+          components: [
+            {
+              id: 'sbisa-b-fruit-1',
+              name: 'Fresh Fruit Cup',
+              station: 'Fruit & Yogurt',
+              macros: { calories: 60, protein: 1, carbs: 15, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-b-fruit-2',
+              name: 'Greek Yogurt',
+              station: 'Fruit & Yogurt',
+              macros: { calories: 100, protein: 17, carbs: 6, fats: 0 },
+              allergens: ['dairy'],
+              dietaryPreferences: ['vegetarian', 'glutenFree']
+            },
+            {
+              id: 'sbisa-b-fruit-3',
+              name: 'Banana',
+              station: 'Fruit & Yogurt',
+              macros: { calories: 105, protein: 1, carbs: 27, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            }
+          ]
+        }
+      ],
+      lunch: [
+        {
+          id: 'sbisa-l-grill',
+          name: 'Grill',
+          components: [
+            {
+              id: 'sbisa-l-grill-1',
+              name: 'Grilled Chicken Breast',
+              station: 'Grill',
+              macros: { calories: 165, protein: 31, carbs: 0, fats: 4 },
+              allergens: [],
+              dietaryPreferences: ['halal', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-grill-2',
+              name: 'Burger Patty',
+              station: 'Grill',
+              macros: { calories: 250, protein: 20, carbs: 0, fats: 18 },
+              allergens: [],
+              dietaryPreferences: ['glutenFree']
+            },
+            {
+              id: 'sbisa-l-grill-3',
+              name: 'Grilled Salmon',
+              station: 'Grill',
+              macros: { calories: 280, protein: 25, carbs: 0, fats: 18 },
+              allergens: ['fish'],
+              dietaryPreferences: ['glutenFree']
+            },
+            {
+              id: 'sbisa-l-grill-4',
+              name: 'Veggie Burger',
+              station: 'Grill',
+              macros: { calories: 180, protein: 15, carbs: 18, fats: 6 },
+              allergens: ['soy'],
+              dietaryPreferences: ['vegan']
+            }
+          ]
+        },
+        {
+          id: 'sbisa-l-salad',
+          name: 'Salad Bar',
+          components: [
+            {
+              id: 'sbisa-l-salad-1',
+              name: 'Mixed Greens (2 cups)',
+              station: 'Salad Bar',
+              macros: { calories: 20, protein: 2, carbs: 4, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-salad-2',
+              name: 'Cherry Tomatoes',
+              station: 'Salad Bar',
+              macros: { calories: 25, protein: 1, carbs: 5, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-salad-3',
+              name: 'Grilled Chicken (diced)',
+              station: 'Salad Bar',
+              macros: { calories: 120, protein: 24, carbs: 0, fats: 3 },
+              allergens: [],
+              dietaryPreferences: ['halal', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-salad-4',
+              name: 'Hard Boiled Eggs (2)',
+              station: 'Salad Bar',
+              macros: { calories: 140, protein: 12, carbs: 1, fats: 10 },
+              allergens: ['eggs'],
+              dietaryPreferences: ['vegetarian', 'glutenFree']
+            }
+          ]
+        },
+        {
+          id: 'sbisa-l-carbs',
+          name: 'Carbs & Sides',
+          components: [
+            {
+              id: 'sbisa-l-carb-1',
+              name: 'Brown Rice (1 cup)',
+              station: 'Carbs & Sides',
+              macros: { calories: 215, protein: 5, carbs: 45, fats: 2 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-carb-2',
+              name: 'White Rice (1 cup)',
+              station: 'Carbs & Sides',
+              macros: { calories: 205, protein: 4, carbs: 45, fats: 0.5 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-carb-3',
+              name: 'Quinoa (1 cup)',
+              station: 'Carbs & Sides',
+              macros: { calories: 220, protein: 8, carbs: 40, fats: 4 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-carb-4',
+              name: 'Sweet Potato (medium)',
+              station: 'Carbs & Sides',
+              macros: { calories: 130, protein: 3, carbs: 30, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            }
+          ]
+        },
+        {
+          id: 'sbisa-l-veg',
+          name: 'Vegetables',
+          components: [
+            {
+              id: 'sbisa-l-veg-1',
+              name: 'Steamed Broccoli',
+              station: 'Vegetables',
+              macros: { calories: 55, protein: 4, carbs: 11, fats: 0.5 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-veg-2',
+              name: 'Roasted Brussels Sprouts',
+              station: 'Vegetables',
+              macros: { calories: 60, protein: 3, carbs: 12, fats: 1 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-veg-3',
+              name: 'Green Beans',
+              station: 'Vegetables',
+              macros: { calories: 45, protein: 2, carbs: 10, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            }
+          ]
+        }
+      ],
+      dinner: [
+        {
+          id: 'sbisa-d-grill',
+          name: 'Grill',
+          components: [
+            {
+              id: 'sbisa-d-grill-1',
+              name: 'Grilled Chicken Breast',
+              station: 'Grill',
+              macros: { calories: 165, protein: 31, carbs: 0, fats: 4 },
+              allergens: [],
+              dietaryPreferences: ['halal', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-grill-2',
+              name: 'Grilled Steak (6oz)',
+              station: 'Grill',
+              macros: { calories: 310, protein: 42, carbs: 0, fats: 15 },
+              allergens: [],
+              dietaryPreferences: ['glutenFree']
+            },
+            {
+              id: 'sbisa-d-grill-3',
+              name: 'Baked Salmon',
+              station: 'Grill',
+              macros: { calories: 280, protein: 25, carbs: 0, fats: 18 },
+              allergens: ['fish'],
+              dietaryPreferences: ['glutenFree']
+            }
+          ]
+        },
+        {
+          id: 'sbisa-d-pasta',
+          name: 'Pasta Station',
+          components: [
+            {
+              id: 'sbisa-d-pasta-1',
+              name: 'Whole Wheat Pasta (1 cup)',
+              station: 'Pasta Station',
+              macros: { calories: 180, protein: 7, carbs: 37, fats: 1 },
+              allergens: ['wheat'],
+              dietaryPreferences: ['vegan']
+            },
+            {
+              id: 'sbisa-d-pasta-2',
+              name: 'Marinara Sauce',
+              station: 'Pasta Station',
+              macros: { calories: 70, protein: 2, carbs: 12, fats: 2 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-pasta-3',
+              name: 'Alfredo Sauce',
+              station: 'Pasta Station',
+              macros: { calories: 110, protein: 3, carbs: 5, fats: 9 },
+              allergens: ['dairy'],
+              dietaryPreferences: ['vegetarian', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-pasta-4',
+              name: 'Meatballs (3)',
+              station: 'Pasta Station',
+              macros: { calories: 240, protein: 18, carbs: 8, fats: 15 },
+              allergens: ['wheat', 'eggs'],
+              dietaryPreferences: []
+            }
+          ]
+        },
+        {
+          id: 'sbisa-d-carbs',
+          name: 'Carbs & Sides',
+          components: [
+            {
+              id: 'sbisa-d-carb-1',
+              name: 'Baked Potato',
+              station: 'Carbs & Sides',
+              macros: { calories: 160, protein: 4, carbs: 37, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-carb-2',
+              name: 'Brown Rice (1 cup)',
+              station: 'Carbs & Sides',
+              macros: { calories: 215, protein: 5, carbs: 45, fats: 2 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-carb-3',
+              name: 'Mashed Potatoes',
+              station: 'Carbs & Sides',
+              macros: { calories: 210, protein: 4, carbs: 35, fats: 7 },
+              allergens: ['dairy'],
+              dietaryPreferences: ['vegetarian', 'glutenFree']
+            }
+          ]
+        },
+        {
+          id: 'sbisa-d-veg',
+          name: 'Vegetables',
+          components: [
+            {
+              id: 'sbisa-d-veg-1',
+              name: 'Steamed Broccoli',
+              station: 'Vegetables',
+              macros: { calories: 55, protein: 4, carbs: 11, fats: 0.5 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-veg-2',
+              name: 'Roasted Asparagus',
+              station: 'Vegetables',
+              macros: { calories: 40, protein: 4, carbs: 8, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-veg-3',
+              name: 'Sautéed Spinach',
+              station: 'Vegetables',
+              macros: { calories: 50, protein: 5, carbs: 7, fats: 1 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            }
+          ]
+        }
+      ]
+    }
   },
+  
+  // RESTAURANT: Chick-fil-A at MSC
   {
-    id: '2',
-    name: 'Chick-fil-A Campus',
-    cuisine: 'American',
-    location: 'Midtown',
-    distance: 1.2,
-    rating: 4.6,
-    priceRange: '$$',
-    meals: [
+    id: 'rest-2',
+    name: 'Chick-fil-A at MSC',
+    location: 'MSC',
+    isDiningHall: false,
+    dishes: [
       {
-        id: '2-1',
+        id: 'cfa-1',
         name: 'Chicken Biscuit',
         description: 'Chicken breast on a buttermilk biscuit',
-        calories: 460,
-        protein: 23,
-        carbs: 45,
-        fats: 21,
-        paymentOptions: [
-          { type: 'maroonMeal', cost: 1 },
-          { type: 'diningDollars', cost: 5.99 },
-          { type: 'realDollars', cost: 5.99 }
-        ],
-        mealTime: 'breakfast'
+        macros: { calories: 460, protein: 23, carbs: 45, fats: 21 },
+        allergens: ['wheat', 'eggs', 'dairy'],
+        dietaryPreferences: [],
+        paymentCosts: {
+          maroonMeal: 1,
+          diningDollars: 5.99,
+          realDollars: 5.99
+        },
+        mealTimes: ['breakfast']
       },
       {
-        id: '2-2',
-        name: 'Classic Chicken Sandwich',
-        description: 'Grilled or fried chicken breast on a toasted bun',
-        calories: 440,
-        protein: 38,
-        carbs: 41,
-        fats: 16,
-        paymentOptions: [
-          { type: 'maroonMeal', cost: 1 },
-          { type: 'diningDollars', cost: 6.99 },
-          { type: 'realDollars', cost: 6.99 }
-        ],
-        mealTime: 'lunch'
+        id: 'cfa-2',
+        name: 'Grilled Chicken Sandwich',
+        description: 'Grilled chicken breast on a toasted bun',
+        macros: { calories: 440, protein: 38, carbs: 41, fats: 16 },
+        allergens: ['wheat', 'dairy'],
+        dietaryPreferences: [],
+        paymentCosts: {
+          maroonMeal: 1,
+          diningDollars: 6.99,
+          realDollars: 6.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       },
       {
-        id: '2-3',
+        id: 'cfa-3',
         name: 'Spicy Deluxe Sandwich',
         description: 'Spicy chicken with lettuce, tomato, and pepper jack cheese',
-        calories: 550,
-        protein: 34,
-        carbs: 48,
-        fats: 25,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 8.49 },
-          { type: 'realDollars', cost: 8.49 }
-        ],
-        mealTime: 'lunch'
+        macros: { calories: 550, protein: 34, carbs: 48, fats: 25 },
+        allergens: ['wheat', 'dairy', 'eggs'],
+        dietaryPreferences: [],
+        paymentCosts: {
+          diningDollars: 8.49,
+          realDollars: 8.49
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       },
       {
-        id: '2-4',
+        id: 'cfa-4',
         name: 'Grilled Nuggets (8-count)',
         description: 'Grilled chicken nuggets with your choice of sauce',
-        calories: 250,
-        protein: 38,
-        carbs: 9,
-        fats: 6,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 7.99 },
-          { type: 'realDollars', cost: 7.99 }
-        ],
-        mealTime: 'dinner'
+        macros: { calories: 250, protein: 38, carbs: 9, fats: 6 },
+        allergens: [],
+        dietaryPreferences: ['glutenFree'],
+        paymentCosts: {
+          diningDollars: 7.99,
+          realDollars: 7.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       }
     ]
   },
+
+  // RESTAURANT: Fresh Market at Commons
   {
-    id: '3',
-    name: 'Campus Fresh Market',
-    cuisine: 'Health Food',
-    location: 'Downtown',
-    distance: 0.8,
-    rating: 4.9,
-    priceRange: '$$',
-    meals: [
+    id: 'rest-3',
+    name: 'Fresh Market at Commons',
+    location: 'Commons',
+    isDiningHall: false,
+    dishes: [
       {
-        id: '3-1',
+        id: 'fm-1',
         name: 'Protein Smoothie Bowl',
         description: 'Açaí bowl with protein powder, granola, and fresh fruit',
-        calories: 420,
-        protein: 28,
-        carbs: 52,
-        fats: 12,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 8.99 },
-          { type: 'realDollars', cost: 8.99 }
-        ],
-        mealTime: 'breakfast'
+        macros: { calories: 420, protein: 28, carbs: 52, fats: 12 },
+        allergens: ['treeNuts', 'dairy'],
+        dietaryPreferences: ['vegetarian'],
+        paymentCosts: {
+          diningDollars: 8.99,
+          realDollars: 8.99
+        },
+        mealTimes: ['breakfast']
       },
       {
-        id: '3-2',
+        id: 'fm-2',
         name: 'Build-Your-Own Salad',
         description: 'Custom salad with choice of protein, greens, and toppings',
-        calories: 380,
-        protein: 32,
-        carbs: 28,
-        fats: 16,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 9.99 },
-          { type: 'realDollars', cost: 9.99 }
-        ],
-        mealTime: 'lunch'
+        macros: { calories: 380, protein: 32, carbs: 28, fats: 16 },
+        allergens: ['eggs'],
+        dietaryPreferences: ['glutenFree'],
+        paymentCosts: {
+          diningDollars: 9.99,
+          realDollars: 9.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       },
       {
-        id: '3-3',
+        id: 'fm-3',
         name: 'Grilled Chicken Wrap',
         description: 'Grilled chicken with veggies in a whole wheat wrap',
-        calories: 510,
-        protein: 42,
-        carbs: 45,
-        fats: 16,
-        paymentOptions: [
-          { type: 'maroonMeal', cost: 1 },
-          { type: 'diningDollars', cost: 8.49 },
-          { type: 'realDollars', cost: 8.49 }
-        ],
-        mealTime: 'lunch'
+        macros: { calories: 510, protein: 42, carbs: 45, fats: 16 },
+        allergens: ['wheat', 'dairy'],
+        dietaryPreferences: [],
+        paymentCosts: {
+          maroonMeal: 1,
+          diningDollars: 8.49,
+          realDollars: 8.49
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       },
       {
-        id: '3-4',
+        id: 'fm-4',
         name: 'Salmon & Quinoa Bowl',
         description: 'Grilled salmon with quinoa, roasted vegetables, and lemon',
-        calories: 580,
-        protein: 44,
-        carbs: 48,
-        fats: 20,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 12.99 },
-          { type: 'realDollars', cost: 12.99 }
-        ],
-        mealTime: 'dinner'
+        macros: { calories: 580, protein: 44, carbs: 48, fats: 20 },
+        allergens: ['fish'],
+        dietaryPreferences: ['glutenFree'],
+        paymentCosts: {
+          diningDollars: 12.99,
+          realDollars: 12.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       }
     ]
   },
+
+  // RESTAURANT: Panda Express at Duncan
   {
-    id: '4',
-    name: 'Panda Express Campus',
-    cuisine: 'Asian',
-    location: 'Uptown',
-    distance: 2.1,
-    rating: 4.7,
-    priceRange: '$',
-    meals: [
+    id: 'rest-4',
+    name: 'Panda Express at Duncan',
+    location: 'Duncan',
+    isDiningHall: false,
+    dishes: [
       {
-        id: '4-1',
+        id: 'pe-1',
         name: 'Orange Chicken Bowl',
         description: 'Crispy chicken in orange sauce with fried rice',
-        calories: 820,
-        protein: 36,
-        carbs: 94,
-        fats: 32,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 9.99 },
-          { type: 'realDollars', cost: 9.99 }
-        ],
-        mealTime: 'lunch'
+        macros: { calories: 820, protein: 36, carbs: 94, fats: 32 },
+        allergens: ['wheat', 'soy', 'eggs'],
+        dietaryPreferences: [],
+        paymentCosts: {
+          diningDollars: 9.99,
+          realDollars: 9.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       },
       {
-        id: '4-2',
+        id: 'pe-2',
         name: 'Grilled Teriyaki Chicken',
         description: 'Grilled chicken with teriyaki sauce and steamed vegetables',
-        calories: 480,
-        protein: 42,
-        carbs: 52,
-        fats: 10,
-        paymentOptions: [
-          { type: 'maroonMeal', cost: 1 },
-          { type: 'diningDollars', cost: 8.99 },
-          { type: 'realDollars', cost: 8.99 }
-        ],
-        mealTime: 'lunch'
+        macros: { calories: 480, protein: 42, carbs: 52, fats: 10 },
+        allergens: ['soy', 'wheat'],
+        dietaryPreferences: [],
+        paymentCosts: {
+          maroonMeal: 1,
+          diningDollars: 8.99,
+          realDollars: 8.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       },
       {
-        id: '4-3',
+        id: 'pe-3',
         name: 'String Bean Chicken Breast',
         description: 'Chicken breast wok-tossed with string beans',
-        calories: 420,
-        protein: 38,
-        carbs: 28,
-        fats: 16,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 8.99 },
-          { type: 'realDollars', cost: 8.99 }
-        ],
-        mealTime: 'dinner'
+        macros: { calories: 420, protein: 38, carbs: 28, fats: 16 },
+        allergens: ['soy'],
+        dietaryPreferences: ['glutenFree'],
+        paymentCosts: {
+          diningDollars: 8.99,
+          realDollars: 8.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       }
     ]
   },
+
+  // RESTAURANT: Subway at MSC
   {
-    id: '5',
-    name: 'Subway Campus',
-    cuisine: 'American',
-    location: 'Downtown',
-    distance: 0.6,
-    rating: 4.5,
-    priceRange: '$',
-    meals: [
+    id: 'rest-5',
+    name: 'Subway at MSC',
+    location: 'MSC',
+    isDiningHall: false,
+    dishes: [
       {
-        id: '5-1',
+        id: 'sub-1',
         name: 'Egg & Cheese Flatbread',
         description: 'Egg whites with cheese on flatbread',
-        calories: 380,
-        protein: 26,
-        carbs: 42,
-        fats: 12,
-        paymentOptions: [
-          { type: 'maroonMeal', cost: 1 },
-          { type: 'diningDollars', cost: 5.99 },
-          { type: 'realDollars', cost: 5.99 }
-        ],
-        mealTime: 'breakfast'
+        macros: { calories: 380, protein: 26, carbs: 42, fats: 12 },
+        allergens: ['wheat', 'eggs', 'dairy'],
+        dietaryPreferences: ['vegetarian'],
+        paymentCosts: {
+          maroonMeal: 1,
+          diningDollars: 5.99,
+          realDollars: 5.99
+        },
+        mealTimes: ['breakfast']
       },
       {
-        id: '5-2',
+        id: 'sub-2',
         name: 'Turkey Breast Sub (6-inch)',
         description: 'Oven roasted turkey with vegetables on wheat bread',
-        calories: 280,
-        protein: 18,
-        carbs: 46,
-        fats: 4,
-        paymentOptions: [
-          { type: 'maroonMeal', cost: 1 },
-          { type: 'diningDollars', cost: 6.49 },
-          { type: 'realDollars', cost: 6.49 }
-        ],
-        mealTime: 'lunch'
+        macros: { calories: 280, protein: 18, carbs: 46, fats: 4 },
+        allergens: ['wheat'],
+        dietaryPreferences: [],
+        paymentCosts: {
+          maroonMeal: 1,
+          diningDollars: 6.49,
+          realDollars: 6.49
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       },
       {
-        id: '5-3',
+        id: 'sub-3',
         name: 'Chicken & Bacon Ranch Sub (6-inch)',
         description: 'Grilled chicken with bacon and ranch on wheat',
-        calories: 570,
-        protein: 36,
-        carbs: 48,
-        fats: 24,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 7.99 },
-          { type: 'realDollars', cost: 7.99 }
-        ],
-        mealTime: 'dinner'
+        macros: { calories: 570, protein: 36, carbs: 48, fats: 24 },
+        allergens: ['wheat', 'dairy', 'eggs'],
+        dietaryPreferences: [],
+        paymentCosts: {
+          diningDollars: 7.99,
+          realDollars: 7.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       }
     ]
   },
+
+  // RESTAURANT: Starbucks at Commons
   {
-    id: '6',
-    name: 'Starbucks Campus',
-    cuisine: 'American',
-    location: 'Midtown',
-    distance: 1.5,
-    rating: 4.4,
-    priceRange: '$$',
-    meals: [
+    id: 'rest-6',
+    name: 'Starbucks at Commons',
+    location: 'Commons',
+    isDiningHall: false,
+    dishes: [
       {
-        id: '6-1',
+        id: 'sbux-1',
         name: 'Egg White & Roasted Red Pepper Wrap',
         description: 'Egg whites with spinach and peppers in a whole wheat wrap',
-        calories: 290,
-        protein: 20,
-        carbs: 34,
-        fats: 8,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 5.45 },
-          { type: 'realDollars', cost: 5.45 }
-        ],
-        mealTime: 'breakfast'
+        macros: { calories: 290, protein: 20, carbs: 34, fats: 8 },
+        allergens: ['wheat', 'eggs', 'dairy'],
+        dietaryPreferences: ['vegetarian'],
+        paymentCosts: {
+          diningDollars: 5.45,
+          realDollars: 5.45
+        },
+        mealTimes: ['breakfast']
       },
       {
-        id: '6-2',
+        id: 'sbux-2',
         name: 'Protein Box - Chicken & Quinoa',
         description: 'Grilled chicken with quinoa, vegetables, and hard-boiled egg',
-        calories: 420,
-        protein: 36,
-        carbs: 38,
-        fats: 14,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 7.95 },
-          { type: 'realDollars', cost: 7.95 }
-        ],
-        mealTime: 'lunch'
+        macros: { calories: 420, protein: 36, carbs: 38, fats: 14 },
+        allergens: ['eggs'],
+        dietaryPreferences: ['glutenFree'],
+        paymentCosts: {
+          diningDollars: 7.95,
+          realDollars: 7.95
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       }
     ]
   },
+
+  // RESTAURANT: Pizza Place at Duncan
   {
-    id: '7',
-    name: 'Pizza Place Campus',
-    cuisine: 'Italian',
-    location: 'Uptown',
-    distance: 1.8,
-    rating: 4.3,
-    priceRange: '$',
-    meals: [
+    id: 'rest-7',
+    name: 'Pizza Place at Duncan',
+    location: 'Duncan',
+    isDiningHall: false,
+    dishes: [
       {
-        id: '7-1',
+        id: 'pizza-1',
         name: 'Veggie Pizza (2 slices)',
         description: 'Thin crust pizza with vegetables and light cheese',
-        calories: 480,
-        protein: 22,
-        carbs: 62,
-        fats: 16,
-        paymentOptions: [
-          { type: 'diningDollars', cost: 6.99 },
-          { type: 'realDollars', cost: 6.99 }
-        ],
-        mealTime: 'lunch'
+        macros: { calories: 480, protein: 22, carbs: 62, fats: 16 },
+        allergens: ['wheat', 'dairy'],
+        dietaryPreferences: ['vegetarian'],
+        paymentCosts: {
+          diningDollars: 6.99,
+          realDollars: 6.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       },
       {
-        id: '7-2',
+        id: 'pizza-2',
         name: 'Grilled Chicken Pizza (2 slices)',
         description: 'Thin crust with grilled chicken and vegetables',
-        calories: 540,
-        protein: 38,
-        carbs: 58,
-        fats: 18,
-        paymentOptions: [
-          { type: 'maroonMeal', cost: 1 },
-          { type: 'diningDollars', cost: 7.99 },
-          { type: 'realDollars', cost: 7.99 }
-        ],
-        mealTime: 'dinner'
+        macros: { calories: 540, protein: 38, carbs: 58, fats: 18 },
+        allergens: ['wheat', 'dairy'],
+        dietaryPreferences: [],
+        paymentCosts: {
+          maroonMeal: 1,
+          diningDollars: 7.99,
+          realDollars: 7.99
+        },
+        mealTimes: ['breakfast', 'lunch', 'dinner']
       }
     ]
   }
 ];
 
-export const cuisineTypes = [
-  'All Cuisines',
-  'American',
-  'Mediterranean',
-  'Health Food',
-  'Asian',
-  'Italian'
-];
-
 export const locations = [
   'No Preference',
-  'Downtown',
-  'Midtown',
-  'Uptown',
-  'Suburbs'
+  'MSC',
+  'Sbisa',
+  'Commons',
+  'Duncan'
 ];

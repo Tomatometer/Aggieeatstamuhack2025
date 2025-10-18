@@ -37,9 +37,6 @@ export function RestaurantResults({ preferences, restaurants, onBack }: Restaura
             {preferences.location}
           </Badge>
           <Badge variant="outline">
-            {preferences.mood}
-          </Badge>
-          <Badge variant="outline">
             {preferences.dietGoals.calories} cal
           </Badge>
           <Badge variant="outline">
