@@ -1,0 +1,102 @@
+{
+  "status": "success",
+  "request_time": "2025-10-18T12:00:00Z",
+  "location": {
+    "id": "mobile-bistro-001",
+    "name": "Mobile Bistro",
+    "type": "Food Truck",
+    "date": "2025-10-18"
+  },
+  "periods": [
+    {
+      "id": "all-day",
+      "name": "All Day",
+      "start_time": "11:00:00",
+      "end_time": "14:00:00"
+    }
+  ],
+  "menu": {
+    "periods": {
+      "all-day": {
+        "categories": [
+          {
+            "id": "rice-bowls",
+            "name": "Rice Bowls",
+            "sort_order": 1,
+            "description": "Asian-inspired rice bowls with fresh ingredients",
+            "items": [
+              {
+                "id": "korean-beef-bulgogi-bowl",
+                "name": "Korean Beef Bulgogi Rice Bowl",
+                "description": "Steamed rice, sauteed vegetable, savory Korean BBQ sauce, and fresh slaw",
+                "price": "12.93",
+                "currency": "USD",
+                "calories": null,
+                "protein": null,
+                "allergens": ["soy", "wheat", "gluten", "sesame"],
+                "dietary_flags": [],
+                "ingredients": [
+                  "steamed rice",
+                  "beef bulgogi",
+                  "sauteed vegetables",
+                  "Korean BBQ sauce",
+                  "fresh slaw"
+                ],
+                "customizable": false
+              },
+              {
+                "id": "chicken-teriyaki-bowl",
+                "name": "Chicken Teriyaki Rice Bowl",
+                "description": "Steamed rice, sauteed vegetable, sweet & tangy teriyaki sauce, and fresh slaw",
+                "price": "11.09",
+                "currency": "USD",
+                "calories": null,
+                "protein": null,
+                "allergens": ["soy", "wheat", "gluten", "sesame"],
+                "dietary_flags": [],
+                "ingredients": [
+                  "steamed rice",
+                  "chicken",
+                  "sauteed vegetables",
+                  "teriyaki sauce",
+                  "fresh slaw"
+                ],
+                "customizable": false
+              },
+              {
+                "id": "veggie-teriyaki-bowl",
+                "name": "Veggie Teriyaki Rice Bowl",
+                "description": "Fried tofu and Brussels sprouts, sauteed vegetable, steamed rice, slaw, pickled onion, green onion, sesame seed, and teriyaki sauce",
+                "price": "11.09",
+                "currency": "USD",
+                "calories": null,
+                "protein": null,
+                "allergens": ["soy", "wheat", "gluten", "sesame"],
+                "dietary_flags": ["vegetarian", "vegan"],
+                "ingredients": [
+                  "fried tofu",
+                  "Brussels sprouts",
+                  "sauteed vegetables",
+                  "steamed rice",
+                  "fresh slaw",
+                  "pickled onion",
+                  "green onion",
+                  "sesame seed",
+                  "teriyaki sauce"
+                ],
+                "customizable": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "disclaimer": "This is a sample menu and is subject to change. Our offerings may vary based on the availability of seasonal ingredients and the chef's inspiration. We are committed to using the freshest ingredients at their peak, so the actual menu on the day of your visit may differ.",
+    "cuisine_type": "Asian Fusion",
+    "service_type": "Food Truck",
+    "payment_methods": ["cash", "credit", "debit"],
+    "year": "2025"
+  }
+}
