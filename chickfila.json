@@ -1,0 +1,722 @@
+{
+  "status": "success",
+  "request_time": "2025-10-18T12:00:00Z",
+  "location": {
+    "id": "chickfila-collegestation-001",
+    "name": "Chick-fil-A",
+    "address": "1719 Texas Ave S, College Station, TX 77840",
+    "date": "2025-10-18",
+    "note": "Closed on Sundays"
+  },
+  "periods": [
+    {
+      "id": "breakfast",
+      "name": "Breakfast",
+      "start_time": "06:30:00",
+      "end_time": "10:30:00"
+    },
+    {
+      "id": "all-day",
+      "name": "All Day",
+      "start_time": "10:30:00",
+      "end_time": "22:00:00"
+    }
+  ],
+  "menu": {
+    "periods": {
+      "breakfast": {
+        "categories": [
+          {
+            "id": "breakfast-entrees",
+            "name": "Breakfast Entrées",
+            "sort_order": 1,
+            "description": "Start your day with chicken",
+            "items": [
+              {
+                "id": "chick-n-minis",
+                "name": "Chick-n-Minis",
+                "description": "Bite-sized Chick-fil-A Nuggets nestled in warm, mini yeast rolls that are lightly brushed with a honey butter spread",
+                "price": 5.49,
+                "sizes": {
+                  "4-count": 5.49,
+                  "10-count": 12.39
+                },
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "chicken-biscuit",
+                "name": "Chick-fil-A Chicken Biscuit",
+                "description": "A breakfast portion of boneless breast of chicken, seasoned to perfection, hand-breaded, pressure cooked in peanut oil and served on a buttermilk biscuit baked fresh",
+                "price": 4.19,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "spicy-chicken-biscuit",
+                "name": "Spicy Chicken Biscuit",
+                "description": "A breakfast portion of boneless breast of chicken with a spicy kick, hand-breaded, pressure cooked in peanut oil and served on a buttermilk biscuit",
+                "price": 4.49,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "chicken-egg-cheese-biscuit",
+                "name": "Chicken, Egg & Cheese Biscuit",
+                "description": "A breakfast portion of boneless breast of chicken, a folded egg and cheese served on a buttermilk biscuit",
+                "price": 5.79,
+                "allergens": ["wheat", "gluten", "dairy", "eggs", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "bacon-egg-cheese-biscuit",
+                "name": "Bacon, Egg & Cheese Biscuit",
+                "description": "Crispy bacon, a folded egg and cheese served on a buttermilk biscuit",
+                "price": 4.89,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "sausage-egg-cheese-biscuit",
+                "name": "Sausage, Egg & Cheese Biscuit",
+                "description": "Savory sausage, a folded egg and cheese served on a buttermilk biscuit",
+                "price": 4.89,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "egg-white-grill",
+                "name": "Egg White Grill",
+                "description": "Grilled chicken, freshly prepared egg whites, and American cheese served on an English muffin",
+                "price": 5.29,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "hash-browns",
+                "name": "Hash Browns",
+                "description": "Crispy potato medallions cooked in canola oil",
+                "price": 2.15,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "greek-yogurt-parfait",
+                "name": "Greek Yogurt Parfait",
+                "description": "Creamy vanilla Greek yogurt with fresh strawberries and blueberries, topped with granola",
+                "price": 5.25,
+                "allergens": ["dairy", "wheat", "gluten"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "fruit-cup",
+                "name": "Fruit Cup",
+                "description": "Fresh mix of red and green apples, mandarin oranges, strawberries, and blueberries",
+                "price": 4.25,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan", "gluten-free"]
+              }
+            ]
+          }
+        ]
+      },
+      "all-day": {
+        "categories": [
+          {
+            "id": "entrees",
+            "name": "Entrées",
+            "sort_order": 1,
+            "description": "Signature chicken sandwiches and more",
+            "items": [
+              {
+                "id": "chicken-sandwich",
+                "name": "Chick-fil-A Chicken Sandwich",
+                "description": "A boneless breast of chicken seasoned to perfection, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips",
+                "price": 6.49,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "deluxe-sandwich",
+                "name": "Chick-fil-A Deluxe Sandwich",
+                "description": "A boneless breast of chicken with lettuce, tomato, and American cheese on a toasted bun",
+                "price": 7.49,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "spicy-chicken-sandwich",
+                "name": "Spicy Chicken Sandwich",
+                "description": "A boneless breast of chicken seasoned with a spicy blend of peppers, hand-breaded, cooked in peanut oil and served on a toasted bun with pickles",
+                "price": 6.89,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "spicy-deluxe-sandwich",
+                "name": "Spicy Deluxe Sandwich",
+                "description": "Spicy chicken with lettuce, tomato, cheese, and Colby-Jack cheese on a toasted bun",
+                "price": 7.89,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "grilled-chicken-sandwich",
+                "name": "Grilled Chicken Sandwich",
+                "description": "A lemon herb marinated boneless breast of chicken, grilled and served on a toasted multigrain bun with lettuce and tomato",
+                "price": 7.29,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": []
+              },
+              {
+                "id": "grilled-chicken-club",
+                "name": "Grilled Chicken Club Sandwich",
+                "description": "Grilled chicken with Colby-Jack cheese, applewood smoked bacon, lettuce, and tomato on a toasted multigrain bun",
+                "price": 8.79,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": []
+              },
+              {
+                "id": "pretzel-cheddar-club",
+                "name": "Pretzel Cheddar Club Sandwich",
+                "description": "Original chicken filet on a toasted pretzel bun with lettuce, tomato, cheddar cheese, bacon, and Creamy Dijon Mustard Sauce",
+                "price": 8.49,
+                "available": "Limited Time",
+                "allergens": ["wheat", "gluten", "dairy", "peanuts", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "nuggets-8ct",
+                "name": "Chick-fil-A Nuggets (8-count)",
+                "description": "Bite-sized pieces of boneless chicken breast, seasoned to perfection, hand-breaded and cooked in peanut oil",
+                "price": 6.49,
+                "allergens": ["wheat", "gluten", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "nuggets-12ct",
+                "name": "Chick-fil-A Nuggets (12-count)",
+                "description": "Bite-sized pieces of boneless chicken breast, seasoned to perfection, hand-breaded and cooked in peanut oil",
+                "price": 9.19,
+                "allergens": ["wheat", "gluten", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "nuggets-30ct",
+                "name": "Chick-fil-A Nuggets (30-count)",
+                "description": "Bite-sized pieces of boneless chicken breast, seasoned to perfection, hand-breaded and cooked in peanut oil",
+                "price": 21.99,
+                "allergens": ["wheat", "gluten", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "grilled-nuggets",
+                "name": "Grilled Nuggets",
+                "description": "Bite-sized pieces of freshly marinated boneless breast of chicken, grilled for a tender and juicy taste",
+                "sizes": {
+                  "8-count": 6.89,
+                  "12-count": 9.99
+                },
+                "allergens": [],
+                "dietary_flags": ["gluten-free"]
+              },
+              {
+                "id": "chick-n-strips",
+                "name": "Chick-n-Strips",
+                "description": "Made from the most tender part of the chicken breast, marinated with special seasonings and hand-breaded",
+                "sizes": {
+                  "3-count": 7.19,
+                  "4-count": 8.79
+                },
+                "allergens": ["wheat", "gluten", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "grilled-cool-wrap",
+                "name": "Grilled Cool Wrap",
+                "description": "Sliced grilled chicken with lettuce, red cabbage, carrots, and cheese in a flaxseed flatbread",
+                "price": 8.99,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": []
+              }
+            ]
+          },
+          {
+            "id": "salads",
+            "name": "Salads",
+            "sort_order": 2,
+            "description": "Fresh salads prepared daily",
+            "items": [
+              {
+                "id": "cobb-salad",
+                "name": "Cobb Salad",
+                "description": "Chick-fil-A Nuggets, romaine lettuce, baby greens, red cabbage, carrots, roasted corn kernels, Monterey Jack and Cheddar cheeses, bacon, and hard-boiled eggs",
+                "price": 10.99,
+                "allergens": ["dairy", "eggs"],
+                "dietary_flags": ["gluten-free"]
+              },
+              {
+                "id": "spicy-southwest-salad",
+                "name": "Spicy Southwest Salad",
+                "description": "Sliced grilled chicken, romaine lettuce, baby greens, red cabbage, carrots, black beans, roasted corn, poblano chiles, tortilla strips, and Monterey Jack and Cheddar cheeses",
+                "price": 10.99,
+                "allergens": ["dairy", "wheat", "gluten"],
+                "dietary_flags": []
+              },
+              {
+                "id": "market-salad",
+                "name": "Market Salad",
+                "description": "Grilled chicken with mixed greens, blue cheese, apples, strawberries, and blueberries",
+                "price": 10.99,
+                "allergens": ["dairy", "tree-nuts"],
+                "dietary_flags": ["gluten-free"]
+              }
+            ]
+          },
+          {
+            "id": "sides",
+            "name": "Sides",
+            "sort_order": 3,
+            "description": "Perfect complements to any meal",
+            "items": [
+              {
+                "id": "waffle-fries-small",
+                "name": "Waffle Potato Fries (Small)",
+                "description": "Waffle-shaped potatoes cooked in canola oil until crispy outside and tender inside",
+                "price": 2.75,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan", "gluten-free"]
+              },
+              {
+                "id": "waffle-fries-medium",
+                "name": "Waffle Potato Fries (Medium)",
+                "description": "Waffle-shaped potatoes cooked in canola oil until crispy outside and tender inside",
+                "price": 3.25,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan", "gluten-free"]
+              },
+              {
+                "id": "waffle-fries-large",
+                "name": "Waffle Potato Fries (Large)",
+                "description": "Waffle-shaped potatoes cooked in canola oil until crispy outside and tender inside",
+                "price": 3.85,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan", "gluten-free"]
+              },
+              {
+                "id": "mac-cheese",
+                "name": "Mac & Cheese",
+                "description": "Creamy macaroni and cheese made with a special blend of cheeses",
+                "sizes": {
+                  "small": 3.55,
+                  "medium": 4.39,
+                  "large": 5.85
+                },
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "fruit-cup-side",
+                "name": "Fruit Cup",
+                "description": "Fresh mix of red and green apples, mandarin oranges, strawberries, and blueberries",
+                "price": 4.25,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan", "gluten-free"]
+              },
+              {
+                "id": "side-salad",
+                "name": "Side Salad",
+                "description": "Mixed greens with red cabbage and carrots, topped with grape tomatoes",
+                "price": 4.49,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan", "gluten-free"]
+              },
+              {
+                "id": "chicken-noodle-soup",
+                "name": "Chicken Noodle Soup",
+                "description": "Hearty chicken soup with carrots, celery, and egg noodles",
+                "sizes": {
+                  "small": 3.99,
+                  "large": 5.85
+                },
+                "allergens": ["wheat", "gluten", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "waffle-chips",
+                "name": "Waffle Potato Chips",
+                "description": "Crispy waffle-cut chips",
+                "price": 2.29,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan", "gluten-free"]
+              },
+              {
+                "id": "kale-crunch-side",
+                "name": "Kale Crunch Side",
+                "description": "Kale and green cabbage tossed with an apple cider vinegar-based dressing",
+                "price": 4.49,
+                "allergens": ["tree-nuts"],
+                "dietary_flags": ["vegetarian", "vegan"]
+              }
+            ]
+          },
+          {
+            "id": "kids-meals",
+            "name": "Kid's Meals",
+            "sort_order": 4,
+            "description": "Meals for our youngest guests",
+            "items": [
+              {
+                "id": "kids-nuggets-4ct",
+                "name": "Kid's Nuggets (4-count)",
+                "description": "4-count nuggets with choice of side and drink",
+                "price": 5.25,
+                "allergens": ["wheat", "gluten", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "kids-nuggets-6ct",
+                "name": "Kid's Nuggets (6-count)",
+                "description": "6-count nuggets with choice of side and drink",
+                "price": 6.29,
+                "allergens": ["wheat", "gluten", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "kids-grilled-nuggets",
+                "name": "Kid's Grilled Nuggets",
+                "description": "Grilled nuggets with choice of side and drink",
+                "price": 6.49,
+                "allergens": [],
+                "dietary_flags": ["gluten-free"]
+              },
+              {
+                "id": "kids-strips",
+                "name": "Kid's Chick-n-Strips (1-count)",
+                "description": "1 Chick-n-Strip with choice of side and drink",
+                "price": 5.15,
+                "allergens": ["wheat", "gluten", "peanuts"],
+                "dietary_flags": []
+              }
+            ]
+          },
+          {
+            "id": "treats",
+            "name": "Treats",
+            "sort_order": 5,
+            "description": "Sweet endings and frozen treats",
+            "items": [
+              {
+                "id": "milkshake-vanilla",
+                "name": "Vanilla Milkshake",
+                "description": "Hand-spun vanilla milkshake",
+                "sizes": {
+                  "small": 4.49,
+                  "large": 5.75
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "milkshake-chocolate",
+                "name": "Chocolate Milkshake",
+                "description": "Hand-spun chocolate milkshake",
+                "sizes": {
+                  "small": 4.49,
+                  "large": 5.75
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "milkshake-strawberry",
+                "name": "Strawberry Milkshake",
+                "description": "Hand-spun strawberry milkshake",
+                "sizes": {
+                  "small": 4.49,
+                  "large": 5.75
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "milkshake-cookies-cream",
+                "name": "Cookies & Cream Milkshake",
+                "description": "Hand-spun milkshake with Oreo cookie pieces",
+                "sizes": {
+                  "small": 4.99,
+                  "large": 6.25
+                },
+                "allergens": ["dairy", "wheat", "gluten"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "frosted-lemonade",
+                "name": "Frosted Lemonade",
+                "description": "Chick-fil-A Lemonade blended with vanilla Icedream",
+                "sizes": {
+                  "small": 4.79,
+                  "large": 5.99
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "frosted-coffee",
+                "name": "Frosted Coffee",
+                "description": "Cold-brewed coffee blended with vanilla Icedream",
+                "sizes": {
+                  "small": 4.79,
+                  "large": 5.99
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "icedream-cone",
+                "name": "Icedream Cone",
+                "description": "Vanilla frozen dairy dessert in a crispy cone",
+                "price": 2.15,
+                "allergens": ["dairy", "wheat", "gluten"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "icedream-cup",
+                "name": "Icedream Cup",
+                "description": "Vanilla frozen dairy dessert in a cup",
+                "price": 2.29,
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "chocolate-chunk-cookie",
+                "name": "Chocolate Chunk Cookie",
+                "description": "Freshly baked cookie with chocolate chunks",
+                "price": 1.79,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "brownie",
+                "name": "Chocolate Fudge Brownie",
+                "description": "Rich chocolate brownie with chocolate chips",
+                "price": 2.39,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "beverages",
+            "name": "Beverages",
+            "sort_order": 6,
+            "description": "Refreshing drinks",
+            "items": [
+              {
+                "id": "lemonade",
+                "name": "Chick-fil-A Lemonade",
+                "description": "Classic lemonade made with real lemon juice",
+                "sizes": {
+                  "small": 2.45,
+                  "medium": 2.85,
+                  "large": 3.25
+                },
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "diet-lemonade",
+                "name": "Diet Lemonade",
+                "description": "Diet lemonade sweetened with Splenda",
+                "sizes": {
+                  "small": 2.45,
+                  "medium": 2.85,
+                  "large": 3.25
+                },
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "iced-tea-sweetened",
+                "name": "Freshly-Brewed Iced Tea Sweetened",
+                "description": "Freshly brewed sweet tea",
+                "sizes": {
+                  "small": 2.15,
+                  "medium": 2.55,
+                  "large": 2.95
+                },
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "iced-tea-unsweetened",
+                "name": "Freshly-Brewed Iced Tea Unsweetened",
+                "description": "Freshly brewed unsweetened tea",
+                "sizes": {
+                  "small": 2.15,
+                  "medium": 2.55,
+                  "large": 2.95
+                },
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "sunjoy",
+                "name": "Sunjoy (Sweet Tea + Lemonade)",
+                "description": "Combination of lemonade and sweetened iced tea",
+                "sizes": {
+                  "small": 2.45,
+                  "medium": 2.85,
+                  "large": 3.25
+                },
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "cherry-berry-sprite",
+                "name": "Cherry Berry & Sprite",
+                "description": "Sprite with cherry berry flavor",
+                "available": "Limited Time",
+                "sizes": {
+                  "small": 2.45,
+                  "medium": 2.85,
+                  "large": 3.25
+                },
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "soft-drink",
+                "name": "Soft Drink",
+                "description": "Coca-Cola products",
+                "sizes": {
+                  "small": 2.15,
+                  "medium": 2.55,
+                  "large": 2.95
+                },
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "coffee",
+                "name": "Brewed Coffee",
+                "description": "Freshly brewed hot coffee",
+                "sizes": {
+                  "small": 1.99,
+                  "medium": 2.29,
+                  "large": 2.59
+                },
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "iced-coffee",
+                "name": "Iced Coffee",
+                "description": "Cold-brewed coffee served over ice",
+                "sizes": {
+                  "small": 2.99,
+                  "medium": 3.49,
+                  "large": 3.99
+                },
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "Simply Orange Juice",
+                "name": "Simply Orange Juice",
+                "description": "100% pure orange juice",
+                "price": 3.29,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan", "gluten-free"]
+              },
+              {
+                "id": "apple-juice",
+                "name": "Apple Juice",
+                "description": "100% apple juice",
+                "price": 2.29,
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan", "gluten-free"]
+              },
+              {
+                "id": "milk",
+                "name": "Milk",
+                "description": "1% low-fat milk",
+                "price": 1.75,
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              },
+              {
+                "id": "chocolate-milk",
+                "name": "Chocolate Milk",
+                "description": "1% chocolate milk",
+                "price": 2.09,
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              }
+            ]
+          },
+          {
+            "id": "meals",
+            "name": "Meals",
+            "sort_order": 7,
+            "description": "Entrée meals with a side and drink",
+            "items": [
+              {
+                "id": "chicken-sandwich-meal",
+                "name": "Chick-fil-A Chicken Sandwich Meal",
+                "description": "Chick-fil-A Chicken Sandwich with your choice of side and drink",
+                "price": 11.39,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "deluxe-sandwich-meal",
+                "name": "Chick-fil-A Deluxe Sandwich Meal",
+                "description": "Chick-fil-A Deluxe Sandwich with your choice of side and drink",
+                "price": 12.39,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "spicy-chicken-sandwich-meal",
+                "name": "Spicy Chicken Sandwich Meal",
+                "description": "Spicy Chicken Sandwich with your choice of side and drink",
+                "price": 11.79,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "spicy-deluxe-sandwich-meal",
+                "name": "Spicy Deluxe Sandwich Meal",
+                "description": "Spicy Deluxe Sandwich with your choice of side and drink",
+                "price": 12.79,
+                "allergens": ["wheat", "gluten", "dairy", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "grilled-chicken-sandwich-meal",
+                "name": "Grilled Chicken Sandwich Meal",
+                "description": "Grilled Chicken Sandwich with your choice of side and drink",
+                "price": 12.19,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": []
+              },
+              {
+                "id": "grilled-chicken-club-meal",
+                "name": "Grilled Chicken Club Meal",
+                "description": "Grilled Chicken Club Sandwich with your choice of side and drink",
+                "price": 13.69,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": []
+              },
+              {
+                "id": "nuggets-meal-8ct",
+                "name": "Chick-fil-A Nuggets Meal (8-count)",
+                "description": "8-count nuggets with your choice of side and drink",
+                "price": 11.49,
+                "allergens": ["wheat", "gluten", "peanuts"],
+                "dietary_flags": []
+              },
+              {
+                "id": "nuggets-meal-12ct",
+                "name": "Chick-fil-A
