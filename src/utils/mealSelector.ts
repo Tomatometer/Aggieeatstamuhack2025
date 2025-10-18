@@ -8,9 +8,21 @@ import {
   DiningHall,
   MealComponent,
   Macros,
-  MealTime
+  MealTime,
+  ComponentCategory
 } from '../types';
 import { mockDiningLocations } from '../data/mockData';
+
+/**
+ * Global meal rules for dining hall component combinations
+ * Requires at least 2 distinct components, with at least 1 protein
+ */
+const GLOBAL_DINING_HALL_MEAL_RULES = {
+  required: ['protein'] as ComponentCategory[],
+  optional: ['vegetable', 'side', 'sauce', 'base'] as ComponentCategory[],
+  maxComponents: 4,
+  minComponents: 2
+} as const;
 
 /**
  * Finds the optimal combination of 3 meals (breakfast, lunch, dinner) 
@@ -155,6 +167,7 @@ function generateMealOptions(
 
 /**
  * Generate component combinations for dining hall meals
+ * Each station is processed independently to create complete meals
  */
 function generateDiningHallCombinations(
   diningHall: DiningHall,
@@ -162,7 +175,7 @@ function generateDiningHallCombinations(
   mealTime: MealTime,
   preferences: UserPreferences
 ): SelectedMeal[] {
-  const combinations: SelectedMeal[] = [];
+  const allCombinations: SelectedMeal[] = [];
 
   // Get target macros for this meal (roughly 1/3 of daily goals)
   const targetMacros: Macros = {
@@ -172,26 +185,45 @@ function generateDiningHallCombinations(
     fats: preferences.dietGoals.fats / 3
   };
 
-  // Generate a few different combinations with different strategies
-  const strategies = [
-    { caloriesMult: 1.0, proteinMult: 1.2, carbsMult: 0.8, fatsMult: 1.0 }, // High protein
-    { caloriesMult: 1.0, proteinMult: 1.0, carbsMult: 1.0, fatsMult: 1.0 }, // Balanced
-    { caloriesMult: 1.0, proteinMult: 0.8, carbsMult: 1.3, fatsMult: 1.0 }, // Higher carbs
-  ];
+  // Process each station independently
+  for (const station of stations) {
+    const stationCombinations = generateStationCombinations(
+      diningHall,
+      station,
+      mealTime,
+      targetMacros,
+      preferences
+    );
+    allCombinations.push(...stationCombinations);
+  }
 
-  for (const strategy of strategies) {
-    const adjustedTarget: Macros = {
-      calories: targetMacros.calories * strategy.caloriesMult,
-      protein: targetMacros.protein * strategy.proteinMult,
-      carbs: targetMacros.carbs * strategy.carbsMult,
-      fats: targetMacros.fats * strategy.fatsMult
-    };
+  return allCombinations;
+}
 
-    const components = selectComponentsForTarget(stations, adjustedTarget);
+/**
+ * Generate valid meal combinations from a single station
+ */
+function generateStationCombinations(
+  diningHall: DiningHall,
+  station: { name: string; components: MealComponent[] },
+  mealTime: MealTime,
+  targetMacros: Macros,
+  preferences: UserPreferences
+): SelectedMeal[] {
+  const validMeals: SelectedMeal[] = [];
 
-    if (components.length > 0) {
-      const totalMacros = calculateMealTotals(components);
+  // Group components by category
+  const componentsByCategory = groupComponentsByCategory(station.components);
 
+  // Generate valid combinations based on global rules
+  const combinations = generateValidCombinations(componentsByCategory, targetMacros);
+
+  // Create SelectedMeal objects for each valid combination
+  for (const components of combinations) {
+    const totalMacros = calculateMealTotals(components);
+
+    // Only include meals with reasonable macro totals
+    if (isReasonableMealSize(totalMacros, targetMacros)) {
       // Try each payment option for the dining hall
       const paymentOptions: Array<'mealSwipe' | 'diningDollars' | 'realDollars'> = [
         'mealSwipe',
@@ -200,7 +232,7 @@ function generateDiningHallCombinations(
       ];
 
       for (const paymentType of paymentOptions) {
-        combinations.push({
+        validMeals.push({
           location: diningHall,
           mealTime,
           selectedComponents: components,
@@ -215,63 +247,154 @@ function generateDiningHallCombinations(
     }
   }
 
+  return validMeals;
+}
+
+/**
+ * Group meal components by their category
+ */
+function groupComponentsByCategory(components: MealComponent[]): Record<ComponentCategory, MealComponent[]> {
+  const grouped: Record<string, MealComponent[]> = {
+    protein: [],
+    base: [],
+    vegetable: [],
+    side: [],
+    sauce: []
+  };
+
+  for (const component of components) {
+    if (grouped[component.category]) {
+      grouped[component.category].push(component);
+    }
+  }
+
+  return grouped as Record<ComponentCategory, MealComponent[]>;
+}
+
+/**
+ * Generate valid combinations following global meal rules
+ * Must have at least 2 distinct components, with at least 1 protein
+ */
+function generateValidCombinations(
+  componentsByCategory: Record<ComponentCategory, MealComponent[]>,
+  targetMacros: Macros
+): MealComponent[][] {
+  const combinations: MealComponent[][] = [];
+
+  const proteins = componentsByCategory.protein || [];
+  const bases = componentsByCategory.base || [];
+  const vegetables = componentsByCategory.vegetable || [];
+  const sides = componentsByCategory.side || [];
+  const sauces = componentsByCategory.sauce || [];
+
+  // Must have at least one protein
+  if (proteins.length === 0) {
+    return combinations;
+  }
+
+  // Generate all valid 2-component combinations with at least 1 protein
+  for (const protein of proteins) {
+    // Protein + Base combinations
+    for (const base of bases) {
+      const combo2 = [protein, base];
+      combinations.push([...combo2]);
+
+      // Try adding a third component
+      for (const vegetable of vegetables) {
+        const combo3 = [...combo2, vegetable];
+        if (combo3.length <= GLOBAL_DINING_HALL_MEAL_RULES.maxComponents) {
+          combinations.push([...combo3]);
+        }
+
+        // Try adding a fourth component (sauce)
+        for (const sauce of sauces) {
+          const combo4 = [...combo2, vegetable, sauce];
+          if (combo4.length <= GLOBAL_DINING_HALL_MEAL_RULES.maxComponents) {
+            combinations.push([...combo4]);
+          }
+        }
+      }
+
+      // Base + side combinations (3 components)
+      for (const side of sides) {
+        const combo3 = [...combo2, side];
+        if (combo3.length <= GLOBAL_DINING_HALL_MEAL_RULES.maxComponents) {
+          combinations.push([...combo3]);
+        }
+      }
+
+      // Base + sauce combinations (3 components)
+      for (const sauce of sauces) {
+        const combo3 = [...combo2, sauce];
+        if (combo3.length <= GLOBAL_DINING_HALL_MEAL_RULES.maxComponents) {
+          combinations.push([...combo3]);
+        }
+      }
+    }
+
+    // Protein + Vegetable combinations (no base)
+    for (const vegetable of vegetables) {
+      const combo2 = [protein, vegetable];
+      combinations.push([...combo2]);
+
+      // Try adding a side
+      for (const side of sides) {
+        const combo3 = [...combo2, side];
+        if (combo3.length <= GLOBAL_DINING_HALL_MEAL_RULES.maxComponents) {
+          combinations.push([...combo3]);
+        }
+      }
+
+      // Try adding a sauce
+      for (const sauce of sauces) {
+        const combo3 = [...combo2, sauce];
+        if (combo3.length <= GLOBAL_DINING_HALL_MEAL_RULES.maxComponents) {
+          combinations.push([...combo3]);
+        }
+      }
+    }
+
+    // Protein + Side combinations (no base)
+    for (const side of sides) {
+      const combo2 = [protein, side];
+      combinations.push([...combo2]);
+
+      // Try adding a sauce
+      for (const sauce of sauces) {
+        const combo3 = [...combo2, sauce];
+        if (combo3.length <= GLOBAL_DINING_HALL_MEAL_RULES.maxComponents) {
+          combinations.push([...combo3]);
+        }
+      }
+    }
+
+    // Protein + Sauce combinations (no base, for low-carb options)
+    for (const sauce of sauces) {
+      const combo2 = [protein, sauce];
+      combinations.push([...combo2]);
+    }
+
+    // Protein + Protein combinations (for high-protein meals)
+    for (const protein2 of proteins) {
+      if (protein.id !== protein2.id) {
+        const combo2 = [protein, protein2];
+        combinations.push([...combo2]);
+      }
+    }
+  }
+
   return combinations;
 }
 
 /**
- * Select components from stations to match target macros
- * Uses a greedy algorithm to build a reasonable meal
+ * Check if meal size is reasonable for one meal (not too small or too large)
  */
-function selectComponentsForTarget(
-  stations: Array<{ name: string; components: MealComponent[] }>,
-  target: Macros
-): MealComponent[] {
-  const selected: MealComponent[] = [];
-  let totals: Macros = { calories: 0, protein: 0, carbs: 0, fats: 0 };
+function isReasonableMealSize(mealMacros: Macros, targetMacros: Macros): boolean {
+  // Meal should be between 50% and 150% of target calories
+  const minCalories = targetMacros.calories * 0.5;
+  const maxCalories = targetMacros.calories * 1.5;
 
-  // Try to get at least one item from each station
-  for (const station of stations) {
-    if (station.components.length === 0) continue;
-
-    // Find the component that best matches our remaining needs
-    let bestComponent: MealComponent | null = null;
-    let bestScore = Infinity;
-
-    for (const component of station.components) {
-      // Calculate how this would affect our distance from target
-      const newTotals: Macros = {
-        calories: totals.calories + component.macros.calories,
-        protein: totals.protein + component.macros.protein,
-        carbs: totals.carbs + component.macros.carbs,
-        fats: totals.fats + component.macros.fats
-      };
-
-      // Score based on distance from target (lower is better)
-      const score =
-        Math.abs(newTotals.calories - target.calories) * 0.3 +
-        Math.abs(newTotals.protein - target.protein) * 2 +
-        Math.abs(newTotals.carbs - target.carbs) * 0.5 +
-        Math.abs(newTotals.fats - target.fats) * 1;
-
-      // Don't overshoot calories too much
-      if (newTotals.calories > target.calories * 1.3) continue;
-
-      if (score < bestScore) {
-        bestScore = score;
-        bestComponent = component;
-      }
-    }
-
-    if (bestComponent) {
-      selected.push(bestComponent);
-      totals.calories += bestComponent.macros.calories;
-      totals.protein += bestComponent.macros.protein;
-      totals.carbs += bestComponent.macros.carbs;
-      totals.fats += bestComponent.macros.fats;
-    }
-  }
-
-  return selected;
+  return mealMacros.calories >= minCalories && mealMacros.calories <= maxCalories;
 }
 
 /**

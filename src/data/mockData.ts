@@ -24,6 +24,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-egg-1',
               name: 'Scrambled Eggs (2)',
               station: 'Egg Station',
+              category: 'protein',
               macros: { calories: 180, protein: 12, carbs: 2, fats: 12 },
               allergens: ['eggs', 'dairy'],
               dietaryPreferences: ['vegetarian']
@@ -32,6 +33,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-egg-2',
               name: 'Egg Whites (3)',
               station: 'Egg Station',
+              category: 'protein',
               macros: { calories: 75, protein: 15, carbs: 1, fats: 0 },
               allergens: ['eggs'],
               dietaryPreferences: ['vegetarian']
@@ -40,9 +42,37 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-egg-3',
               name: 'Omelet with Veggies',
               station: 'Egg Station',
+              category: 'protein',
               macros: { calories: 220, protein: 18, carbs: 8, fats: 14 },
               allergens: ['eggs', 'dairy'],
               dietaryPreferences: ['vegetarian']
+            },
+            {
+              id: 'sbisa-b-egg-4',
+              name: 'English Muffin',
+              station: 'Egg Station',
+              category: 'base',
+              macros: { calories: 130, protein: 5, carbs: 25, fats: 1.5 },
+              allergens: ['wheat'],
+              dietaryPreferences: ['vegetarian']
+            },
+            {
+              id: 'sbisa-b-egg-5',
+              name: 'Wheat Toast (2 slices)',
+              station: 'Egg Station',
+              category: 'base',
+              macros: { calories: 160, protein: 8, carbs: 28, fats: 2 },
+              allergens: ['wheat'],
+              dietaryPreferences: ['vegan']
+            },
+            {
+              id: 'sbisa-b-egg-6',
+              name: 'Avocado Slices',
+              station: 'Egg Station',
+              category: 'side',
+              macros: { calories: 120, protein: 1.5, carbs: 6, fats: 11 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
             }
           ]
         },
@@ -54,6 +84,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-prot-1',
               name: 'Turkey Sausage (2 links)',
               station: 'Protein Station',
+              category: 'protein',
               macros: { calories: 130, protein: 14, carbs: 1, fats: 8 },
               allergens: [],
               dietaryPreferences: ['halal']
@@ -62,6 +93,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-prot-2',
               name: 'Bacon (3 strips)',
               station: 'Protein Station',
+              category: 'protein',
               macros: { calories: 120, protein: 9, carbs: 0, fats: 9 },
               allergens: [],
               dietaryPreferences: []
@@ -70,9 +102,37 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-prot-3',
               name: 'Grilled Chicken Breast',
               station: 'Protein Station',
+              category: 'protein',
               macros: { calories: 165, protein: 31, carbs: 0, fats: 4 },
               allergens: [],
               dietaryPreferences: ['halal']
+            },
+            {
+              id: 'sbisa-b-prot-4',
+              name: 'Breakfast Potatoes',
+              station: 'Protein Station',
+              category: 'base',
+              macros: { calories: 140, protein: 3, carbs: 24, fats: 4 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-b-prot-5',
+              name: 'Grits (1 cup)',
+              station: 'Protein Station',
+              category: 'base',
+              macros: { calories: 150, protein: 3, carbs: 31, fats: 1.5 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-b-prot-6',
+              name: 'Sautéed Peppers & Onions',
+              station: 'Protein Station',
+              category: 'side',
+              macros: { calories: 35, protein: 1, carbs: 8, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
             }
           ]
         },
@@ -84,6 +144,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-carb-1',
               name: 'Whole Wheat Toast (2 slices)',
               station: 'Carbs Station',
+              category: 'base',
               macros: { calories: 160, protein: 8, carbs: 28, fats: 2 },
               allergens: ['wheat'],
               dietaryPreferences: ['vegan']
@@ -92,6 +153,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-carb-2',
               name: 'Oatmeal (1 cup)',
               station: 'Carbs Station',
+              category: 'base',
               macros: { calories: 150, protein: 5, carbs: 27, fats: 3 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -100,6 +162,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-carb-3',
               name: 'Pancakes (2)',
               station: 'Carbs Station',
+              category: 'base',
               macros: { calories: 220, protein: 6, carbs: 44, fats: 2.5 },
               allergens: ['wheat', 'eggs', 'dairy'],
               dietaryPreferences: ['vegetarian']
@@ -108,6 +171,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-carb-4',
               name: 'Hash Browns',
               station: 'Carbs Station',
+              category: 'base',
               macros: { calories: 150, protein: 2, carbs: 18, fats: 8 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -122,6 +186,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-fruit-1',
               name: 'Fresh Fruit Cup',
               station: 'Fruit & Yogurt',
+              category: 'side',
               macros: { calories: 60, protein: 1, carbs: 15, fats: 0 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -130,6 +195,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-fruit-2',
               name: 'Greek Yogurt',
               station: 'Fruit & Yogurt',
+              category: 'protein',
               macros: { calories: 100, protein: 17, carbs: 6, fats: 0 },
               allergens: ['dairy'],
               dietaryPreferences: ['vegetarian', 'glutenFree']
@@ -138,9 +204,28 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-b-fruit-3',
               name: 'Banana',
               station: 'Fruit & Yogurt',
+              category: 'side',
               macros: { calories: 105, protein: 1, carbs: 27, fats: 0 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-b-fruit-4',
+              name: 'Cottage Cheese',
+              station: 'Fruit & Yogurt',
+              category: 'protein',
+              macros: { calories: 120, protein: 14, carbs: 6, fats: 5 },
+              allergens: ['dairy'],
+              dietaryPreferences: ['vegetarian', 'glutenFree']
+            },
+            {
+              id: 'sbisa-b-fruit-5',
+              name: 'Granola (1/2 cup)',
+              station: 'Fruit & Yogurt',
+              category: 'base',
+              macros: { calories: 210, protein: 5, carbs: 34, fats: 7 },
+              allergens: ['treeNuts'],
+              dietaryPreferences: ['vegetarian']
             }
           ]
         }
@@ -154,6 +239,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-grill-1',
               name: 'Grilled Chicken Breast',
               station: 'Grill',
+              category: 'protein',
               macros: { calories: 165, protein: 31, carbs: 0, fats: 4 },
               allergens: [],
               dietaryPreferences: ['halal', 'glutenFree']
@@ -162,6 +248,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-grill-2',
               name: 'Burger Patty',
               station: 'Grill',
+              category: 'protein',
               macros: { calories: 250, protein: 20, carbs: 0, fats: 18 },
               allergens: [],
               dietaryPreferences: ['glutenFree']
@@ -170,6 +257,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-grill-3',
               name: 'Grilled Salmon',
               station: 'Grill',
+              category: 'protein',
               macros: { calories: 280, protein: 25, carbs: 0, fats: 18 },
               allergens: ['fish'],
               dietaryPreferences: ['glutenFree']
@@ -178,9 +266,37 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-grill-4',
               name: 'Veggie Burger',
               station: 'Grill',
+              category: 'protein',
               macros: { calories: 180, protein: 15, carbs: 18, fats: 6 },
               allergens: ['soy'],
               dietaryPreferences: ['vegan']
+            },
+            {
+              id: 'sbisa-l-grill-5',
+              name: 'Burger Bun',
+              station: 'Grill',
+              category: 'base',
+              macros: { calories: 140, protein: 4, carbs: 26, fats: 2 },
+              allergens: ['wheat'],
+              dietaryPreferences: ['vegetarian']
+            },
+            {
+              id: 'sbisa-l-grill-6',
+              name: 'Whole Wheat Bun',
+              station: 'Grill',
+              category: 'base',
+              macros: { calories: 150, protein: 6, carbs: 28, fats: 2.5 },
+              allergens: ['wheat'],
+              dietaryPreferences: ['vegan']
+            },
+            {
+              id: 'sbisa-l-grill-7',
+              name: 'Grilled Vegetables',
+              station: 'Grill',
+              category: 'side',
+              macros: { calories: 50, protein: 2, carbs: 10, fats: 1 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
             }
           ]
         },
@@ -192,6 +308,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-salad-1',
               name: 'Mixed Greens (2 cups)',
               station: 'Salad Bar',
+              category: 'base',
               macros: { calories: 20, protein: 2, carbs: 4, fats: 0 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -200,6 +317,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-salad-2',
               name: 'Cherry Tomatoes',
               station: 'Salad Bar',
+              category: 'vegetable',
               macros: { calories: 25, protein: 1, carbs: 5, fats: 0 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -208,6 +326,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-salad-3',
               name: 'Grilled Chicken (diced)',
               station: 'Salad Bar',
+              category: 'protein',
               macros: { calories: 120, protein: 24, carbs: 0, fats: 3 },
               allergens: [],
               dietaryPreferences: ['halal', 'glutenFree']
@@ -216,6 +335,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-salad-4',
               name: 'Hard Boiled Eggs (2)',
               station: 'Salad Bar',
+              category: 'protein',
               macros: { calories: 140, protein: 12, carbs: 1, fats: 10 },
               allergens: ['eggs'],
               dietaryPreferences: ['vegetarian', 'glutenFree']
@@ -230,6 +350,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-carb-1',
               name: 'Brown Rice (1 cup)',
               station: 'Carbs & Sides',
+              category: 'base',
               macros: { calories: 215, protein: 5, carbs: 45, fats: 2 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -238,6 +359,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-carb-2',
               name: 'White Rice (1 cup)',
               station: 'Carbs & Sides',
+              category: 'base',
               macros: { calories: 205, protein: 4, carbs: 45, fats: 0.5 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -246,6 +368,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-carb-3',
               name: 'Quinoa (1 cup)',
               station: 'Carbs & Sides',
+              category: 'base',
               macros: { calories: 220, protein: 8, carbs: 40, fats: 4 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -254,6 +377,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-carb-4',
               name: 'Sweet Potato (medium)',
               station: 'Carbs & Sides',
+              category: 'base',
               macros: { calories: 130, protein: 3, carbs: 30, fats: 0 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -268,6 +392,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-veg-1',
               name: 'Steamed Broccoli',
               station: 'Vegetables',
+              category: 'vegetable',
               macros: { calories: 55, protein: 4, carbs: 11, fats: 0.5 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -276,6 +401,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-veg-2',
               name: 'Roasted Brussels Sprouts',
               station: 'Vegetables',
+              category: 'vegetable',
               macros: { calories: 60, protein: 3, carbs: 12, fats: 1 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -284,7 +410,44 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-l-veg-3',
               name: 'Green Beans',
               station: 'Vegetables',
+              category: 'vegetable',
               macros: { calories: 45, protein: 2, carbs: 10, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-veg-4',
+              name: 'Grilled Tofu',
+              station: 'Vegetables',
+              category: 'protein',
+              macros: { calories: 145, protein: 17, carbs: 4, fats: 7 },
+              allergens: ['soy'],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-veg-5',
+              name: 'Roasted Chickpeas',
+              station: 'Vegetables',
+              category: 'protein',
+              macros: { calories: 140, protein: 7, carbs: 22, fats: 3 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-veg-6',
+              name: 'Wild Rice (1 cup)',
+              station: 'Vegetables',
+              category: 'base',
+              macros: { calories: 166, protein: 6.5, carbs: 35, fats: 0.5 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-l-veg-7',
+              name: 'Roasted Sweet Potato Cubes',
+              station: 'Vegetables',
+              category: 'base',
+              macros: { calories: 150, protein: 2, carbs: 35, fats: 0 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
             }
@@ -300,6 +463,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-grill-1',
               name: 'Grilled Chicken Breast',
               station: 'Grill',
+              category: 'protein',
               macros: { calories: 165, protein: 31, carbs: 0, fats: 4 },
               allergens: [],
               dietaryPreferences: ['halal', 'glutenFree']
@@ -308,6 +472,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-grill-2',
               name: 'Grilled Steak (6oz)',
               station: 'Grill',
+              category: 'protein',
               macros: { calories: 310, protein: 42, carbs: 0, fats: 15 },
               allergens: [],
               dietaryPreferences: ['glutenFree']
@@ -316,9 +481,46 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-grill-3',
               name: 'Baked Salmon',
               station: 'Grill',
+              category: 'protein',
               macros: { calories: 280, protein: 25, carbs: 0, fats: 18 },
               allergens: ['fish'],
               dietaryPreferences: ['glutenFree']
+            },
+            {
+              id: 'sbisa-d-grill-4',
+              name: 'Grilled Shrimp (6oz)',
+              station: 'Grill',
+              category: 'protein',
+              macros: { calories: 170, protein: 36, carbs: 1, fats: 2 },
+              allergens: ['shellfish'],
+              dietaryPreferences: ['glutenFree']
+            },
+            {
+              id: 'sbisa-d-grill-5',
+              name: 'Jasmine Rice (1 cup)',
+              station: 'Grill',
+              category: 'base',
+              macros: { calories: 205, protein: 4, carbs: 45, fats: 0.5 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-grill-6',
+              name: 'Cauliflower Rice (1 cup)',
+              station: 'Grill',
+              category: 'base',
+              macros: { calories: 25, protein: 2, carbs: 5, fats: 0 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-grill-7',
+              name: 'Grilled Zucchini',
+              station: 'Grill',
+              category: 'side',
+              macros: { calories: 30, protein: 2, carbs: 6, fats: 0.5 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
             }
           ]
         },
@@ -330,6 +532,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-pasta-1',
               name: 'Whole Wheat Pasta (1 cup)',
               station: 'Pasta Station',
+              category: 'base',
               macros: { calories: 180, protein: 7, carbs: 37, fats: 1 },
               allergens: ['wheat'],
               dietaryPreferences: ['vegan']
@@ -338,6 +541,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-pasta-2',
               name: 'Marinara Sauce',
               station: 'Pasta Station',
+              category: 'sauce',
               macros: { calories: 70, protein: 2, carbs: 12, fats: 2 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -346,6 +550,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-pasta-3',
               name: 'Alfredo Sauce',
               station: 'Pasta Station',
+              category: 'sauce',
               macros: { calories: 110, protein: 3, carbs: 5, fats: 9 },
               allergens: ['dairy'],
               dietaryPreferences: ['vegetarian', 'glutenFree']
@@ -354,6 +559,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-pasta-4',
               name: 'Meatballs (3)',
               station: 'Pasta Station',
+              category: 'protein',
               macros: { calories: 240, protein: 18, carbs: 8, fats: 15 },
               allergens: ['wheat', 'eggs'],
               dietaryPreferences: []
@@ -368,6 +574,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-carb-1',
               name: 'Baked Potato',
               station: 'Carbs & Sides',
+              category: 'base',
               macros: { calories: 160, protein: 4, carbs: 37, fats: 0 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -376,6 +583,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-carb-2',
               name: 'Brown Rice (1 cup)',
               station: 'Carbs & Sides',
+              category: 'base',
               macros: { calories: 215, protein: 5, carbs: 45, fats: 2 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -384,6 +592,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-carb-3',
               name: 'Mashed Potatoes',
               station: 'Carbs & Sides',
+              category: 'base',
               macros: { calories: 210, protein: 4, carbs: 35, fats: 7 },
               allergens: ['dairy'],
               dietaryPreferences: ['vegetarian', 'glutenFree']
@@ -398,6 +607,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-veg-1',
               name: 'Steamed Broccoli',
               station: 'Vegetables',
+              category: 'vegetable',
               macros: { calories: 55, protein: 4, carbs: 11, fats: 0.5 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -406,6 +616,7 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-veg-2',
               name: 'Roasted Asparagus',
               station: 'Vegetables',
+              category: 'vegetable',
               macros: { calories: 40, protein: 4, carbs: 8, fats: 0 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
@@ -414,9 +625,46 @@ export const mockDiningLocations: DiningLocation[] = [
               id: 'sbisa-d-veg-3',
               name: 'Sautéed Spinach',
               station: 'Vegetables',
+              category: 'vegetable',
               macros: { calories: 50, protein: 5, carbs: 7, fats: 1 },
               allergens: [],
               dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-veg-4',
+              name: 'Baked Tempeh',
+              station: 'Vegetables',
+              category: 'protein',
+              macros: { calories: 195, protein: 20, carbs: 9, fats: 11 },
+              allergens: ['soy'],
+              dietaryPreferences: ['vegan']
+            },
+            {
+              id: 'sbisa-d-veg-5',
+              name: 'Black Bean Burger Patty',
+              station: 'Vegetables',
+              category: 'protein',
+              macros: { calories: 170, protein: 10, carbs: 20, fats: 6 },
+              allergens: [],
+              dietaryPreferences: ['vegan', 'glutenFree']
+            },
+            {
+              id: 'sbisa-d-veg-6',
+              name: 'Farro (1 cup)',
+              station: 'Vegetables',
+              category: 'base',
+              macros: { calories: 220, protein: 8, carbs: 44, fats: 2 },
+              allergens: ['wheat'],
+              dietaryPreferences: ['vegan']
+            },
+            {
+              id: 'sbisa-d-veg-7',
+              name: 'Couscous (1 cup)',
+              station: 'Vegetables',
+              category: 'base',
+              macros: { calories: 176, protein: 6, carbs: 36, fats: 0.5 },
+              allergens: ['wheat'],
+              dietaryPreferences: ['vegan']
             }
           ]
         }

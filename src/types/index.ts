@@ -35,6 +35,14 @@ export type DietaryPreference = 'vegetarian' | 'vegan' | 'halal' | 'glutenFree';
 
 export type Allergen = 'dairy' | 'eggs' | 'fish' | 'shellfish' | 'treeNuts' | 'peanuts' | 'wheat' | 'soy';
 
+// Component categories for dining hall meal building
+export type ComponentCategory = 
+  | 'protein' 
+  | 'base' 
+  | 'vegetable' 
+  | 'side' 
+  | 'sauce';
+
 // Macros for both dishes and meal components
 export interface Macros {
   calories: number;
@@ -67,6 +75,7 @@ export interface MealComponent {
   id: string;
   name: string;
   station: string;
+  category: ComponentCategory; // Category for meal building logic
   macros: Macros;
   allergens: Allergen[];
   dietaryPreferences: DietaryPreference[];
