@@ -1,0 +1,1012 @@
+{
+  "status": "success",
+  "request_time": "2025-10-18T12:00:00Z",
+  "location": {
+    "id": "salata-001",
+    "name": "Salata",
+    "date": "2025-10-18",
+    "region": "texas"
+  },
+  "regional_pricing": {
+    "texas": {
+      "regular_salad": "8.00",
+      "small_salad": "7.00",
+      "wrap": "7.00",
+      "protein": "3.00",
+      "premium_protein": "4.00",
+      "soup_cup": "3.00",
+      "soup_bowl": "4.00",
+      "add_soup": "2.00",
+      "add_soup_premium": "3.00",
+      "cookies": "1.00",
+      "drinks": "2.00"
+    },
+    "georgia": {
+      "regular_salad": "8.00",
+      "small_salad": "7.00",
+      "wrap": "7.00",
+      "protein": "3.00",
+      "premium_protein": "4.00",
+      "soup_cup": "3.00",
+      "soup_bowl": "4.00",
+      "add_soup": "2.00",
+      "add_soup_premium": "3.00",
+      "cookies": "1.00",
+      "drinks": "2.00"
+    },
+    "oklahoma": {
+      "regular_salad": "8.00",
+      "small_salad": "7.00",
+      "wrap": "7.00",
+      "protein": "3.00",
+      "premium_protein": "4.00",
+      "soup_cup": "3.00",
+      "soup_bowl": "4.00",
+      "add_soup": "2.00",
+      "add_soup_premium": "3.00",
+      "cookies": "1.00",
+      "drinks": "2.00"
+    },
+    "louisiana": {
+      "regular_salad": "8.00",
+      "small_salad": "7.00",
+      "wrap": "7.00",
+      "protein": "3.00",
+      "premium_protein": "4.00",
+      "soup_cup": "3.00",
+      "soup_bowl": "4.00",
+      "add_soup": "2.00",
+      "add_soup_premium": "3.00",
+      "cookies": "1.00",
+      "drinks": "2.00"
+    },
+    "florida": {
+      "regular_salad": "9.00",
+      "small_salad": "8.00",
+      "wrap": "8.00",
+      "protein": "3.00",
+      "premium_protein": "4.00",
+      "soup_cup": "3.00",
+      "soup_bowl": "4.00",
+      "add_soup": "2.00",
+      "add_soup_premium": "3.00",
+      "cookies": "1.00",
+      "drinks": "2.50"
+    },
+    "illinois": {
+      "regular_salad": "8.00",
+      "small_salad": "7.00",
+      "wrap": "7.00",
+      "protein": "3.00",
+      "premium_protein": "4.00",
+      "soup_cup": "3.00",
+      "soup_bowl": "4.00",
+      "add_soup": "2.00",
+      "add_soup_premium": "3.00",
+      "cookies": "1.00",
+      "drinks": "2.50"
+    },
+    "california": {
+      "regular_salad": "9.50",
+      "small_salad": "8.50",
+      "wrap": "8.50",
+      "protein": "3.50",
+      "premium_protein": "4.50",
+      "soup_cup": "4.00",
+      "soup_bowl": "5.00",
+      "add_soup": "3.00",
+      "add_soup_premium": "4.00",
+      "cookies": "1.50",
+      "drinks": "3.00"
+    }
+  },
+  "periods": [
+    {
+      "id": "all-day",
+      "name": "All Day",
+      "start_time": "11:00:00",
+      "end_time": "21:00:00"
+    }
+  ],
+  "menu": {
+    "periods": {
+      "all-day": {
+        "categories": [
+          {
+            "id": "build-your-own",
+            "name": "Build Your Own",
+            "sort_order": 1,
+            "description": "Choose your salad and pick from over 50 toppings, then customize it with our signature dressings and proteins, including vegan and gluten-free options. Salads and wraps are served with whole grain croissants or baked pita chips.",
+            "base_options": [
+              {
+                "id": "regular-salad",
+                "name": "Regular Salad",
+                "size": "regular",
+                "price_key": "regular_salad",
+                "customizable": true
+              },
+              {
+                "id": "small-salad",
+                "name": "Small Salad",
+                "size": "small",
+                "price_key": "small_salad",
+                "customizable": true
+              },
+              {
+                "id": "wrap",
+                "name": "Wrap",
+                "size": "regular",
+                "price_key": "wrap",
+                "customizable": true
+              }
+            ],
+            "subcategories": [
+              {
+                "id": "lettuces",
+                "name": "Lettuces",
+                "items": [
+                  {
+                    "id": "pit-smoked-turkey",
+                    "name": "Pit-Smoked Turkey",
+                    "calories": "110",
+                    "allergens": [],
+                    "dietary_flags": ["gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "breads-and-tortillas",
+                "name": "Breads and Tortillas",
+                "description": "Wraps come with choice of tortilla",
+                "items": [
+                  {
+                    "id": "multigrain-croissant",
+                    "name": "Multigrain Croissant",
+                    "calories": "120",
+                    "allergens": ["wheat", "gluten", "dairy"],
+                    "dietary_flags": ["vegetarian"],
+                    "included_with": ["salad"]
+                  },
+                  {
+                    "id": "baked-pita-chips",
+                    "name": "Baked Pita Chips",
+                    "calories": "70",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": ["vegan"],
+                    "included_with": ["salad"]
+                  },
+                  {
+                    "id": "whole-wheat-tortilla",
+                    "name": "Whole Wheat Tortilla",
+                    "calories": "310",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": ["vegan"],
+                    "included_with": ["wrap"]
+                  },
+                  {
+                    "id": "southwestern-tortilla",
+                    "name": "Southwestern Tortilla",
+                    "calories": "310",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": ["vegan"],
+                    "included_with": ["wrap"]
+                  },
+                  {
+                    "id": "cool-cucumber-tortilla",
+                    "name": "Cool Cucumber Tortilla",
+                    "calories": "280",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": ["vegan"],
+                    "included_with": ["wrap"]
+                  },
+                  {
+                    "id": "thai-ginger-tortilla",
+                    "name": "Thai Ginger Tortilla",
+                    "calories": "310",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": ["vegan"],
+                    "included_with": ["wrap"]
+                  },
+                  {
+                    "id": "texas-bbq-tortilla",
+                    "name": "Texas BBQ Tortilla",
+                    "calories": "310",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": ["vegan"],
+                    "included_with": ["wrap"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "soups",
+            "name": "Soups",
+            "sort_order": 2,
+            "items": [
+              {
+                "id": "tomato-basil-soup-cup",
+                "name": "Tomato Basil Soup - Cup (8 oz)",
+                "size": "cup",
+                "calories": "320",
+                "price_key": "soup_cup",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              },
+              {
+                "id": "tomato-basil-soup-bowl",
+                "name": "Tomato Basil Soup - Bowl (12 oz)",
+                "size": "bowl",
+                "calories": "480",
+                "price_key": "soup_bowl",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              },
+              {
+                "id": "broccoli-soup-cup",
+                "name": "Broccoli Soup - Cup (8 oz)",
+                "size": "cup",
+                "calories": "120",
+                "price_key": "soup_cup",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              },
+              {
+                "id": "broccoli-soup-bowl",
+                "name": "Broccoli Soup - Bowl (12 oz)",
+                "size": "bowl",
+                "calories": "180",
+                "price_key": "soup_bowl",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              },
+              {
+                "id": "chipotle-white-bean-soup-cup",
+                "name": "Chipotle White Bean Soup - Cup (8 oz)",
+                "size": "cup",
+                "calories": "90",
+                "price_key": "soup_cup",
+                "allergens": [],
+                "dietary_flags": ["vegan", "gluten-free"]
+              },
+              {
+                "id": "chipotle-white-bean-soup-bowl",
+                "name": "Chipotle White Bean Soup - Bowl (12 oz)",
+                "size": "bowl",
+                "calories": "160",
+                "price_key": "soup_bowl",
+                "allergens": [],
+                "dietary_flags": ["vegan", "gluten-free"]
+              }
+            ],
+            "add_ons": [
+              {
+                "name": "Add Soup with Salad or Wrap",
+                "price_key": "add_soup"
+              },
+              {
+                "name": "Add Protein to Soup",
+                "price_key": "add_soup"
+              },
+              {
+                "name": "Add Premium Protein to Soup",
+                "price_key": "add_soup_premium"
+              }
+            ]
+          },
+          {
+            "id": "cookies",
+            "name": "Cookies",
+            "sort_order": 3,
+            "items": [
+              {
+                "id": "chocolate-chunk-cookie",
+                "name": "Chocolate Chunk Cookie",
+                "calories": "190",
+                "price_key": "cookies",
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "oatmeal-raisin-cookie",
+                "name": "Oatmeal Raisin Cookie",
+                "calories": "170",
+                "price_key": "cookies",
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "white-chocolate-macadamia-nut-cookie",
+                "name": "White Chocolate Macadamia Nut Cookie",
+                "calories": "200",
+                "price_key": "cookies",
+                "allergens": ["wheat", "gluten", "dairy", "eggs", "tree nuts"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "peanut-butter-cookie",
+                "name": "Peanut Butter Cookie",
+                "calories": "200",
+                "price_key": "cookies",
+                "allergens": ["wheat", "gluten", "dairy", "eggs", "peanuts"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "drinks",
+            "name": "Drinks",
+            "sort_order": 4,
+            "subcategories": [
+              {
+                "id": "lemonades-and-limeades",
+                "name": "Lemonades & Limeades",
+                "items": [
+                  {
+                    "id": "raspberry-lemonade",
+                    "name": "Raspberry Lemonade",
+                    "calories": "150",
+                    "size": "20 fl oz",
+                    "price_key": "drinks",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "peach-lemonade",
+                    "name": "Peach Lemonade",
+                    "calories": "150",
+                    "size": "20 fl oz",
+                    "price_key": "drinks",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "prickly-pear-limeade",
+                    "name": "Prickly Pear Limeade",
+                    "calories": "150",
+                    "size": "20 fl oz",
+                    "price_key": "drinks",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  }
+                ]
+              },
+              {
+                "id": "teas",
+                "name": "Teas",
+                "items": [
+                  {
+                    "id": "black-china-tea",
+                    "name": "Black China Tea",
+                    "calories": "0",
+                    "size": "20 fl oz",
+                    "price_key": "drinks",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "plum-cinnamon-tea",
+                    "name": "Plum Cinnamon Tea",
+                    "calories": "0",
+                    "size": "20 fl oz",
+                    "price_key": "drinks",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "tropical-green-tea",
+                    "name": "Tropical Green Tea",
+                    "calories": "0",
+                    "size": "20 fl oz",
+                    "price_key": "drinks",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "brand": "Salata",
+    "concept": "Build-your-own salad and wrap restaurant",
+    "description": "Choose your salad and pick from over 50 toppings, then customize it with our signature dressings and proteins, including vegan and gluten-free options. Salads and wraps are served with whole grain croissants or baked pita chips.",
+    "disclaimer": "Ingredients may change periodically. Products may vary by location. Reference our nutritional brochure or salata.com for additional information. 2,000 calories a day is used for general nutrition advice, but calorie needs vary. Nutritional information provided by USDA National Nutrient Database.",
+    "year": "2019",
+    "website": "https://salata.com",
+    "menu_version": "06-2019"
+  }
+}id": "salata-mix",
+                    "name": "Salata Mix",
+                    "calories": {
+                      "wrap": "15",
+                      "small_salad": "15",
+                      "salad": "40"
+                    },
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "romaine",
+                    "name": "Romaine",
+                    "calories": {
+                      "wrap": "20",
+                      "small_salad": "20",
+                      "salad": "40"
+                    },
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "spring-mix",
+                    "name": "Spring Mix",
+                    "calories": {
+                      "wrap": "10",
+                      "small_salad": "10",
+                      "salad": "15"
+                    },
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "spinach",
+                    "name": "Spinach",
+                    "calories": {
+                      "wrap": "15",
+                      "small_salad": "15",
+                      "salad": "20"
+                    },
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "kale",
+                    "name": "Kale",
+                    "calories": {
+                      "wrap": "25",
+                      "small_salad": "25",
+                      "salad": "30"
+                    },
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "vegetables",
+                "name": "Vegetables",
+                "items": [
+                  {
+                    "id": "carrots",
+                    "name": "Carrots",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "10"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "cucumbers",
+                    "name": "Cucumbers",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "5"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "broccoli",
+                    "name": "Broccoli",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "5"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "mushrooms",
+                    "name": "Mushrooms",
+                    "calories": {"wrap": "0", "small_salad": "0", "salad": "5"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "tomatoes",
+                    "name": "Tomatoes",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "10"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "green-bell-peppers",
+                    "name": "Green Bell Peppers",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "5"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "jicama",
+                    "name": "Jicama",
+                    "calories": {"wrap": "10", "small_salad": "10", "salad": "10"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "snow-peas",
+                    "name": "Snow Peas",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "10"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "radishes",
+                    "name": "Radishes",
+                    "calories": {"wrap": "0", "small_salad": "0", "salad": "5"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "edamame",
+                    "name": "Edamame",
+                    "calories": {"wrap": "25", "small_salad": "25", "salad": "30"},
+                    "allergens": ["soy"],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "red-onions",
+                    "name": "Red Onions",
+                    "calories": {"wrap": "10", "small_salad": "10", "salad": "10"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "bean-sprouts",
+                    "name": "Bean Sprouts",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "5"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "sun-dried-tomatoes",
+                    "name": "Sun-Dried Tomatoes",
+                    "calories": {"wrap": "45", "small_salad": "45", "salad": "50"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "cabbage",
+                    "name": "Cabbage",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "5"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "pea-sprouts",
+                    "name": "Pea Sprouts",
+                    "calories": {"wrap": "15", "small_salad": "15", "salad": "15"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "cilantro",
+                    "name": "Cilantro",
+                    "calories": {"wrap": "0", "small_salad": "0", "salad": "0"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "corn",
+                    "name": "Corn",
+                    "calories": {"wrap": "15", "small_salad": "15", "salad": "30"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "beets",
+                    "name": "Beets",
+                    "calories": {"wrap": "10", "small_salad": "10", "salad": "10"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "kidney-beans",
+                    "name": "Kidney Beans",
+                    "calories": {"wrap": "20", "small_salad": "20", "salad": "30"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "green-peas",
+                    "name": "Green Peas",
+                    "calories": {"wrap": "10", "small_salad": "10", "salad": "20"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "black-olives",
+                    "name": "Black Olives",
+                    "calories": {"wrap": "25", "small_salad": "25", "salad": "50"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "black-beans",
+                    "name": "Black Beans",
+                    "calories": {"wrap": "15", "small_salad": "15", "salad": "25"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "chick-peas",
+                    "name": "Chick Peas",
+                    "calories": {"wrap": "15", "small_salad": "15", "salad": "25"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "green-olives",
+                    "name": "Green Olives",
+                    "calories": {"wrap": "30", "small_salad": "30", "salad": "60"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "fresh-jalapenos",
+                    "name": "Fresh Jalapeños",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "5"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "banana-peppers",
+                    "name": "Banana Peppers",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "5"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "pepperoncini",
+                    "name": "Pepperoncini",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "10"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "premium-vegetables",
+                "name": "Premium Vegetables",
+                "items": [
+                  {
+                    "id": "artichoke-hearts",
+                    "name": "Artichoke Hearts",
+                    "calories": {"wrap": "40", "small_salad": "40", "salad": "40"},
+                    "price": "1.00",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "avocado",
+                    "name": "Avocado",
+                    "calories": {"wrap": "80", "small_salad": "80", "salad": "80"},
+                    "price": "1.00",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "fruits",
+                "name": "Fruits",
+                "items": [
+                  {
+                    "id": "pineapples",
+                    "name": "Pineapples",
+                    "calories": {"wrap": "10", "small_salad": "10", "salad": "15"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "strawberries",
+                    "name": "Strawberries",
+                    "calories": {"wrap": "5", "small_salad": "5", "salad": "10"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "mandarin-oranges",
+                    "name": "Mandarin Oranges",
+                    "calories": {"wrap": "20", "small_salad": "20", "salad": "25"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "apples",
+                    "name": "Apples",
+                    "calories": {"wrap": "10", "small_salad": "10", "salad": "20"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "grapes",
+                    "name": "Grapes",
+                    "calories": {"wrap": "15", "small_salad": "15", "salad": "25"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "raisins",
+                    "name": "Raisins",
+                    "calories": {"wrap": "50", "small_salad": "50", "salad": "100"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "dried-cranberries",
+                    "name": "Dried Cranberries",
+                    "calories": {"wrap": "50", "small_salad": "50", "salad": "100"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "cheese-and-nuts",
+                "name": "Cheese and Nuts",
+                "items": [
+                  {
+                    "id": "mixed-cheese",
+                    "name": "Mixed Cheese",
+                    "calories": {"wrap": "60", "small_salad": "60", "salad": "110"},
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "feta-cheese",
+                    "name": "Feta Cheese",
+                    "calories": {"wrap": "45", "small_salad": "45", "salad": "45"},
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "blue-cheese",
+                    "name": "Blue Cheese",
+                    "calories": {"wrap": "50", "small_salad": "50", "salad": "50"},
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "parmesan-cheese",
+                    "name": "Parmesan Cheese",
+                    "calories": {"wrap": "45", "small_salad": "45", "salad": "100"},
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "walnuts",
+                    "name": "Walnuts",
+                    "calories": {"wrap": "60", "small_salad": "60", "salad": "60"},
+                    "allergens": ["tree nuts"],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "almonds",
+                    "name": "Almonds",
+                    "calories": {"wrap": "40", "small_salad": "40", "salad": "40"},
+                    "allergens": ["tree nuts"],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "pumpkin-seeds",
+                    "name": "Pumpkin Seeds",
+                    "calories": {"wrap": "50", "small_salad": "50", "salad": "50"},
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "other-toppings",
+                "name": "Other Toppings",
+                "items": [
+                  {
+                    "id": "pasta",
+                    "name": "Pasta",
+                    "calories": {"wrap": "50", "small_salad": "50", "salad": "50"},
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "chopped-egg",
+                    "name": "Chopped Egg",
+                    "calories": {"wrap": "35", "small_salad": "35", "salad": "35"},
+                    "allergens": ["eggs"],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "chopped-bacon",
+                    "name": "Chopped Bacon",
+                    "calories": {"wrap": "35", "small_salad": "35", "salad": "35"},
+                    "allergens": [],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "croutons",
+                    "name": "Croutons",
+                    "calories": {"wrap": "60", "small_salad": "60", "salad": "100"},
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "sesame-sticks",
+                    "name": "Sesame Sticks",
+                    "calories": {"wrap": "60", "small_salad": "60", "salad": "130"},
+                    "allergens": ["wheat", "gluten", "sesame"],
+                    "dietary_flags": ["vegetarian"]
+                  }
+                ]
+              },
+              {
+                "id": "dressings",
+                "name": "Dressings",
+                "items": [
+                  {
+                    "id": "fresh-herb-vinaigrette",
+                    "name": "Fresh Herb Vinaigrette",
+                    "calories": "290",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "buttermilk-ranch",
+                    "name": "Buttermilk Ranch",
+                    "calories": "240",
+                    "allergens": ["dairy", "eggs"],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "ginger-lime-vinaigrette",
+                    "name": "Ginger Lime Vinaigrette",
+                    "calories": "300",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "classic-caesar",
+                    "name": "Classic Caesar",
+                    "calories": "290",
+                    "allergens": ["dairy", "eggs", "fish"],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "spicy-chipotle-ranch",
+                    "name": "Spicy Chipotle Ranch",
+                    "calories": "230",
+                    "allergens": ["dairy", "eggs"],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "balsamic-vinaigrette",
+                    "name": "Balsamic Vinaigrette",
+                    "calories": "320",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "honey-mustard",
+                    "name": "Honey Mustard",
+                    "calories": "260",
+                    "allergens": [],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "lemon-vinaigrette",
+                    "name": "Lemon Vinaigrette",
+                    "calories": "310",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "fat-free-mango",
+                    "name": "Fat-Free Mango",
+                    "calories": "40",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "fat-free-sun-dried-tomato",
+                    "name": "Fat-Free Sun-Dried Tomato",
+                    "calories": "15",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "proteins",
+                "name": "Proteins",
+                "price_key": "protein",
+                "items": [
+                  {
+                    "id": "falafel",
+                    "name": "Falafel",
+                    "calories": "130",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "quinoa",
+                    "name": "Quinoa",
+                    "calories": "140",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "baked-tofu",
+                    "name": "Baked Tofu",
+                    "calories": "230",
+                    "allergens": ["soy"],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "herb-marinated-chicken",
+                    "name": "Herb-Marinated Chicken",
+                    "calories": "190",
+                    "allergens": [],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "pesto-chicken",
+                    "name": "Pesto Chicken",
+                    "calories": "240",
+                    "allergens": ["dairy", "tree nuts"],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "asian-bbq-chicken",
+                    "name": "Asian BBQ Chicken",
+                    "calories": "200",
+                    "allergens": ["soy"],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "spicy-chipotle-chicken",
+                    "name": "Spicy Chipotle Chicken",
+                    "calories": "190",
+                    "allergens": [],
+                    "dietary_flags": ["gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "premium-proteins",
+                "name": "Premium Proteins",
+                "price_key": "premium_protein",
+                "items": [
+                  {
+                    "id": "herb-marinated-krabmeat",
+                    "name": "Herb-Marinated Krabmeat",
+                    "calories": "170",
+                    "allergens": ["fish", "wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "baked-salmon",
+                    "name": "Baked Salmon",
+                    "calories": "260",
+                    "allergens": ["fish"],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "seafood-mix",
+                    "name": "Seafood Mix",
+                    "calories": "180",
+                    "allergens": ["shellfish", "fish"],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "herb-marinated-shrimp",
+                    "name": "Herb-Marinated Shrimp",
+                    "calories": "140",
+                    "allergens": ["shellfish"],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "
