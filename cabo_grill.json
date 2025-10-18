@@ -1,0 +1,556 @@
+{
+  "status": "success",
+  "request_time": "2025-10-18T12:00:00Z",
+  "location": {
+    "id": "cabo-fresh-001",
+    "name": "Cabo Fresh Mexican Grill",
+    "date": "2025-10-18"
+  },
+  "periods": [
+    {
+      "id": "all-day",
+      "name": "All Day",
+      "start_time": "11:00:00",
+      "end_time": "21:00:00"
+    }
+  ],
+  "menu": {
+    "periods": {
+      "all-day": {
+        "categories": [
+          {
+            "id": "build-your-own",
+            "name": "Build Your Own",
+            "sort_order": 1,
+            "description": "Customize your meal with your choice of base, protein, toppings, and more",
+            "base_items": [
+              {
+                "id": "burrito",
+                "name": "Burrito",
+                "description": "Large flour tortilla",
+                "customizable": true,
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": []
+              },
+              {
+                "id": "bowl",
+                "name": "Bowl",
+                "description": "No tortilla",
+                "customizable": true,
+                "allergens": [],
+                "dietary_flags": ["gluten-free"]
+              },
+              {
+                "id": "tacos",
+                "name": "Tacos",
+                "description": "Choice of tortilla",
+                "customizable": true,
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": []
+              },
+              {
+                "id": "quesadilla",
+                "name": "Quesadilla",
+                "description": "Grilled flour tortilla with cheese",
+                "customizable": true,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "salad",
+                "name": "Salad",
+                "description": "Fresh greens base",
+                "customizable": true,
+                "allergens": [],
+                "dietary_flags": ["gluten-free", "vegetarian"]
+              }
+            ],
+            "subcategories": [
+              {
+                "id": "proteins",
+                "name": "Proteins",
+                "items": [
+                  {
+                    "id": "grilled-chicken",
+                    "name": "Grilled Chicken",
+                    "allergens": [],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "shredded-chicken",
+                    "name": "Shredded Chicken",
+                    "allergens": [],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "steak",
+                    "name": "Steak",
+                    "allergens": [],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "carnitas",
+                    "name": "Carnitas",
+                    "description": "Slow-cooked pork",
+                    "allergens": [],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "ground-beef",
+                    "name": "Ground Beef",
+                    "allergens": [],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "shrimp",
+                    "name": "Shrimp",
+                    "allergens": ["shellfish"],
+                    "dietary_flags": ["gluten-free"]
+                  },
+                  {
+                    "id": "veggie",
+                    "name": "Veggie",
+                    "description": "Mixed vegetables",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "rice",
+                "name": "Rice",
+                "items": [
+                  {
+                    "id": "cilantro-lime-rice",
+                    "name": "Cilantro Lime Rice",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "spanish-rice",
+                    "name": "Spanish Rice",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "beans",
+                "name": "Beans",
+                "items": [
+                  {
+                    "id": "black-beans",
+                    "name": "Black Beans",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "pinto-beans",
+                    "name": "Pinto Beans",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "refried-beans",
+                    "name": "Refried Beans",
+                    "allergens": [],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "toppings",
+                "name": "Toppings",
+                "items": [
+                  {
+                    "id": "cheese",
+                    "name": "Cheese",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "sour-cream",
+                    "name": "Sour Cream",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "gluten-free"]
+                  },
+                  {
+                    "id": "guacamole",
+                    "name": "Guacamole",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "lettuce",
+                    "name": "Lettuce",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "tomatoes",
+                    "name": "Tomatoes",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "onions",
+                    "name": "Onions",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "cilantro",
+                    "name": "Cilantro",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "jalapenos",
+                    "name": "Jalapeños",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "corn",
+                    "name": "Corn",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "pico-de-gallo",
+                    "name": "Pico de Gallo",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              },
+              {
+                "id": "salsas",
+                "name": "Salsas",
+                "items": [
+                  {
+                    "id": "mild-salsa",
+                    "name": "Mild Salsa",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "medium-salsa",
+                    "name": "Medium Salsa",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "hot-salsa",
+                    "name": "Hot Salsa",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "verde-salsa",
+                    "name": "Verde Salsa",
+                    "description": "Green tomatillo salsa",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  },
+                  {
+                    "id": "corn-salsa",
+                    "name": "Corn Salsa",
+                    "allergens": [],
+                    "dietary_flags": ["vegan", "gluten-free"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cabolife-bowl",
+            "name": "CaboLife Bowl",
+            "sort_order": 2,
+            "description": "Meal bowls with protein options. Includes up to 2 custom toppings.",
+            "items": [
+              {
+                "id": "cabolife-bowl-grilled-chicken",
+                "name": "CaboLife Bowl - Grilled Chicken",
+                "description": "Grilled chicken with rice, beans, and your choice of toppings",
+                "base_calories": "450",
+                "allergens": [],
+                "dietary_flags": ["gluten-free"],
+                "customizable": true,
+                "included_toppings": 2
+              },
+              {
+                "id": "cabolife-bowl-steak",
+                "name": "CaboLife Bowl - Steak",
+                "description": "Steak with rice, beans, and your choice of toppings",
+                "base_calories": "480",
+                "allergens": [],
+                "dietary_flags": ["gluten-free"],
+                "customizable": true,
+                "included_toppings": 2
+              },
+              {
+                "id": "cabolife-bowl-carnitas",
+                "name": "CaboLife Bowl - Carnitas",
+                "description": "Slow-cooked pork with rice, beans, and your choice of toppings",
+                "base_calories": "470",
+                "allergens": [],
+                "dietary_flags": ["gluten-free"],
+                "customizable": true,
+                "included_toppings": 2
+              },
+              {
+                "id": "cabolife-bowl-shrimp",
+                "name": "CaboLife Bowl - Shrimp",
+                "description": "Grilled shrimp with rice, beans, and your choice of toppings",
+                "base_calories": "420",
+                "allergens": ["shellfish"],
+                "dietary_flags": ["gluten-free"],
+                "customizable": true,
+                "included_toppings": 2
+              },
+              {
+                "id": "cabolife-bowl-veggie",
+                "name": "CaboLife Bowl - Veggie",
+                "description": "Mixed vegetables with rice, beans, and your choice of toppings",
+                "base_calories": "380",
+                "allergens": [],
+                "dietary_flags": ["vegan", "gluten-free"],
+                "customizable": true,
+                "included_toppings": 2
+              }
+            ]
+          },
+          {
+            "id": "meal-swipe-options",
+            "name": "Meal Swipe Options",
+            "sort_order": 3,
+            "description": "Includes side and fountain drink",
+            "items": [
+              {
+                "id": "burrito-meal-swipe",
+                "name": "Burrito - Meal Swipe",
+                "description": "Build your own burrito with side and drink",
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": [],
+                "includes": ["side", "fountain drink"]
+              },
+              {
+                "id": "bowl-meal-swipe",
+                "name": "Bowl - Meal Swipe",
+                "description": "Build your own bowl with side and drink",
+                "allergens": [],
+                "dietary_flags": ["gluten-free"],
+                "includes": ["side", "fountain drink"]
+              },
+              {
+                "id": "tacos-meal-swipe",
+                "name": "Tacos - Meal Swipe",
+                "description": "Build your own tacos with side and drink",
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": [],
+                "includes": ["side", "fountain drink"]
+              },
+              {
+                "id": "quesadilla-meal-swipe",
+                "name": "Quesadilla - Meal Swipe",
+                "description": "Build your own quesadilla with side and drink",
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"],
+                "includes": ["side", "fountain drink"]
+              }
+            ]
+          },
+          {
+            "id": "sides",
+            "name": "Sides",
+            "sort_order": 4,
+            "items": [
+              {
+                "id": "chips",
+                "name": "Chips",
+                "calories": "210",
+                "allergens": ["corn"],
+                "dietary_flags": ["vegan", "gluten-free"]
+              },
+              {
+                "id": "chips-and-salsa",
+                "name": "Chips and Salsa",
+                "calories": "240",
+                "allergens": ["corn"],
+                "dietary_flags": ["vegan", "gluten-free"]
+              },
+              {
+                "id": "chips-and-queso",
+                "name": "Chips and Queso",
+                "calories": "380",
+                "allergens": ["corn", "dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              },
+              {
+                "id": "chips-and-guacamole",
+                "name": "Chips and Guacamole",
+                "calories": "320",
+                "allergens": ["corn"],
+                "dietary_flags": ["vegan", "gluten-free"]
+              },
+              {
+                "id": "side-rice",
+                "name": "Side of Rice",
+                "calories": "180",
+                "allergens": [],
+                "dietary_flags": ["vegan", "gluten-free"]
+              },
+              {
+                "id": "side-beans",
+                "name": "Side of Beans",
+                "calories": "120",
+                "allergens": [],
+                "dietary_flags": ["vegan", "gluten-free"]
+              }
+            ]
+          },
+          {
+            "id": "extras",
+            "name": "Extras",
+            "sort_order": 5,
+            "items": [
+              {
+                "id": "extra-protein",
+                "name": "Extra Protein",
+                "description": "Add extra protein to any item",
+                "allergens": [],
+                "dietary_flags": []
+              },
+              {
+                "id": "extra-guacamole",
+                "name": "Extra Guacamole",
+                "calories": "110",
+                "allergens": [],
+                "dietary_flags": ["vegan", "gluten-free"]
+              },
+              {
+                "id": "extra-cheese",
+                "name": "Extra Cheese",
+                "calories": "100",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              },
+              {
+                "id": "extra-sour-cream",
+                "name": "Extra Sour Cream",
+                "calories": "60",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              },
+              {
+                "id": "extra-queso",
+                "name": "Extra Queso",
+                "calories": "120",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              }
+            ]
+          },
+          {
+            "id": "drinks",
+            "name": "Drinks",
+            "sort_order": 6,
+            "items": [
+              {
+                "id": "fountain-drink",
+                "name": "Fountain Drink",
+                "calories": "0-250",
+                "sizes": ["small", "medium", "large"],
+                "allergens": [],
+                "dietary_flags": []
+              },
+              {
+                "id": "bottled-water",
+                "name": "Bottled Water",
+                "calories": "0",
+                "allergens": [],
+                "dietary_flags": ["vegan"]
+              },
+              {
+                "id": "bottled-soda",
+                "name": "Bottled Soda",
+                "calories": "140-200",
+                "allergens": [],
+                "dietary_flags": []
+              },
+              {
+                "id": "mexican-soda",
+                "name": "Mexican Soda",
+                "description": "Jarritos or similar",
+                "calories": "150",
+                "allergens": [],
+                "dietary_flags": []
+              },
+              {
+                "id": "horchata",
+                "name": "Horchata",
+                "description": "Traditional rice drink",
+                "calories": "180",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "jamaica",
+                "name": "Jamaica",
+                "description": "Hibiscus tea",
+                "calories": "90",
+                "allergens": [],
+                "dietary_flags": ["vegan"]
+              }
+            ]
+          },
+          {
+            "id": "desserts",
+            "name": "Desserts",
+            "sort_order": 7,
+            "items": [
+              {
+                "id": "churros",
+                "name": "Churros",
+                "calories": "280",
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "sopapillas",
+                "name": "Sopapillas",
+                "calories": "250",
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "flan",
+                "name": "Flan",
+                "calories": "220",
+                "allergens": ["dairy", "eggs"],
+                "dietary_flags": ["vegetarian", "gluten-free"]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "brand": "Cabo Fresh Mexican Grill",
+    "cuisine_type": "Mexican",
+    "concept": "Fast-casual Mexican restaurant with build-your-own options",
+    "description": "Fresh Mexican food with customizable burritos, bowls, tacos, quesadillas, and salads",
+    "dietary_accommodations": [
+      "Vegan options available",
+      "Gluten-free options available (bowls, corn tortillas)",
+      "Vegetarian options available"
+    ],
+    "special_notes": [
+      "CaboLife Bowl includes up to 2 custom toppings",
+      "Meal Swipe options include side and fountain drink",
+      "All items customizable with various proteins, beans, rice, and toppings"
+    ]
+  }
+}
