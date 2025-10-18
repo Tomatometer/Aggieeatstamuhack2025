@@ -1,0 +1,740 @@
+{
+  "status": "success",
+  "request_time": "2025-10-18T12:00:00Z",
+  "location": {
+    "id": "starbucks-navarro-001",
+    "name": "Starbucks - Navarro College",
+    "address": "3205 W 2nd Ave, Corsicana, TX 75110",
+    "phone": "903-872-8088",
+    "date": "2025-10-18"
+  },
+  "periods": [
+    {
+      "id": "all-day",
+      "name": "All Day",
+      "start_time": "07:00:00",
+      "end_time": "20:00:00"
+    }
+  ],
+  "menu": {
+    "periods": {
+      "all-day": {
+        "categories": [
+          {
+            "id": "espresso-traditions",
+            "name": "Espresso Traditions",
+            "sort_order": 1,
+            "description": "Classic espresso-based beverages",
+            "items": [
+              {
+                "id": "caffe-latte",
+                "name": "Caffè Latte",
+                "prices": {
+                  "tall": 2.95,
+                  "grande": 3.65,
+                  "venti": 3.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "cappuccino",
+                "name": "Cappuccino",
+                "prices": {
+                  "tall": 2.95,
+                  "grande": 3.65,
+                  "venti": 3.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "caramel-macchiato",
+                "name": "Caramel Macchiato",
+                "prices": {
+                  "tall": 3.65,
+                  "grande": 4.45,
+                  "venti": 4.75
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "mocha",
+                "name": "Mocha",
+                "prices": {
+                  "tall": 3.45,
+                  "grande": 4.15,
+                  "venti": 4.45
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "white-chocolate",
+                "name": "White Chocolate Mocha",
+                "prices": {
+                  "tall": 3.65,
+                  "grande": 4.45,
+                  "venti": 4.75
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "caffe-americano",
+                "name": "Caffè Americano",
+                "prices": {
+                  "tall": 2.25,
+                  "grande": 2.65,
+                  "venti": 2.95
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "cinnamon-dolce",
+                "name": "Cinnamon Dolce Latte",
+                "prices": {
+                  "tall": 3.65,
+                  "grande": 4.45,
+                  "venti": 4.75
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "flat-white",
+                "name": "Flat White",
+                "prices": {
+                  "tall": 3.75,
+                  "grande": 4.45,
+                  "venti": 4.75
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "vanilla-keto-latte",
+                "name": "Vanilla Keto Latte",
+                "description": "Sugar-free · Iced / Hot",
+                "prices": {
+                  "tall": 3.45,
+                  "grande": 4.15,
+                  "venti": 4.45
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "keto", "sugar-free"]
+              }
+            ]
+          },
+          {
+            "id": "frappuccino",
+            "name": "Frappuccino Blended",
+            "sort_order": 2,
+            "description": "Blended frozen beverages",
+            "items": [
+              {
+                "id": "caramel-frappuccino",
+                "name": "Caramel Frappuccino",
+                "prices": {
+                  "tall": 3.95,
+                  "grande": 4.65,
+                  "venti": 4.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "coffee-frappuccino",
+                "name": "Coffee Frappuccino",
+                "prices": {
+                  "tall": 3.45,
+                  "grande": 3.95,
+                  "venti": 4.45
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "java-chip-frappuccino",
+                "name": "Java Chip Frappuccino",
+                "prices": {
+                  "tall": 3.95,
+                  "grande": 4.65,
+                  "venti": 4.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "matcha-green-tea-frappuccino",
+                "name": "Matcha Green Tea Frappuccino",
+                "prices": {
+                  "tall": 3.95,
+                  "grande": 4.75,
+                  "venti": 5.25
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "mocha-frappuccino",
+                "name": "Mocha Frappuccino",
+                "prices": {
+                  "tall": 3.95,
+                  "grande": 4.65,
+                  "venti": 4.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "strawberries-cream-frappuccino",
+                "name": "Strawberries & Cream Frappuccino",
+                "prices": {
+                  "tall": 3.75,
+                  "grande": 4.45,
+                  "venti": 4.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "vanilla-bean-frappuccino",
+                "name": "Vanilla Bean Frappuccino",
+                "prices": {
+                  "tall": 3.45,
+                  "grande": 3.95,
+                  "venti": 4.45
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "white-chocolate-frappuccino",
+                "name": "White Chocolate Frappuccino",
+                "prices": {
+                  "tall": 3.95,
+                  "grande": 4.65,
+                  "venti": 4.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "mango-smoothie",
+                "name": "Mango Smoothie",
+                "prices": {
+                  "tall": 3.75,
+                  "grande": 4.45,
+                  "venti": 4.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "strawberry-smoothie",
+                "name": "Strawberry Smoothie",
+                "prices": {
+                  "tall": 3.75,
+                  "grande": 4.45,
+                  "venti": 4.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "coffee-alternatives",
+            "name": "Coffee Alternatives",
+            "sort_order": 3,
+            "description": "Tea and hot chocolate options",
+            "items": [
+              {
+                "id": "matcha-green-tea",
+                "name": "Matcha Green Tea Latte",
+                "prices": {
+                  "tall": 4.25,
+                  "grande": 4.60,
+                  "venti": 5.03
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "hot-tea",
+                "name": "Hot Tea",
+                "prices": {
+                  "tall": 1.95,
+                  "grande": 2.15,
+                  "venti": 2.15
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "chai",
+                "name": "Chai Tea Latte",
+                "prices": {
+                  "tall": 3.25,
+                  "grande": 3.95,
+                  "venti": 4.25
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "iced-tea",
+                "name": "Iced Tea",
+                "prices": {
+                  "tall": 1.75,
+                  "grande": 2.25,
+                  "venti": 2.95
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "iced-tea-lemonade",
+                "name": "Iced Tea Lemonade",
+                "prices": {
+                  "tall": 2.45,
+                  "grande": 2.95,
+                  "venti": 3.45
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "hot-chocolate",
+                "name": "Hot Chocolate",
+                "prices": {
+                  "tall": 2.75,
+                  "grande": 3.25,
+                  "venti": 3.45
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "cold-beverages",
+            "name": "Cold Beverages",
+            "sort_order": 4,
+            "description": "Iced espresso drinks and refreshers",
+            "items": [
+              {
+                "id": "iced-caffe-latte",
+                "name": "Iced Caffè Latte",
+                "prices": {
+                  "tall": 2.95,
+                  "grande": 3.65,
+                  "venti": 3.95
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "iced-caramel-macchiato",
+                "name": "Iced Caramel Macchiato",
+                "prices": {
+                  "tall": 3.65,
+                  "grande": 4.45,
+                  "venti": 4.75
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "iced-caffe-mocha",
+                "name": "Iced Caffè Mocha",
+                "prices": {
+                  "tall": 3.45,
+                  "grande": 4.15,
+                  "venti": 4.45
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "iced-white-chocolate",
+                "name": "Iced White Chocolate Mocha",
+                "prices": {
+                  "tall": 3.65,
+                  "grande": 4.45,
+                  "venti": 4.75
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "iced-caffe-americano",
+                "name": "Iced Caffè Americano",
+                "prices": {
+                  "tall": 2.25,
+                  "grande": 2.65,
+                  "venti": 2.95
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "iced-tazo-chai",
+                "name": "Iced Tazo Chai Tea Latte",
+                "prices": {
+                  "tall": 3.25,
+                  "grande": 3.95,
+                  "venti": 4.25
+                },
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "iced-brewed-coffee",
+                "name": "Iced Brewed Coffee",
+                "prices": {
+                  "tall": 2.25,
+                  "grande": 2.65,
+                  "venti": 2.95
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "cold-brew",
+                "name": "Cold Brew",
+                "prices": {
+                  "tall": 2.95,
+                  "grande": 3.45,
+                  "venti": 3.75
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "strawberry-acai",
+                "name": "Strawberry Açaí Refresher",
+                "prices": {
+                  "tall": 3.25,
+                  "grande": 3.75,
+                  "venti": 4.25
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "very-berry-hibiscus",
+                "name": "Very Berry Hibiscus Refresher",
+                "prices": {
+                  "tall": 3.25,
+                  "grande": 3.75,
+                  "venti": 4.25
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "pink-drink",
+                "name": "Pink Drink",
+                "prices": {
+                  "tall": 3.85,
+                  "grande": 4.35,
+                  "venti": 4.95
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "mango-dragon-fruit",
+                "name": "Mango Dragon Fruit Refresher",
+                "prices": {
+                  "tall": 3.25,
+                  "grande": 3.75,
+                  "venti": 4.25
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "espresso",
+            "name": "Espresso",
+            "sort_order": 5,
+            "description": "Straight espresso shots",
+            "items": [
+              {
+                "id": "espresso",
+                "name": "Espresso",
+                "prices": {
+                  "solo": 1.75,
+                  "doppio": 1.95
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "brewed-coffee",
+            "name": "Brewed Coffee",
+            "sort_order": 6,
+            "description": "Fresh brewed coffee",
+            "items": [
+              {
+                "id": "coffee-of-the-day",
+                "name": "Coffee of the Day",
+                "prices": {
+                  "tall": 1.75,
+                  "grande": 2.10,
+                  "venti": 2.35
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "decaf-pike-place",
+                "name": "Decaf Pike Place",
+                "prices": {
+                  "tall": 1.75,
+                  "grande": 2.10,
+                  "venti": 2.35
+                },
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "collin-street-bakery-bites",
+            "name": "Collin Street Bakery Bites",
+            "sort_order": 7,
+            "description": "Fresh baked goods",
+            "items": [
+              {
+                "id": "peach-turnover",
+                "name": "Peach Turnover",
+                "price": 1.95,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "cherry-turnover",
+                "name": "Cherry Turnover",
+                "price": 1.95,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "apple-turnover",
+                "name": "Apple Turnover",
+                "price": 1.95,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "chocolate-danish",
+                "name": "Chocolate Danish",
+                "price": 1.95,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "cinnamon-roll",
+                "name": "Cinnamon Roll",
+                "price": 2.25,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "apple-fritter",
+                "name": "Apple Fritter",
+                "price": 1.95,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "glazed-donut",
+                "name": "Glazed Donut",
+                "price": 1.00,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "chocolate-donut",
+                "name": "Chocolate Donut",
+                "price": 1.25,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "banana-bread",
+                "name": "Banana Bread",
+                "price": 1.75,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "blueberry-muffin",
+                "name": "Blueberry Muffin",
+                "price": 1.95,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "french-toast-muffin",
+                "name": "French Toast Muffin",
+                "price": 1.95,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "banana-nut-muffin",
+                "name": "Banana Nut Muffin",
+                "price": 1.95,
+                "allergens": ["wheat", "gluten", "dairy", "eggs", "tree-nuts"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "in-house-bites",
+            "name": "In-House Bites",
+            "sort_order": 8,
+            "description": "Ready-to-eat items",
+            "items": [
+              {
+                "id": "strawberry-parfait",
+                "name": "Strawberry Parfait",
+                "price": 2.29,
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "bacon-breakfast-sandwich",
+                "name": "Bacon Breakfast Sandwich",
+                "price": 2.99,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "sausage-breakfast-sandwich",
+                "name": "Sausage Breakfast Sandwich",
+                "price": 2.99,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "plain-croissant",
+                "name": "Plain Croissant",
+                "price": 2.50,
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "birthday-cake-pop",
+                "name": "Birthday Cake Pop",
+                "price": 0.75,
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "sausage-roll",
+                "name": "Sausage Roll",
+                "price": null,
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": []
+              }
+            ]
+          },
+          {
+            "id": "extras",
+            "name": "Extras",
+            "sort_order": 9,
+            "description": "Customization options",
+            "items": [
+              {
+                "id": "add-caramel-mocha",
+                "name": "Add Caramel / Mocha",
+                "price": 0.50,
+                "allergens": [],
+                "dietary_flags": []
+              },
+              {
+                "id": "extra-espresso-shot",
+                "name": "Extra Espresso Shot",
+                "price": 0.75,
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "ristretto-shot",
+                "name": "Ristretto Shot",
+                "price": 0.90,
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "add-flavored-syrup",
+                "name": "Add Flavored Syrup",
+                "description": "Vanilla, Sugar Free Vanilla, Hazelnut, Toffeenut, Caramel, Raspberry, Peppermint",
+                "price": 0.60,
+                "allergens": [],
+                "dietary_flags": []
+              },
+              {
+                "id": "add-lemonade",
+                "name": "Add Lemonade",
+                "price": 0.60,
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "add-milk-alternative",
+                "name": "Add Milk (Almond / Coconut / Soy)",
+                "price": 0.60,
+                "allergens": [],
+                "dietary_flags": []
+              },
+              {
+                "id": "vanilla-sweet-cream-foam",
+                "name": "Vanilla Sweet Cream Foam",
+                "price": 1.00,
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "just-the-shot",
+                "name": "Just the Shot",
+                "price": 2.15,
+                "size": "small",
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              },
+              {
+                "id": "double-shot",
+                "name": "Double Shot",
+                "price": 2.45,
+                "size": "small",
+                "allergens": [],
+                "dietary_flags": ["vegan", "vegetarian"]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "available_syrups": [
+    "Vanilla",
+    "Sugar Free Vanilla",
+    "Hazelnut",
+    "Toffeenut",
+    "Caramel",
+    "Raspberry",
+    "Peppermint"
+  ]
+}
