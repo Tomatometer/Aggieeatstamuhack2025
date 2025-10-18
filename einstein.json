@@ -1,0 +1,899 @@
+{
+  "status": "success",
+  "request_time": "2025-10-18T12:00:00Z",
+  "location": {
+    "id": "einstein-bros-001",
+    "name": "Einstein Bros. Bagels",
+    "date": "2025-10-18"
+  },
+  "periods": [
+    {
+      "id": "all-day",
+      "name": "All Day",
+      "start_time": "06:00:00",
+      "end_time": "21:00:00"
+    }
+  ],
+  "menu": {
+    "periods": {
+      "all-day": {
+        "categories": [
+          {
+            "id": "bagel-boxes",
+            "name": "Bagel Boxes",
+            "sort_order": 1,
+            "items": [
+              {
+                "id": "bakers-dozen-box",
+                "name": "Baker's Dozen Box",
+                "description": "13 Bagels + 2 Shmear Tubs",
+                "calories": null,
+                "price": null,
+                "portion": "box",
+                "ingredients": [],
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": []
+              },
+              {
+                "id": "half-dozen-box",
+                "name": "Half Dozen Box",
+                "description": "6 Bagels + 1 Shmear Tub",
+                "calories": null,
+                "price": null,
+                "portion": "box",
+                "ingredients": [],
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": []
+              }
+            ]
+          },
+          {
+            "id": "fresh-baked-bagels",
+            "name": "Fresh-Baked Bagels",
+            "sort_order": 2,
+            "subcategories": [
+              {
+                "id": "classic-bagels",
+                "name": "Classic",
+                "items": [
+                  {
+                    "id": "ancient-grain-bagel",
+                    "name": "Ancient Grain",
+                    "calories": "280",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "cinnamon-raisin-bagel",
+                    "name": "Cinnamon Raisin",
+                    "calories": "280",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "cranberry-bagel",
+                    "name": "Cranberry",
+                    "calories": "310",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "everything-bagel",
+                    "name": "Everything",
+                    "calories": "280",
+                    "allergens": ["wheat", "gluten", "sesame"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "garlic-bagel",
+                    "name": "Garlic",
+                    "calories": "280",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "honey-wheat-bagel",
+                    "name": "Honey Wheat",
+                    "calories": "260",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "onion-bagel",
+                    "name": "Onion",
+                    "calories": "270",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "plain-bagel",
+                    "name": "Plain",
+                    "calories": "270",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "poppy-seed-bagel",
+                    "name": "Poppy Seed",
+                    "calories": "290",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "pumpernickel-bagel",
+                    "name": "Pumpernickel",
+                    "calories": "270",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "sesame-seed-bagel",
+                    "name": "Sesame Seed",
+                    "calories": "290",
+                    "allergens": ["wheat", "gluten", "sesame"],
+                    "dietary_flags": []
+                  }
+                ]
+              },
+              {
+                "id": "signature-bagels",
+                "name": "Signature",
+                "items": [
+                  {
+                    "id": "asiago-bagel",
+                    "name": "Asiago",
+                    "calories": "300",
+                    "allergens": ["wheat", "gluten", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "blueberry-bagel",
+                    "name": "Blueberry",
+                    "calories": "290",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "chocolate-chip-bagel",
+                    "name": "Chocolate Chip",
+                    "calories": "300",
+                    "allergens": ["wheat", "gluten", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "cinnamon-sugar-bagel",
+                    "name": "Cinnamon Sugar",
+                    "calories": "320",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "french-toast-bagel",
+                    "name": "French Toast",
+                    "calories": "370",
+                    "allergens": ["wheat", "gluten", "eggs", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "pretzel-bagel",
+                    "name": "Pretzel",
+                    "calories": "280",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  }
+                ]
+              },
+              {
+                "id": "gourmet-bagels",
+                "name": "Gourmet",
+                "items": [
+                  {
+                    "id": "apple-cinnamon-bagel",
+                    "name": "Apple Cinnamon",
+                    "calories": "450",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "cheddar-jalapeno-bagel",
+                    "name": "Cheddar Jalapeño",
+                    "calories": "340",
+                    "allergens": ["wheat", "gluten", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "cheesy-hash-brown-bagel",
+                    "name": "Cheesy Hash Brown",
+                    "calories": "400",
+                    "allergens": ["wheat", "gluten", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "green-chile-bagel",
+                    "name": "Green Chile",
+                    "calories": "390",
+                    "allergens": ["wheat", "gluten"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "power-protein-bagel",
+                    "name": "Power Protein",
+                    "calories": "350",
+                    "allergens": ["wheat", "gluten", "soy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "six-cheese-bagel",
+                    "name": "Six Cheese",
+                    "calories": "370",
+                    "allergens": ["wheat", "gluten", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "spinach-florentine-bagel",
+                    "name": "Spinach Florentine",
+                    "calories": "370",
+                    "allergens": ["wheat", "gluten", "dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "double-whipped-shmear",
+            "name": "Double-Whipped Shmear",
+            "sort_order": 3,
+            "items": [
+              {
+                "id": "plain-shmear",
+                "name": "Plain",
+                "calories": "120",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "onion-chive-shmear",
+                "name": "Onion & Chive",
+                "calories": "120",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "smoked-salmon-shmear",
+                "name": "Smoked Salmon",
+                "calories": "110",
+                "allergens": ["dairy", "fish"],
+                "dietary_flags": []
+              },
+              {
+                "id": "garden-veggie-shmear",
+                "name": "Garden Veggie",
+                "calories": "110",
+                "description": "25% less fat than regular shmear",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "honey-almond-shmear",
+                "name": "Honey Almond",
+                "calories": "120",
+                "description": "25% less fat than regular shmear",
+                "allergens": ["dairy", "tree nuts"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "jalapeno-salsa-shmear",
+                "name": "Jalapeño Salsa",
+                "calories": "110",
+                "description": "25% less fat than regular shmear",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "reduced-fat-plain-shmear",
+                "name": "Reduced Fat Plain",
+                "calories": "100",
+                "description": "25% less fat than regular shmear",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "strawberry-shmear",
+                "name": "Strawberry",
+                "calories": "120",
+                "description": "25% less fat than regular shmear",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "toppings",
+            "name": "Toppings",
+            "sort_order": 4,
+            "items": [
+              {
+                "id": "butter-blend",
+                "name": "Butter Blend",
+                "calories": "100",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "honey",
+                "name": "Honey",
+                "calories": "90",
+                "allergens": [],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "jelly",
+                "name": "Jelly",
+                "calories": "70",
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "vegan"]
+              },
+              {
+                "id": "peanut-butter",
+                "name": "Peanut Butter",
+                "calories": "240",
+                "allergens": ["peanuts"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "avocado-toast",
+            "name": "Avocado Toast",
+            "sort_order": 5,
+            "items": [
+              {
+                "id": "avocado-toast",
+                "name": "Avocado Toast",
+                "description": "Everything seasoning, salt & pepper on a Classic Bagel",
+                "calories": "400-500",
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "egg-sandwiches",
+            "name": "Egg Sandwiches",
+            "sort_order": 6,
+            "subcategories": [
+              {
+                "id": "signature-egg-sandwiches",
+                "name": "Signature",
+                "items": [
+                  {
+                    "id": "farmhouse",
+                    "name": "Farmhouse",
+                    "description": "Eggs, Thick-Cut Bacon, Smoked Ham, Cheddar Cheese with Country Pepper Shmear on a Cheesy Hash Brown Gourmet Bagel",
+                    "calories": "680",
+                    "allergens": ["wheat", "gluten", "eggs", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "chorizo-sunrise",
+                    "name": "Chorizo Sunrise",
+                    "description": "Eggs, Chorizo, Cheese, Avocado, Jalapeño Salsa Shmear on a Green Chile Gourmet Bagel",
+                    "calories": "800",
+                    "allergens": ["wheat", "gluten", "eggs", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "all-nighter",
+                    "name": "All-Nighter",
+                    "description": "Eggs, Bacon, American Cheese, Jalapeño Garlic Aioli on a Cheesy Hash Brown Gourmet Bagel",
+                    "calories": "880",
+                    "allergens": ["wheat", "gluten", "eggs", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "garden-avocado",
+                    "name": "Garden Avocado",
+                    "description": "Eggs, Avocado, Tomato, Spinach, Roasted Tomato Spread on an Everything Bagel",
+                    "calories": "500",
+                    "allergens": ["wheat", "gluten", "eggs"],
+                    "dietary_flags": ["vegetarian"]
+                  }
+                ]
+              },
+              {
+                "id": "egg-whites",
+                "name": "Egg Whites",
+                "items": [
+                  {
+                    "id": "santa-fe",
+                    "name": "Santa Fe",
+                    "description": "Egg White, Turkey-Sausage, Cheese with Roasted Tomato Salsa and Jalapeño Salsa Shmear on an Asiago Thintastic Bagel",
+                    "calories": "530",
+                    "allergens": ["wheat", "gluten", "eggs", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "bacon-avocado-tomato",
+                    "name": "Bacon, Avocado & Tomato",
+                    "description": "Egg White, Thick-Cut Bacon, Avocado, Tomato with Roasted Tomato Spread on a Plain Thintastic Bagel",
+                    "calories": "410",
+                    "allergens": ["wheat", "gluten", "eggs"],
+                    "dietary_flags": []
+                  }
+                ]
+              },
+              {
+                "id": "classic-egg-sandwiches",
+                "name": "Classic",
+                "items": [
+                  {
+                    "id": "bacon-cheddar",
+                    "name": "Bacon & Cheddar",
+                    "calories": "450",
+                    "allergens": ["wheat", "gluten", "eggs", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "turkey-sausage-cheddar",
+                    "name": "Turkey-Sausage & Cheddar",
+                    "calories": "480",
+                    "allergens": ["wheat", "gluten", "eggs", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "ham-swiss",
+                    "name": "Ham & Swiss",
+                    "calories": "450",
+                    "allergens": ["wheat", "gluten", "eggs", "dairy"],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "cheddar-cheese",
+                    "name": "Cheddar Cheese",
+                    "calories": "410",
+                    "allergens": ["wheat", "gluten", "eggs", "dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  }
+                ]
+              }
+            ],
+            "customization_options": [
+              {
+                "id": "add-second-egg",
+                "name": "Add a Second Egg",
+                "calories_added": "80",
+                "price_modifier": null
+              },
+              {
+                "id": "upgrade-gourmet",
+                "name": "Upgrade to a Gourmet Bagel",
+                "calories_added": "60-80",
+                "price_modifier": null
+              },
+              {
+                "id": "substitute-egg-white",
+                "name": "Substitute Egg White",
+                "calories_added": "-45",
+                "price_modifier": null
+              },
+              {
+                "id": "make-thintastic",
+                "name": "Make Your Bagel Thintastic",
+                "calories_added": "-70 to -120",
+                "price_modifier": null
+              }
+            ],
+            "meal_options": {
+              "name": "Make It A Meal",
+              "description": "Add Twice-Baked Hash Brown and Medium Coffee or Orange Juice",
+              "calories": "195-420"
+            }
+          },
+          {
+            "id": "deli-lunch",
+            "name": "Deli Lunch",
+            "sort_order": 7,
+            "description": "Side of Chips Included (180 Cal)",
+            "items": [
+              {
+                "id": "nova-lox",
+                "name": "Nova Lox",
+                "description": "Nova Lox, Red Onion, Capers, Tomato with Plain Shmear on a Plain Bagel",
+                "calories": "480",
+                "allergens": ["wheat", "gluten", "fish", "dairy"],
+                "dietary_flags": [],
+                "warnings": ["Cold smoked salmon is not cooked. Consuming raw or under cooked seafood may increase the risk of foodborne illness."]
+              },
+              {
+                "id": "turkey-bacon-avocado",
+                "name": "Turkey, Bacon & Avocado",
+                "description": "Roasted Turkey, Thick-Cut Bacon, Avocado, Lettuce, Tomato with Roasted Tomato Spread on a Plain Bagel",
+                "calories": "610",
+                "allergens": ["wheat", "gluten"],
+                "dietary_flags": []
+              },
+              {
+                "id": "tasty-turkey",
+                "name": "Tasty Turkey",
+                "description": "Roasted Turkey, Spinach, Cucumber, Lettuce, Tomato with Onion & Chive Shmear on an Asiago Bagel",
+                "calories": "510",
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": []
+              },
+              {
+                "id": "avocado-veg-out",
+                "name": "Avocado Veg Out",
+                "description": "Avocado, Tomato, Cucumber, Red Onion, Spinach, Lettuce with Garden Veggie Shmear on a Sesame Bagel",
+                "calories": "420",
+                "allergens": ["wheat", "gluten", "dairy", "sesame"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "turkey-cheddar",
+                "name": "Turkey & Cheddar",
+                "description": "Roasted Turkey, Cheddar Cheese, Lettuce, Tomato, Red Onion with Mayo and Deli Mustard on a Plain Bagel",
+                "calories": "540",
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "ham-swiss-deli",
+                "name": "Ham & Swiss",
+                "description": "Smoked Ham, Swiss Cheese, Lettuce, Tomato, Red Onion with Mayo and Deli Mustard on a Plain Bagel",
+                "calories": "550",
+                "allergens": ["wheat", "gluten", "dairy", "eggs"],
+                "dietary_flags": []
+              },
+              {
+                "id": "pizza-bagel-cheese",
+                "name": "Pizza Bagel - Cheese",
+                "calories": "440",
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "pizza-bagel-pepperoni",
+                "name": "Pizza Bagel - Pepperoni",
+                "calories": "530",
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": []
+              }
+            ]
+          },
+          {
+            "id": "beverages",
+            "name": "Beverages",
+            "sort_order": 8,
+            "subcategories": [
+              {
+                "id": "coffee",
+                "name": "Coffee",
+                "items": [
+                  {
+                    "id": "fresh-brewed-coffee-s",
+                    "name": "Fresh-Brewed Coffee - Small",
+                    "description": "Breakfast Blend Medium Roast, Decaf Medium Roast, Darn Good Dark Roast, Vanilla Hazelnut",
+                    "calories": "5",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "fresh-brewed-coffee-m",
+                    "name": "Fresh-Brewed Coffee - Medium",
+                    "description": "Breakfast Blend Medium Roast, Decaf Medium Roast, Darn Good Dark Roast, Vanilla Hazelnut",
+                    "calories": "5",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "fresh-brewed-coffee-l",
+                    "name": "Fresh-Brewed Coffee - Large",
+                    "description": "Breakfast Blend Medium Roast, Decaf Medium Roast, Darn Good Dark Roast, Vanilla Hazelnut",
+                    "calories": "5",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  }
+                ],
+                "customization_options": [
+                  {
+                    "name": "Flavor Shot: Vanilla, Caramel, Chocolate",
+                    "calories_added": "110-240"
+                  },
+                  {
+                    "name": "Espresso Shot",
+                    "calories_added": "0"
+                  },
+                  {
+                    "name": "Almond Milk",
+                    "calories_reduced": "5-75"
+                  }
+                ]
+              },
+              {
+                "id": "lattes",
+                "name": "Lattes",
+                "description": "Hot or Iced. Espresso drinks not available at all locations.",
+                "items": [
+                  {
+                    "id": "mocha-latte-s",
+                    "name": "Mocha - Small",
+                    "calories": "270",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "mocha-latte-m",
+                    "name": "Mocha - Medium",
+                    "calories": "350",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "mocha-latte-l",
+                    "name": "Mocha - Large",
+                    "calories": "420",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "caramel-macchiato-s",
+                    "name": "Caramel Macchiato - Small",
+                    "calories": "290",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "caramel-macchiato-m",
+                    "name": "Caramel Macchiato - Medium",
+                    "calories": "370",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "caramel-macchiato-l",
+                    "name": "Caramel Macchiato - Large",
+                    "calories": "450",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "latte-s",
+                    "name": "Latte - Small",
+                    "calories": "110",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "latte-m",
+                    "name": "Latte - Medium",
+                    "calories": "140",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "latte-l",
+                    "name": "Latte - Large",
+                    "calories": "170",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "chai-tea-latte-s",
+                    "name": "Chai Tea Latte - Small",
+                    "calories": "170",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "chai-tea-latte-m",
+                    "name": "Chai Tea Latte - Medium",
+                    "calories": "230",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "chai-tea-latte-l",
+                    "name": "Chai Tea Latte - Large",
+                    "calories": "280",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  }
+                ]
+              },
+              {
+                "id": "cold-brew",
+                "name": "Cold Brew",
+                "items": [
+                  {
+                    "id": "cold-brew-classic-s",
+                    "name": "Classic Cold Brew - Small",
+                    "calories": "0",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "cold-brew-classic-l",
+                    "name": "Classic Cold Brew - Large",
+                    "calories": "0",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "vanilla-cream-cold-brew-s",
+                    "name": "Vanilla Cream Cold Brew - Small",
+                    "calories": "190",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "vanilla-cream-cold-brew-l",
+                    "name": "Vanilla Cream Cold Brew - Large",
+                    "calories": "310",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "caramel-cream-cold-brew-s",
+                    "name": "Caramel Cream Cold Brew - Small",
+                    "calories": "210",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "caramel-cream-cold-brew-l",
+                    "name": "Caramel Cream Cold Brew - Large",
+                    "calories": "360",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "chocolate-cream-cold-brew-s",
+                    "name": "Chocolate Cream Cold Brew - Small",
+                    "calories": "200",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "chocolate-cream-cold-brew-l",
+                    "name": "Chocolate Cream Cold Brew - Large",
+                    "calories": "340",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "vanilla-cold-brew-shake-s",
+                    "name": "Vanilla Cold Brew Shake - Small",
+                    "description": "Available Coffee-Free",
+                    "calories": "350",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "vanilla-cold-brew-shake-l",
+                    "name": "Vanilla Cold Brew Shake - Large",
+                    "description": "Available Coffee-Free",
+                    "calories": "540",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "caramel-cold-brew-shake-s",
+                    "name": "Caramel Cold Brew Shake - Small",
+                    "description": "Available Coffee-Free",
+                    "calories": "390",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "caramel-cold-brew-shake-l",
+                    "name": "Caramel Cold Brew Shake - Large",
+                    "description": "Available Coffee-Free",
+                    "calories": "610",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "chocolate-cold-brew-shake-s",
+                    "name": "Chocolate Cold Brew Shake - Small",
+                    "description": "Available Coffee-Free",
+                    "calories": "380",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "chocolate-cold-brew-shake-l",
+                    "name": "Chocolate Cold Brew Shake - Large",
+                    "description": "Available Coffee-Free",
+                    "calories": "590",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian"]
+                  }
+                ]
+              },
+              {
+                "id": "smoothies",
+                "name": "Smoothies",
+                "items": [
+                  {
+                    "id": "strawberry-banana-smoothie-s",
+                    "name": "Strawberry Banana Smoothie - Small",
+                    "calories": "280",
+                    "allergens": [],
+                    "dietary_flags": ["vegetarian"]
+                  },
+                  {
+                    "id": "strawberry-banana-smoothie-l",
+                    "name": "Strawberry Banana Smoothie - Large",
+                    "calories": "430",
+                    "allergens": [],
+                    "dietary_flags": ["vegetarian"]
+                  }
+                ]
+              },
+              {
+                "id": "tea",
+                "name": "Tea",
+                "items": [
+                  {
+                    "id": "hot-tea-s",
+                    "name": "Hot Tea - Small",
+                    "calories": "0",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "hot-tea-l",
+                    "name": "Hot Tea - Large",
+                    "calories": "0",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "iced-tea-s",
+                    "name": "Iced Tea - Small",
+                    "calories": "0",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  },
+                  {
+                    "id": "iced-tea-l",
+                    "name": "Iced Tea - Large",
+                    "calories": "0",
+                    "allergens": [],
+                    "dietary_flags": ["vegan"]
+                  }
+                ]
+              },
+              {
+                "id": "fountain-drinks",
+                "name": "Fountain Drinks",
+                "items": [
+                  {
+                    "id": "fountain-drink-s",
+                    "name": "Fountain Drink - Small",
+                    "calories": "0-280",
+                    "allergens": [],
+                    "dietary_flags": []
+                  },
+                  {
+                    "id": "fountain-drink-l",
+                    "name": "Fountain Drink - Large",
+                    "calories": "0-340",
+                    "allergens": [],
+                    "dietary_flags": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "disclaimer": "Items subject to change without notice and may not be available in all locations. 2,000 calories a day is used for general nutrition advice, but calorie needs vary. Additional nutrition information available upon request.",
+    "copyright": "©Einstein Noah Restaurant Group, Inc. All Rights Reserved 2021.",
+    "version": "2105-4873"
+  }
+}
