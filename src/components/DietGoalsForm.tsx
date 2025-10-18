@@ -4,21 +4,63 @@ import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Button } from './ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { Slider } from './ui/slider';
 import { UserPreferences } from '../types';
 import { cuisineTypes, locations } from '../data/mockData';
-import { Target, MapPin, Utensils } from 'lucide-react';
+import { Target, MapPin, Utensils, Wallet, SlidersHorizontal } from 'lucide-react';
 
 interface DietGoalsFormProps {
   onSubmit: (preferences: UserPreferences) => void;
+  initialPreferences?: UserPreferences | null;
 }
 
-export function DietGoalsForm({ onSubmit }: DietGoalsFormProps) {
-  const [calories, setCalories] = useState<string>('2000');
-  const [protein, setProtein] = useState<string>('150');
-  const [carbs, setCarbs] = useState<string>('200');
-  const [fats, setFats] = useState<string>('65');
-  const [location, setLocation] = useState<string>('No Preference');
-  const [mood, setMood] = useState<string>('All Cuisines');
+export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormProps) {
+  const [calories, setCalories] = useState<string>(
+    initialPreferences?.dietGoals.calories.toString() || '2000'
+  );
+  const [protein, setProtein] = useState<string>(
+    initialPreferences?.dietGoals.protein.toString() || '150'
+  );
+  const [carbs, setCarbs] = useState<string>(
+    initialPreferences?.dietGoals.carbs.toString() || '200'
+  );
+  const [fats, setFats] = useState<string>(
+    initialPreferences?.dietGoals.fats.toString() || '65'
+  );
+  const [location, setLocation] = useState<string>(
+    initialPreferences?.location || 'No Preference'
+  );
+  const [mood, setMood] = useState<string>(
+    initialPreferences?.mood || 'All Cuisines'
+  );
+
+  // Budget states
+  const [mealSwipes, setMealSwipes] = useState<string>(
+    initialPreferences?.budget.mealSwipes.toString() || '2'
+  );
+  const [maroonMeals, setMaroonMeals] = useState<string>(
+    initialPreferences?.budget.maroonMeals.toString() || '1'
+  );
+  const [diningDollars, setDiningDollars] = useState<string>(
+    initialPreferences?.budget.diningDollars.toString() || '20'
+  );
+  const [realDollars, setRealDollars] = useState<string>(
+    initialPreferences?.budget.realDollars.toString() || '15'
+  );
+
+  // Macro threshold states (percentage)
+  const [caloriesThreshold, setCaloriesThreshold] = useState([
+    initialPreferences?.macroThresholds.calories || 10
+  ]);
+  const [proteinThreshold, setProteinThreshold] = useState([
+    initialPreferences?.macroThresholds.protein || 15
+  ]);
+  const [carbsThreshold, setCarbsThreshold] = useState([
+    initialPreferences?.macroThresholds.carbs || 15
+  ]);
+  const [fatsThreshold, setFatsThreshold] = useState([
+    initialPreferences?.macroThresholds.fats || 15
+  ]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +72,18 @@ export function DietGoalsForm({ onSubmit }: DietGoalsFormProps) {
         carbs: parseInt(carbs) || 0,
         fats: parseInt(fats) || 0
       },
+      macroThresholds: {
+        calories: caloriesThreshold[0],
+        protein: proteinThreshold[0],
+        carbs: carbsThreshold[0],
+        fats: fatsThreshold[0]
+      },
+      budget: {
+        mealSwipes: parseInt(mealSwipes) || 0,
+        maroonMeals: parseInt(maroonMeals) || 0,
+        diningDollars: parseFloat(diningDollars) || 0,
+        realDollars: parseFloat(realDollars) || 0
+      },
       location,
       mood
     };
@@ -38,7 +92,7 @@ export function DietGoalsForm({ onSubmit }: DietGoalsFormProps) {
   };
 
   return (
-    <Card className="p-6 max-w-2xl mx-auto">
+    <Card className="p-6 max-w-3xl mx-auto">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <h2 className="flex items-center gap-2 mb-4">
@@ -91,6 +145,130 @@ export function DietGoalsForm({ onSubmit }: DietGoalsFormProps) {
 
         <div>
           <h2 className="flex items-center gap-2 mb-4">
+            <SlidersHorizontal className="w-5 h-5" />
+            Macro Thresholds (% tolerance)
+          </h2>
+          <div className="space-y-4">
+            <div>
+              <div className="flex justify-between mb-2">
+                <Label>Calories Threshold</Label>
+                <span className="text-sm text-muted-foreground">±{caloriesThreshold[0]}%</span>
+              </div>
+              <Slider
+                value={caloriesThreshold}
+                onValueChange={setCaloriesThreshold}
+                min={5}
+                max={50}
+                step={5}
+              />
+            </div>
+            <div>
+              <div className="flex justify-between mb-2">
+                <Label>Protein Threshold</Label>
+                <span className="text-sm text-muted-foreground">±{proteinThreshold[0]}%</span>
+              </div>
+              <Slider
+                value={proteinThreshold}
+                onValueChange={setProteinThreshold}
+                min={5}
+                max={50}
+                step={5}
+              />
+            </div>
+            <div>
+              <div className="flex justify-between mb-2">
+                <Label>Carbs Threshold</Label>
+                <span className="text-sm text-muted-foreground">±{carbsThreshold[0]}%</span>
+              </div>
+              <Slider
+                value={carbsThreshold}
+                onValueChange={setCarbsThreshold}
+                min={5}
+                max={50}
+                step={5}
+              />
+            </div>
+            <div>
+              <div className="flex justify-between mb-2">
+                <Label>Fats Threshold</Label>
+                <span className="text-sm text-muted-foreground">±{fatsThreshold[0]}%</span>
+              </div>
+              <Slider
+                value={fatsThreshold}
+                onValueChange={setFatsThreshold}
+                min={5}
+                max={50}
+                step={5}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="flex items-center gap-2 mb-4">
+            <Wallet className="w-5 h-5" />
+            Budget
+          </h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="mealSwipes">Meal Swipes</Label>
+              <Input
+                id="mealSwipes"
+                type="number"
+                value={mealSwipes}
+                onChange={(e) => setMealSwipes(e.target.value)}
+                placeholder="2"
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Unlimited dining hall access
+              </p>
+            </div>
+            <div>
+              <Label htmlFor="maroonMeals">Maroon Meals</Label>
+              <Input
+                id="maroonMeals"
+                type="number"
+                value={maroonMeals}
+                onChange={(e) => setMaroonMeals(e.target.value)}
+                placeholder="1"
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Uses 1 Meal Swipe for specific items
+              </p>
+            </div>
+            <div>
+              <Label htmlFor="diningDollars">Dining Dollars ($)</Label>
+              <Input
+                id="diningDollars"
+                type="number"
+                step="0.01"
+                value={diningDollars}
+                onChange={(e) => setDiningDollars(e.target.value)}
+                placeholder="20.00"
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Campus retail locations only
+              </p>
+            </div>
+            <div>
+              <Label htmlFor="realDollars">Real Dollars ($)</Label>
+              <Input
+                id="realDollars"
+                type="number"
+                step="0.01"
+                value={realDollars}
+                onChange={(e) => setRealDollars(e.target.value)}
+                placeholder="15.00"
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Accepted everywhere
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="flex items-center gap-2 mb-4">
             <MapPin className="w-5 h-5" />
             Location Preference
           </h2>
@@ -128,7 +306,7 @@ export function DietGoalsForm({ onSubmit }: DietGoalsFormProps) {
         </div>
 
         <Button type="submit" className="w-full">
-          Find Matching Restaurants
+          Find My Meal Plan
         </Button>
       </form>
     </Card>

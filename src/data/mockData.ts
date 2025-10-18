@@ -3,7 +3,7 @@ import { Restaurant } from '../types';
 export const mockRestaurants: Restaurant[] = [
   {
     id: '1',
-    name: 'The Protein Kitchen',
+    name: 'Main Dining Hall',
     cuisine: 'American',
     location: 'Downtown',
     distance: 0.5,
@@ -12,54 +12,58 @@ export const mockRestaurants: Restaurant[] = [
     meals: [
       {
         id: '1-1',
-        name: 'Veggie Omelet & Turkey Sausage',
-        description: 'Egg white omelet with vegetables and lean turkey sausage',
-        calories: 380,
-        protein: 32,
-        carbs: 28,
-        fats: 14,
-        price: 9.99,
+        name: 'Breakfast Buffet',
+        description: 'Unlimited access to eggs, pancakes, fruits, yogurt, and more',
+        calories: 650,
+        protein: 35,
+        carbs: 75,
+        fats: 22,
+        isDiningHall: true,
+        paymentOptions: [
+          { type: 'mealSwipe', cost: 1 },
+          { type: 'diningDollars', cost: 12 },
+          { type: 'realDollars', cost: 12 }
+        ],
         mealTime: 'breakfast'
       },
       {
         id: '1-2',
-        name: 'Grilled Chicken Bowl',
-        description: 'Grilled chicken breast with quinoa, roasted vegetables, and avocado',
-        calories: 520,
+        name: 'Lunch Buffet',
+        description: 'Unlimited access to salad bar, entrees, sides, and desserts',
+        calories: 750,
         protein: 45,
-        carbs: 42,
-        fats: 18,
-        price: 14.99,
+        carbs: 80,
+        fats: 28,
+        isDiningHall: true,
+        paymentOptions: [
+          { type: 'mealSwipe', cost: 1 },
+          { type: 'diningDollars', cost: 12 },
+          { type: 'realDollars', cost: 12 }
+        ],
         mealTime: 'lunch'
       },
       {
         id: '1-3',
-        name: 'Salmon Power Plate',
-        description: 'Atlantic salmon with sweet potato, asparagus, and lemon butter',
-        calories: 580,
-        protein: 42,
-        carbs: 38,
-        fats: 24,
-        price: 18.99,
-        mealTime: 'dinner'
-      },
-      {
-        id: '1-4',
-        name: 'Turkey Burger & Sweet Potato Fries',
-        description: 'Lean turkey burger with mixed greens and baked sweet potato fries',
-        calories: 650,
-        protein: 48,
-        carbs: 52,
-        fats: 22,
-        price: 15.99,
+        name: 'Dinner Buffet',
+        description: 'Unlimited access to pasta station, grill items, vegetables, and more',
+        calories: 800,
+        protein: 50,
+        carbs: 85,
+        fats: 30,
+        isDiningHall: true,
+        paymentOptions: [
+          { type: 'mealSwipe', cost: 1 },
+          { type: 'diningDollars', cost: 12 },
+          { type: 'realDollars', cost: 12 }
+        ],
         mealTime: 'dinner'
       }
     ]
   },
   {
     id: '2',
-    name: 'Mediterranean Delight',
-    cuisine: 'Mediterranean',
+    name: 'Chick-fil-A Campus',
+    cuisine: 'American',
     location: 'Midtown',
     distance: 1.2,
     rating: 4.6,
@@ -67,53 +71,67 @@ export const mockRestaurants: Restaurant[] = [
     meals: [
       {
         id: '2-1',
-        name: 'Greek Yogurt Bowl',
-        description: 'Greek yogurt with honey, granola, and fresh berries',
-        calories: 340,
-        protein: 22,
-        carbs: 48,
-        fats: 8,
-        price: 8.99,
+        name: 'Chicken Biscuit',
+        description: 'Chicken breast on a buttermilk biscuit',
+        calories: 460,
+        protein: 23,
+        carbs: 45,
+        fats: 21,
+        paymentOptions: [
+          { type: 'maroonMeal', cost: 1 },
+          { type: 'diningDollars', cost: 5.99 },
+          { type: 'realDollars', cost: 5.99 }
+        ],
         mealTime: 'breakfast'
       },
       {
         id: '2-2',
-        name: 'Greek Chicken Souvlaki',
-        description: 'Grilled chicken skewers with tzatziki, pita, and Greek salad',
-        calories: 480,
-        protein: 40,
-        carbs: 45,
-        fats: 15,
-        price: 13.99,
+        name: 'Classic Chicken Sandwich',
+        description: 'Grilled or fried chicken breast on a toasted bun',
+        calories: 440,
+        protein: 38,
+        carbs: 41,
+        fats: 16,
+        paymentOptions: [
+          { type: 'maroonMeal', cost: 1 },
+          { type: 'diningDollars', cost: 6.99 },
+          { type: 'realDollars', cost: 6.99 }
+        ],
         mealTime: 'lunch'
       },
       {
         id: '2-3',
-        name: 'Falafel Bowl',
-        description: 'Crispy falafel with hummus, tabbouleh, and tahini sauce',
+        name: 'Spicy Deluxe Sandwich',
+        description: 'Spicy chicken with lettuce, tomato, and pepper jack cheese',
         calories: 550,
-        protein: 18,
-        carbs: 68,
-        fats: 22,
-        price: 12.99,
+        protein: 34,
+        carbs: 48,
+        fats: 25,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 8.49 },
+          { type: 'realDollars', cost: 8.49 }
+        ],
         mealTime: 'lunch'
       },
       {
         id: '2-4',
-        name: 'Lamb Kebab Plate',
-        description: 'Spiced lamb kebabs with rice pilaf and grilled vegetables',
-        calories: 620,
+        name: 'Grilled Nuggets (8-count)',
+        description: 'Grilled chicken nuggets with your choice of sauce',
+        calories: 250,
         protein: 38,
-        carbs: 48,
-        fats: 28,
-        price: 17.99,
+        carbs: 9,
+        fats: 6,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 7.99 },
+          { type: 'realDollars', cost: 7.99 }
+        ],
         mealTime: 'dinner'
       }
     ]
   },
   {
     id: '3',
-    name: 'Fit & Fresh',
+    name: 'Campus Fresh Market',
     cuisine: 'Health Food',
     location: 'Downtown',
     distance: 0.8,
@@ -122,109 +140,121 @@ export const mockRestaurants: Restaurant[] = [
     meals: [
       {
         id: '3-1',
-        name: 'Protein Pancakes',
-        description: 'High-protein pancakes with berries and sugar-free syrup',
+        name: 'Protein Smoothie Bowl',
+        description: 'Açaí bowl with protein powder, granola, and fresh fruit',
         calories: 420,
-        protein: 35,
-        carbs: 48,
-        fats: 10,
-        price: 11.99,
+        protein: 28,
+        carbs: 52,
+        fats: 12,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 8.99 },
+          { type: 'realDollars', cost: 8.99 }
+        ],
         mealTime: 'breakfast'
       },
       {
         id: '3-2',
-        name: 'Steak & Eggs',
-        description: 'Lean sirloin steak with scrambled eggs and roasted potatoes',
-        calories: 580,
-        protein: 52,
-        carbs: 32,
-        fats: 24,
-        price: 16.99,
-        mealTime: 'breakfast'
+        name: 'Build-Your-Own Salad',
+        description: 'Custom salad with choice of protein, greens, and toppings',
+        calories: 380,
+        protein: 32,
+        carbs: 28,
+        fats: 16,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 9.99 },
+          { type: 'realDollars', cost: 9.99 }
+        ],
+        mealTime: 'lunch'
       },
       {
         id: '3-3',
-        name: 'Macro Bowl',
-        description: 'Your choice of protein with brown rice, black beans, and vegetables',
-        calories: 500,
+        name: 'Grilled Chicken Wrap',
+        description: 'Grilled chicken with veggies in a whole wheat wrap',
+        calories: 510,
         protein: 42,
-        carbs: 50,
-        fats: 14,
-        price: 13.99,
+        carbs: 45,
+        fats: 16,
+        paymentOptions: [
+          { type: 'maroonMeal', cost: 1 },
+          { type: 'diningDollars', cost: 8.49 },
+          { type: 'realDollars', cost: 8.49 }
+        ],
         mealTime: 'lunch'
       },
       {
         id: '3-4',
-        name: 'Grilled Shrimp & Veggies',
-        description: 'Grilled shrimp with roasted seasonal vegetables and wild rice',
-        calories: 480,
-        protein: 40,
-        carbs: 45,
-        fats: 12,
-        price: 17.99,
+        name: 'Salmon & Quinoa Bowl',
+        description: 'Grilled salmon with quinoa, roasted vegetables, and lemon',
+        calories: 580,
+        protein: 44,
+        carbs: 48,
+        fats: 20,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 12.99 },
+          { type: 'realDollars', cost: 12.99 }
+        ],
         mealTime: 'dinner'
       }
     ]
   },
   {
     id: '4',
-    name: 'Asian Fusion House',
+    name: 'Panda Express Campus',
     cuisine: 'Asian',
     location: 'Uptown',
     distance: 2.1,
     rating: 4.7,
-    priceRange: '$$$',
+    priceRange: '$',
     meals: [
       {
         id: '4-1',
-        name: 'Miso Salmon Breakfast',
-        description: 'Miso-glazed salmon with steamed rice and pickled vegetables',
-        calories: 450,
-        protein: 38,
-        carbs: 42,
-        fats: 15,
-        price: 13.99,
-        mealTime: 'breakfast'
+        name: 'Orange Chicken Bowl',
+        description: 'Crispy chicken in orange sauce with fried rice',
+        calories: 820,
+        protein: 36,
+        carbs: 94,
+        fats: 32,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 9.99 },
+          { type: 'realDollars', cost: 9.99 }
+        ],
+        mealTime: 'lunch'
       },
       {
         id: '4-2',
-        name: 'Teriyaki Chicken Bowl',
-        description: 'Grilled teriyaki chicken with steamed rice and mixed vegetables',
-        calories: 540,
-        protein: 38,
-        carbs: 62,
-        fats: 12,
-        price: 14.99,
+        name: 'Grilled Teriyaki Chicken',
+        description: 'Grilled chicken with teriyaki sauce and steamed vegetables',
+        calories: 480,
+        protein: 42,
+        carbs: 52,
+        fats: 10,
+        paymentOptions: [
+          { type: 'maroonMeal', cost: 1 },
+          { type: 'diningDollars', cost: 8.99 },
+          { type: 'realDollars', cost: 8.99 }
+        ],
         mealTime: 'lunch'
       },
       {
         id: '4-3',
-        name: 'Poke Bowl',
-        description: 'Fresh tuna poke with edamame, cucumber, and seaweed salad',
-        calories: 460,
-        protein: 36,
-        carbs: 45,
-        fats: 14,
-        price: 15.99,
-        mealTime: 'lunch'
-      },
-      {
-        id: '4-4',
-        name: 'Beef & Broccoli',
-        description: 'Lean beef with broccoli in ginger sauce, served with brown rice',
-        calories: 520,
-        protein: 42,
-        carbs: 48,
+        name: 'String Bean Chicken Breast',
+        description: 'Chicken breast wok-tossed with string beans',
+        calories: 420,
+        protein: 38,
+        carbs: 28,
         fats: 16,
-        price: 16.99,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 8.99 },
+          { type: 'realDollars', cost: 8.99 }
+        ],
         mealTime: 'dinner'
       }
     ]
   },
   {
     id: '5',
-    name: 'Mexican Cantina',
-    cuisine: 'Mexican',
+    name: 'Subway Campus',
+    cuisine: 'American',
     location: 'Downtown',
     distance: 0.6,
     rating: 4.5,
@@ -232,54 +262,54 @@ export const mockRestaurants: Restaurant[] = [
     meals: [
       {
         id: '5-1',
-        name: 'Breakfast Burrito',
-        description: 'Egg, black beans, cheese, and salsa wrapped in a whole wheat tortilla',
-        calories: 420,
-        protein: 28,
-        carbs: 45,
-        fats: 14,
-        price: 7.99,
+        name: 'Egg & Cheese Flatbread',
+        description: 'Egg whites with cheese on flatbread',
+        calories: 380,
+        protein: 26,
+        carbs: 42,
+        fats: 12,
+        paymentOptions: [
+          { type: 'maroonMeal', cost: 1 },
+          { type: 'diningDollars', cost: 5.99 },
+          { type: 'realDollars', cost: 5.99 }
+        ],
         mealTime: 'breakfast'
       },
       {
         id: '5-2',
-        name: 'Chicken Burrito Bowl',
-        description: 'Grilled chicken with rice, black beans, salsa, and guacamole',
-        calories: 580,
-        protein: 44,
-        carbs: 58,
-        fats: 18,
-        price: 11.99,
+        name: 'Turkey Breast Sub (6-inch)',
+        description: 'Oven roasted turkey with vegetables on wheat bread',
+        calories: 280,
+        protein: 18,
+        carbs: 46,
+        fats: 4,
+        paymentOptions: [
+          { type: 'maroonMeal', cost: 1 },
+          { type: 'diningDollars', cost: 6.49 },
+          { type: 'realDollars', cost: 6.49 }
+        ],
         mealTime: 'lunch'
       },
       {
         id: '5-3',
-        name: 'Fish Tacos',
-        description: 'Grilled mahi-mahi tacos with cabbage slaw and lime crema',
-        calories: 490,
-        protein: 32,
-        carbs: 52,
-        fats: 16,
-        price: 13.99,
-        mealTime: 'dinner'
-      },
-      {
-        id: '5-4',
-        name: 'Steak Fajitas',
-        description: 'Sizzling steak fajitas with peppers, onions, and tortillas',
-        calories: 620,
-        protein: 46,
+        name: 'Chicken & Bacon Ranch Sub (6-inch)',
+        description: 'Grilled chicken with bacon and ranch on wheat',
+        calories: 570,
+        protein: 36,
         carbs: 48,
         fats: 24,
-        price: 15.99,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 7.99 },
+          { type: 'realDollars', cost: 7.99 }
+        ],
         mealTime: 'dinner'
       }
     ]
   },
   {
     id: '6',
-    name: 'Italian Trattoria',
-    cuisine: 'Italian',
+    name: 'Starbucks Campus',
+    cuisine: 'American',
     location: 'Midtown',
     distance: 1.5,
     rating: 4.4,
@@ -287,91 +317,71 @@ export const mockRestaurants: Restaurant[] = [
     meals: [
       {
         id: '6-1',
-        name: 'Frittata with Spinach',
-        description: 'Italian-style egg frittata with spinach, tomatoes, and parmesan',
-        calories: 360,
-        protein: 26,
-        carbs: 18,
-        fats: 20,
-        price: 10.99,
+        name: 'Egg White & Roasted Red Pepper Wrap',
+        description: 'Egg whites with spinach and peppers in a whole wheat wrap',
+        calories: 290,
+        protein: 20,
+        carbs: 34,
+        fats: 8,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 5.45 },
+          { type: 'realDollars', cost: 5.45 }
+        ],
         mealTime: 'breakfast'
       },
       {
         id: '6-2',
-        name: 'Margherita Flatbread',
-        description: 'Thin crust with fresh mozzarella, tomatoes, and basil',
-        calories: 480,
-        protein: 24,
-        carbs: 54,
-        fats: 18,
-        price: 12.99,
+        name: 'Protein Box - Chicken & Quinoa',
+        description: 'Grilled chicken with quinoa, vegetables, and hard-boiled egg',
+        calories: 420,
+        protein: 36,
+        carbs: 38,
+        fats: 14,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 7.95 },
+          { type: 'realDollars', cost: 7.95 }
+        ],
         mealTime: 'lunch'
-      },
-      {
-        id: '6-3',
-        name: 'Chicken Parmesan (Lighter Version)',
-        description: 'Grilled chicken with marinara and part-skim mozzarella, side salad',
-        calories: 560,
-        protein: 48,
-        carbs: 42,
-        fats: 20,
-        price: 16.99,
-        mealTime: 'dinner'
-      },
-      {
-        id: '6-4',
-        name: 'Pasta Primavera with Shrimp',
-        description: 'Whole wheat pasta with grilled shrimp and seasonal vegetables',
-        calories: 520,
-        protein: 35,
-        carbs: 58,
-        fats: 16,
-        price: 17.99,
-        mealTime: 'dinner'
       }
     ]
   },
   {
     id: '7',
-    name: 'Morning Glory Cafe',
-    cuisine: 'American',
+    name: 'Pizza Place Campus',
+    cuisine: 'Italian',
     location: 'Uptown',
     distance: 1.8,
-    rating: 4.7,
+    rating: 4.3,
     priceRange: '$',
     meals: [
       {
         id: '7-1',
-        name: 'Oatmeal Power Bowl',
-        description: 'Steel-cut oats with protein powder, banana, and almond butter',
-        calories: 400,
-        protein: 28,
-        carbs: 52,
-        fats: 12,
-        price: 8.99,
-        mealTime: 'breakfast'
+        name: 'Veggie Pizza (2 slices)',
+        description: 'Thin crust pizza with vegetables and light cheese',
+        calories: 480,
+        protein: 22,
+        carbs: 62,
+        fats: 16,
+        paymentOptions: [
+          { type: 'diningDollars', cost: 6.99 },
+          { type: 'realDollars', cost: 6.99 }
+        ],
+        mealTime: 'lunch'
       },
       {
         id: '7-2',
-        name: 'Avocado Toast with Eggs',
-        description: 'Whole grain toast with avocado, poached eggs, and cherry tomatoes',
-        calories: 380,
-        protein: 24,
-        carbs: 38,
-        fats: 16,
-        price: 9.99,
-        mealTime: 'breakfast'
-      },
-      {
-        id: '7-3',
-        name: 'Turkey Club Wrap',
-        description: 'Turkey breast, bacon, lettuce, tomato in a whole wheat wrap',
-        calories: 520,
-        protein: 42,
-        carbs: 44,
+        name: 'Grilled Chicken Pizza (2 slices)',
+        description: 'Thin crust with grilled chicken and vegetables',
+        calories: 540,
+        protein: 38,
+        carbs: 58,
         fats: 18,
-        price: 11.99,
-        mealTime: 'lunch'
+        paymentOptions: [
+          { type: 'maroonMeal', cost: 1 },
+          { type: 'diningDollars', cost: 7.99 },
+          { type: 'realDollars', cost: 7.99 }
+        ],
+        mealTime: 'dinner'
       }
     ]
   }
@@ -383,7 +393,6 @@ export const cuisineTypes = [
   'Mediterranean',
   'Health Food',
   'Asian',
-  'Mexican',
   'Italian'
 ];
 

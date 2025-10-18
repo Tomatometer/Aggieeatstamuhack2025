@@ -5,8 +5,31 @@ export interface DietGoals {
   fats: number;
 }
 
+export type PaymentType = 'mealSwipe' | 'diningDollars' | 'maroonMeal' | 'realDollars';
+
+export interface PaymentOption {
+  type: PaymentType;
+  cost: number;
+}
+
+export interface Budget {
+  mealSwipes: number;
+  maroonMeals: number;
+  diningDollars: number;
+  realDollars: number;
+}
+
+export interface MacroThresholds {
+  calories: number; // percentage (e.g., 10 means ±10%)
+  protein: number;
+  carbs: number;
+  fats: number;
+}
+
 export interface UserPreferences {
   dietGoals: DietGoals;
+  macroThresholds: MacroThresholds;
+  budget: Budget;
   location: string;
   mood: string;
   radius?: number;
@@ -22,21 +45,26 @@ export interface Meal {
   protein: number;
   carbs: number;
   fats: number;
-  price: number;
+  paymentOptions: PaymentOption[];
   mealTime: MealTime;
   restaurantName?: string;
+  isDiningHall?: boolean;
   image?: string;
 }
 
+export interface MealWithPayment extends Meal {
+  selectedPayment: PaymentOption;
+}
+
 export interface DailyMealPlan {
-  breakfast: Meal;
-  lunch: Meal;
-  dinner: Meal;
+  breakfast: MealWithPayment;
+  lunch: MealWithPayment;
+  dinner: MealWithPayment;
   totalCalories: number;
   totalProtein: number;
   totalCarbs: number;
   totalFats: number;
-  totalPrice: number;
+  budgetUsed: Budget;
 }
 
 export interface Restaurant {

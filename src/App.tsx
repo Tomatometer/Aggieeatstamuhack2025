@@ -1,111 +1,33 @@
 import { useState } from 'react';
 import { DietGoalsForm } from './components/DietGoalsForm';
 import { DailyMealPlanComponent } from './components/DailyMealPlan';
-import { UserPreferences, DailyMealPlan, Meal } from './types';
-import { mockRestaurants } from './data/mockData';
+import { UserPreferences, DailyMealPlan } from './types';
+import { findOptimalMealPlan } from './utils/mealSelector';
 import { Utensils } from 'lucide-react';
+import { Button } from './components/ui/button';
 
 export default function App() {
   const [preferences, setPreferences] = useState<UserPreferences | null>(null);
   const [mealPlan, setMealPlan] = useState<DailyMealPlan | null>(null);
-
-  const findOptimalMealPlan = (prefs: UserPreferences): DailyMealPlan | null => {
-    // Get all meals from restaurants
-    let allMeals: Meal[] = [];
-    mockRestaurants.forEach((restaurant) => {
-      restaurant.meals.forEach((meal) => {
-        allMeals.push({
-          ...meal,
-          restaurantName: restaurant.name
-        });
-      });
-    });
-
-    // Filter by location if not "No Preference"
-    if (prefs.location !== 'No Preference') {
-      const restaurantIds = mockRestaurants
-        .filter((r) => r.location === prefs.location)
-        .map((r) => r.id);
-      allMeals = allMeals.filter((meal) => {
-        const restaurantId = meal.id.split('-')[0];
-        return restaurantIds.includes(restaurantId);
-      });
-    }
-
-    // Filter by cuisine if not "All Cuisines"
-    if (prefs.mood !== 'All Cuisines') {
-      const restaurantIds = mockRestaurants
-        .filter((r) => r.cuisine === prefs.mood)
-        .map((r) => r.id);
-      allMeals = allMeals.filter((meal) => {
-        const restaurantId = meal.id.split('-')[0];
-        return restaurantIds.includes(restaurantId);
-      });
-    }
-
-    // Separate meals by time
-    const breakfastMeals = allMeals.filter((m) => m.mealTime === 'breakfast');
-    const lunchMeals = allMeals.filter((m) => m.mealTime === 'lunch');
-    const dinnerMeals = allMeals.filter((m) => m.mealTime === 'dinner');
-
-    if (breakfastMeals.length === 0 || lunchMeals.length === 0 || dinnerMeals.length === 0) {
-      return null;
-    }
-
-    // Find the best combination of 3 meals
-    let bestPlan: DailyMealPlan | null = null;
-    let bestScore = Infinity;
-
-    for (const breakfast of breakfastMeals) {
-      for (const lunch of lunchMeals) {
-        for (const dinner of dinnerMeals) {
-          const totalCalories = breakfast.calories + lunch.calories + dinner.calories;
-          const totalProtein = breakfast.protein + lunch.protein + dinner.protein;
-          const totalCarbs = breakfast.carbs + lunch.carbs + dinner.carbs;
-          const totalFats = breakfast.fats + lunch.fats + dinner.fats;
-
-          // Calculate how close this combination is to the target
-          const caloriesDiff = Math.abs(totalCalories - prefs.dietGoals.calories);
-          const proteinDiff = Math.abs(totalProtein - prefs.dietGoals.protein);
-          const carbsDiff = Math.abs(totalCarbs - prefs.dietGoals.carbs);
-          const fatsDiff = Math.abs(totalFats - prefs.dietGoals.fats);
-
-          // Weighted score (protein and calories are more important)
-          const score =
-            caloriesDiff * 0.4 +
-            proteinDiff * 0.3 +
-            carbsDiff * 0.2 +
-            fatsDiff * 0.1;
-
-          if (score < bestScore) {
-            bestScore = score;
-            bestPlan = {
-              breakfast,
-              lunch,
-              dinner,
-              totalCalories,
-              totalProtein,
-              totalCarbs,
-              totalFats,
-              totalPrice: breakfast.price + lunch.price + dinner.price
-            };
-          }
-        }
-      }
-    }
-
-    return bestPlan;
-  };
+  const [showNoResults, setShowNoResults] = useState(false);
 
   const handlePreferencesSubmit = (newPreferences: UserPreferences) => {
     setPreferences(newPreferences);
     const plan = findOptimalMealPlan(newPreferences);
-    setMealPlan(plan);
+    
+    if (plan) {
+      setMealPlan(plan);
+      setShowNoResults(false);
+    } else {
+      setMealPlan(null);
+      setShowNoResults(true);
+    }
   };
 
   const handleBack = () => {
-    setPreferences(null);
+    // Don't clear preferences - just reset the view state
     setMealPlan(null);
+    setShowNoResults(false);
   };
 
   return (
@@ -117,31 +39,48 @@ export default function App() {
             <h1>Macro Match</h1>
           </div>
           <p className="text-muted-foreground mt-2">
-            Find the perfect 3-meal plan that matches your daily macro goals
+            Find the perfect 3-meal plan that matches your daily macro goals and budget
           </p>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        {!preferences || !mealPlan ? (
-          <DietGoalsForm onSubmit={handlePreferencesSubmit} />
+        {!mealPlan && !showNoResults ? (
+          <DietGoalsForm 
+            onSubmit={handlePreferencesSubmit} 
+            initialPreferences={preferences}
+          />
         ) : mealPlan ? (
           <DailyMealPlanComponent
             mealPlan={mealPlan}
             dietGoals={preferences.dietGoals}
             onBack={handleBack}
           />
-        ) : (
+        ) : showNoResults ? (
           <div className="max-w-2xl mx-auto text-center py-12">
-            <p className="text-muted-foreground">
-              Sorry, we couldn't find a meal combination that matches your preferences.
-              Please try adjusting your filters.
-            </p>
-            <button onClick={handleBack} className="mt-4">
-              Try Again
-            </button>
+            <div className="mb-6">
+              <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
+                <Utensils className="w-8 h-8 text-muted-foreground" />
+              </div>
+              <h2 className="mb-2">No Meals Found</h2>
+              <p className="text-muted-foreground">
+                Sorry, there are no meals within your preferences. Please try adjusting your filters.
+              </p>
+            </div>
+            <div className="space-y-2 text-sm text-muted-foreground mb-6">
+              <p>Try these adjustments:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Increase your macro thresholds to allow more flexibility</li>
+                <li>Adjust your budget to include more payment options</li>
+                <li>Change your location preference to "No Preference"</li>
+                <li>Select "All Cuisines" for more meal options</li>
+              </ul>
+            </div>
+            <Button onClick={handleBack}>
+              Adjust Preferences
+            </Button>
           </div>
-        )}
+        ) : null}
       </main>
 
       <footer className="border-t mt-12">
