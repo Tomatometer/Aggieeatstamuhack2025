@@ -1,0 +1,457 @@
+{
+  "status": "success",
+  "request_time": "2025-10-18T12:00:00Z",
+  "location": {
+    "id": "shake-smart-tcu-001",
+    "name": "Shake Smart - TCU",
+    "address": "3005 Stadium Dr, Fort Worth, TX 76109",
+    "venue": "Recreation Center",
+    "date": "2025-10-18"
+  },
+  "periods": [
+    {
+      "id": "all-day",
+      "name": "All Day",
+      "start_time": "07:00:00",
+      "end_time": "22:00:00"
+    }
+  ],
+  "menu": {
+    "periods": {
+      "all-day": {
+        "categories": [
+          {
+            "id": "protein-shakes",
+            "name": "Protein Shakes",
+            "sort_order": 1,
+            "description": "At least 30g of protein per shake. Made with organic agave nectar.",
+            "subcategories": [
+              {
+                "id": "classic-shakes",
+                "name": "Classic Shakes",
+                "items": [
+                  {
+                    "id": "vanilla-thrilla",
+                    "name": "Vanilla Thrilla",
+                    "description": "The bean that gets you lean!",
+                    "base_calories": "350",
+                    "protein": "30g+",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  },
+                  {
+                    "id": "chocolate-shake",
+                    "name": "Chocolate",
+                    "description": "Classic chocolate protein shake",
+                    "base_calories": "360",
+                    "protein": "30g+",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  },
+                  {
+                    "id": "strawberry-shake",
+                    "name": "Strawberry",
+                    "description": "Fresh strawberry protein shake",
+                    "base_calories": "340",
+                    "protein": "30g+",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  },
+                  {
+                    "id": "peanut-butter-shake",
+                    "name": "Peanut Butter",
+                    "description": "Rich peanut butter protein shake",
+                    "base_calories": "420",
+                    "protein": "32g+",
+                    "allergens": ["dairy", "peanuts"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  },
+                  {
+                    "id": "cookies-cream-shake",
+                    "name": "Cookies & Cream",
+                    "description": "Cookies and cream protein shake",
+                    "base_calories": "380",
+                    "protein": "30g+",
+                    "allergens": ["dairy", "wheat", "gluten"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  }
+                ]
+              },
+              {
+                "id": "green-shakes",
+                "name": "Green Shakes",
+                "description": "Shakes with added spinach and superfoods",
+                "items": [
+                  {
+                    "id": "green-machine",
+                    "name": "Green Machine",
+                    "description": "Spinach, banana, pineapple, and vanilla protein",
+                    "base_calories": "330",
+                    "protein": "30g+",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  },
+                  {
+                    "id": "tropical-green",
+                    "name": "Tropical Green",
+                    "description": "Spinach, mango, pineapple, and vanilla protein",
+                    "base_calories": "340",
+                    "protein": "30g+",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  }
+                ]
+              },
+              {
+                "id": "exotic-shakes",
+                "name": "Exotic Shakes",
+                "description": "Unique flavor combinations",
+                "items": [
+                  {
+                    "id": "perfect-10",
+                    "name": "Perfect 10",
+                    "description": "One of our most popular protein shakes",
+                    "base_calories": "370",
+                    "protein": "30g+",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  },
+                  {
+                    "id": "acai-berry-shake",
+                    "name": "Acai Berry",
+                    "description": "Acai, mixed berries, and vanilla protein",
+                    "base_calories": "350",
+                    "protein": "30g+",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  },
+                  {
+                    "id": "pitaya-passion",
+                    "name": "Pitaya Passion",
+                    "description": "Dragon fruit, strawberry, and vanilla protein",
+                    "base_calories": "345",
+                    "protein": "30g+",
+                    "allergens": ["dairy"],
+                    "dietary_flags": ["vegetarian", "high-protein"],
+                    "customizable": true
+                  }
+                ]
+              }
+            ],
+            "customization_options": {
+              "add_ins": [
+                {
+                  "id": "peanut-butter",
+                  "name": "Peanut Butter",
+                  "calories_added": "100",
+                  "allergens": ["peanuts"]
+                },
+                {
+                  "id": "almond-butter",
+                  "name": "Almond Butter",
+                  "calories_added": "100",
+                  "allergens": ["tree nuts"]
+                },
+                {
+                  "id": "spinach",
+                  "name": "Spinach",
+                  "calories_added": "5",
+                  "allergens": []
+                },
+                {
+                  "id": "chia-seeds",
+                  "name": "Chia Seeds",
+                  "calories_added": "60",
+                  "allergens": []
+                },
+                {
+                  "id": "superfood",
+                  "name": "Superfood",
+                  "calories_added": "15",
+                  "allergens": []
+                },
+                {
+                  "id": "banana",
+                  "name": "Banana",
+                  "calories_added": "105",
+                  "allergens": []
+                },
+                {
+                  "id": "blueberries",
+                  "name": "Blueberries",
+                  "calories_added": "45",
+                  "allergens": []
+                },
+                {
+                  "id": "pineapple",
+                  "name": "Pineapple",
+                  "calories_added": "40",
+                  "allergens": []
+                },
+                {
+                  "id": "pitaya",
+                  "name": "Pitaya (Dragon Fruit)",
+                  "calories_added": "30",
+                  "allergens": []
+                }
+              ],
+              "modifications": [
+                {
+                  "id": "no-agave",
+                  "name": "No Agave",
+                  "calories_reduced": "120",
+                  "description": "Remove organic agave sweetener"
+                },
+                {
+                  "id": "half-agave",
+                  "name": "Half Agave",
+                  "calories_reduced": "60",
+                  "description": "Reduce agave sweetener by 50%"
+                },
+                {
+                  "id": "almond-milk",
+                  "name": "Almond Milk",
+                  "calories_reduced": "20-40",
+                  "description": "Substitute with almond milk"
+                },
+                {
+                  "id": "make-it-a-bowl",
+                  "name": "Make It A Bowl",
+                  "calories_added": "150",
+                  "description": "Turn any shake into a bowl topped with granola"
+                }
+              ]
+            }
+          },
+          {
+            "id": "acai-bowls",
+            "name": "Organic Acai Bowls",
+            "sort_order": 2,
+            "description": "Scooped and blended acai bowls with various toppings",
+            "items": [
+              {
+                "id": "rawcai-bowl",
+                "name": "Rawcai",
+                "description": "Scoops of organic acai and strawberry topped with granola, banana slices, chia and coconut flakes",
+                "base_calories": "380",
+                "protein": "8g",
+                "allergens": [],
+                "dietary_flags": ["vegan", "organic"]
+              },
+              {
+                "id": "raw-pb-bowl",
+                "name": "Raw-PB",
+                "description": "Scoops of organic acai topped with granola, banana slices, dark chocolate and peanut butter",
+                "base_calories": "480",
+                "protein": "12g",
+                "allergens": ["peanuts"],
+                "dietary_flags": ["vegan", "organic"]
+              },
+              {
+                "id": "buzz-bowl",
+                "name": "The Buzz Bowl",
+                "description": "Scoops of organic acai, pitaya and pineapple topped with granola, coconut flakes and bee pollen",
+                "base_calories": "360",
+                "protein": "7g",
+                "allergens": [],
+                "dietary_flags": ["vegetarian", "organic"]
+              },
+              {
+                "id": "organic-acai-bowl",
+                "name": "Organic Acai Bowl",
+                "description": "Organic acai, strawberry, apple juice and protein topped with granola, coconut flakes and banana slices",
+                "base_calories": "420",
+                "protein": "30g",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "organic", "high-protein"]
+              },
+              {
+                "id": "pba-bowl",
+                "name": "PB&A",
+                "description": "Organic acai, strawberry, peanut butter, almond milk and protein topped with granola, dark chocolate and banana slices",
+                "base_calories": "520",
+                "protein": "32g",
+                "allergens": ["peanuts", "dairy"],
+                "dietary_flags": ["vegetarian", "organic", "high-protein"]
+              },
+              {
+                "id": "dragon-bowl",
+                "name": "Dragon Bowl",
+                "description": "Pitaya, pineapple, OJ and vanilla protein topped with granola, chia and coconut flakes",
+                "base_calories": "410",
+                "protein": "30g",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "organic", "high-protein"]
+              }
+            ]
+          },
+          {
+            "id": "cold-brew",
+            "name": "Cold Brew Coffee",
+            "sort_order": 3,
+            "items": [
+              {
+                "id": "classic-cold-brew",
+                "name": "Classic Cold Brew",
+                "description": "Smooth cold brew coffee",
+                "calories": "5",
+                "size_options": ["12oz", "16oz", "20oz"],
+                "allergens": [],
+                "dietary_flags": ["vegan"]
+              },
+              {
+                "id": "vanilla-cold-brew",
+                "name": "Vanilla Cold Brew",
+                "description": "Cold brew with vanilla",
+                "calories": "45",
+                "size_options": ["12oz", "16oz", "20oz"],
+                "allergens": [],
+                "dietary_flags": ["vegan"]
+              },
+              {
+                "id": "mocha-cold-brew",
+                "name": "Mocha Cold Brew",
+                "description": "Cold brew with chocolate",
+                "calories": "60",
+                "size_options": ["12oz", "16oz", "20oz"],
+                "allergens": [],
+                "dietary_flags": ["vegan"]
+              },
+              {
+                "id": "caramel-cold-brew",
+                "name": "Caramel Cold Brew",
+                "description": "Cold brew with caramel",
+                "calories": "50",
+                "size_options": ["12oz", "16oz", "20oz"],
+                "allergens": [],
+                "dietary_flags": ["vegan"]
+              }
+            ]
+          },
+          {
+            "id": "oatmeal-overnight-oats",
+            "name": "Oatmeal & Overnight Oats",
+            "sort_order": 4,
+            "items": [
+              {
+                "id": "wholly-oatmeal",
+                "name": "Wholly Oatmeal",
+                "description": "Hot oatmeal with your choice of toppings",
+                "base_calories": "300",
+                "protein": "10g",
+                "allergens": ["gluten"],
+                "dietary_flags": ["vegetarian"],
+                "topping_options": ["banana", "berries", "honey", "brown sugar", "cinnamon", "nuts"]
+              },
+              {
+                "id": "overnight-oats-original",
+                "name": "Overnight Oats - Original",
+                "description": "Cold soaked oats ready to eat",
+                "calories": "320",
+                "protein": "12g",
+                "allergens": ["gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "overnight-oats-pb",
+                "name": "Overnight Oats - Peanut Butter",
+                "description": "Cold soaked oats with peanut butter",
+                "calories": "420",
+                "protein": "16g",
+                "allergens": ["gluten", "dairy", "peanuts"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "overnight-oats-berry",
+                "name": "Overnight Oats - Berry",
+                "description": "Cold soaked oats with mixed berries",
+                "calories": "340",
+                "protein": "12g",
+                "allergens": ["gluten", "dairy"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          },
+          {
+            "id": "food-items",
+            "name": "Food Items",
+            "sort_order": 5,
+            "items": [
+              {
+                "id": "pb-banana-sandwich",
+                "name": "Peanut Butter & Banana Sandwich",
+                "description": "All-natural peanut butter and banana on whole wheat",
+                "calories": "380",
+                "protein": "14g",
+                "allergens": ["peanuts", "wheat", "gluten"],
+                "dietary_flags": ["vegetarian"]
+              },
+              {
+                "id": "turks-matoes-wrap",
+                "name": "Turks and Matoes Wrap",
+                "description": "Turkey wrap with pesto, tomatoes, and spinach",
+                "calories": "420",
+                "protein": "28g",
+                "allergens": ["wheat", "gluten", "dairy"],
+                "dietary_flags": []
+              },
+              {
+                "id": "greek-yogurt",
+                "name": "Greek Yogurt",
+                "description": "Plain or flavored Greek yogurt",
+                "calories": "150",
+                "protein": "15g",
+                "allergens": ["dairy"],
+                "dietary_flags": ["vegetarian", "high-protein"]
+              },
+              {
+                "id": "protein-balls",
+                "name": "Protein Balls",
+                "description": "Energy bites with oats and protein",
+                "calories": "180",
+                "protein": "8g",
+                "allergens": ["gluten", "tree nuts"],
+                "dietary_flags": ["vegetarian"]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "brand": "Shake Smart",
+    "description": "Student-founded concept created for on-the-go college lifestyle. Specializing in protein shakes, acai bowls, cold brew, and healthy meal options.",
+    "nutrition_notes": [
+      "At least 30g of protein in each shake",
+      "Made with organic agave nectar (can be removed or reduced)",
+      "Customizable ingredients available",
+      "Agave contains approximately 60 calories per tablespoon (2 tbsp used per shake)",
+      "Any smoothie can be made into a bowl"
+    ],
+    "dietary_accommodations": ["Vegan options available", "Lactose-free modifications", "Gluten-aware options"],
+    "hours": {
+      "monday": "07:00 AM - 10:00 PM",
+      "tuesday": "07:00 AM - 10:00 PM",
+      "wednesday": "07:00 AM - 10:00 PM",
+      "thursday": "07:00 AM - 10:00 PM",
+      "friday": "07:00 AM - 09:00 PM",
+      "saturday": "09:00 AM - 09:00 PM",
+      "sunday": "09:00 AM - 09:00 PM"
+    },
+    "contact": {
+      "phone": "(512) 222-8915",
+      "website": "https://shakesmart.com"
+    },
+    "copyright": "© 2025 Shake Smart, Inc. All Rights Reserved"
+  }
+}
