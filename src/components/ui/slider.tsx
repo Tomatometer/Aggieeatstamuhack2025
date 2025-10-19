@@ -53,18 +53,18 @@ function Slider({
       </SliderPrimitive.Track>
       {Array.from({ length: _values.length }, (_, index) => (
         <SliderPrimitive.Thumb
-          data-slot="slider-thumb"
-          key={index}
-          className="block shrink-0 transition-transform hover:scale-110 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
-          style={{
-            width: '40px',
-            height: '40px',
-            backgroundImage: `url(${dogImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            cursor: 'grab'
-          }}
-        />
+data-slot="slider-thumb"
+key={index}
+className="absolute -translate-x-1/2 -translate-y-1/2 transition-transform hover:scale-110 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+style={{
+width: '40px',
+height: '40px',
+backgroundImage: `url(${dogImage})`,
+backgroundSize: 'cover',
+backgroundPosition: 'center',
+cursor: 'grab',
+}}
+/>
       ))}
     </SliderPrimitive.Root>
   );

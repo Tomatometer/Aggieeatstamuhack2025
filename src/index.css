@@ -2,6 +2,9 @@
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *, :before, :after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
       --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
       --tw-border-style: solid;
@@ -39,9 +42,6 @@
       --tw-scale-x: 1;
       --tw-scale-y: 1;
       --tw-scale-z: 1;
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-translate-z: 0;
     }
   }
 }
@@ -683,6 +683,16 @@
     transform-origin: var(--radix-select-content-transform-origin);
   }
 
+  .-translate-x-1\/2 {
+    --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
+  .-translate-y-1\/2 {
+    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+
   .animate-pulse {
     animation: var(--animate-pulse);
   }
@@ -880,6 +890,10 @@
 
   .border-transparent {
     border-color: #0000;
+  }
+
+  .bg-\[\#FFF4E6\] {
+    background-color: #fff4e6;
   }
 
   .bg-background {
@@ -1086,10 +1100,6 @@
 
   .text-card-foreground {
     color: var(--card-foreground);
-  }
-
-  .text-current {
-    color: currentColor;
   }
 
   .text-foreground {
@@ -1384,16 +1394,9 @@
     }
   }
 
-  .focus-visible\:outline-hidden:focus-visible {
+  .focus-visible\:outline-none:focus-visible {
     --tw-outline-style: none;
     outline-style: none;
-  }
-
-  @media (forced-colors: active) {
-    .focus-visible\:outline-hidden:focus-visible {
-      outline-offset: 2px;
-      outline: 2px solid #0000;
-    }
   }
 
   .disabled\:pointer-events-none:disabled {
@@ -1859,6 +1862,24 @@ html {
   font-size: var(--font-size);
 }
 
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
 @property --tw-space-y-reverse {
   syntax: "*";
   inherits: false;
@@ -2059,24 +2080,6 @@ html {
   syntax: "*";
   inherits: false;
   initial-value: 1;
-}
-
-@property --tw-translate-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-
-@property --tw-translate-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-
-@property --tw-translate-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
 }
 
 @keyframes spin {

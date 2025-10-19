@@ -99,7 +99,7 @@ export default function App() {
           <div className="max-w-2xl mx-auto text-center py-12">
             <div className="mb-6">
               <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                <Utensils className="w-8 h-8" style={{ color: '#D6D3C4' }} />
+                <Utensils className="w-8 h-8" style={{ 'color': '#000000'}} />
               </div>
               <h2 className="mb-2" style={{ color: '#D6D3C4' }}>No Meals Found</h2>
               <p style={{ color: '#D6D3C4' }}>
@@ -122,7 +122,7 @@ export default function App() {
       </main>
 
       <footer className="border-t mt-12">
-        <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
+        <div className="container mx-auto px-4 py-6 text-center text-sm" style={{ 'color': '#000000'}}>
           <p>Aggie Eats - Meal planning created by Aggies, for Aggies</p>
         </div>
       </footer>
