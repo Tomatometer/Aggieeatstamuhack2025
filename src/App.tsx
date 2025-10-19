@@ -49,10 +49,10 @@ export default function App() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center gap-3">
             <Utensils className="w-8 h-8" />
-            <h1>Macro Match</h1>
+            <h1>AggieEats!</h1>
           </div>
           <p className="text-muted-foreground mt-2">
-            Find the perfect 3-meal plan that matches your daily macro goals and budget
+            Find the perfect 3-meal plan that matches your daily macro goals. Gig - Em!
           </p>
         </div>
       </header>
@@ -123,7 +123,7 @@ export default function App() {
 
       <footer className="border-t mt-12">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
-          <p>Macro Match - Your personalized daily meal planning assistant</p>
+          <p>Aggie Eats - Meal planning created by Aggies, for Aggies</p>
         </div>
       </footer>
     </div>
