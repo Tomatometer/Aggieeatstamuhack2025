@@ -5,9 +5,10 @@ import { Label } from './ui/label';
 import { Button } from './ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Slider } from './ui/slider';
-import { UserPreferences } from '../types';
+import { Checkbox } from './ui/checkbox';
+import { UserPreferences, Allergen, DietaryPreference } from '../types';
 import { locations } from '../data/mockData';
-import { Target, MapPin, Wallet, SlidersHorizontal } from 'lucide-react';
+import { Target, MapPin, Wallet, SlidersHorizontal, AlertCircle, Leaf } from 'lucide-react';
 
 interface DietGoalsFormProps {
   onSubmit: (preferences: UserPreferences) => void;
@@ -29,6 +30,14 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
   );
   const [location, setLocation] = useState<string>(
     initialPreferences?.location || 'No Preference'
+  );
+
+  // Allergies and dietary preferences states
+  const [selectedAllergies, setSelectedAllergies] = useState<Allergen[]>(
+    initialPreferences?.allergies || []
+  );
+  const [selectedDietaryPreferences, setSelectedDietaryPreferences] = useState<DietaryPreference[]>(
+    initialPreferences?.dietaryPreferences || []
   );
 
   // Budget states
@@ -59,6 +68,40 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
     initialPreferences?.macroThresholds.fats || 15
   ]);
 
+  const allergenOptions: { value: Allergen; label: string }[] = [
+    { value: 'dairy', label: 'Dairy' },
+    { value: 'eggs', label: 'Eggs' },
+    { value: 'fish', label: 'Fish' },
+    { value: 'shellfish', label: 'Shellfish' },
+    { value: 'treeNuts', label: 'Tree Nuts' },
+    { value: 'peanuts', label: 'Peanuts' },
+    { value: 'wheat', label: 'Wheat' },
+    { value: 'soy', label: 'Soy' },
+  ];
+
+  const dietaryPreferenceOptions: { value: DietaryPreference; label: string }[] = [
+    { value: 'vegetarian', label: 'Vegetarian' },
+    { value: 'vegan', label: 'Vegan' },
+    { value: 'halal', label: 'Halal' },
+    { value: 'glutenFree', label: 'Gluten Free' },
+  ];
+
+  const toggleAllergen = (allergen: Allergen) => {
+    setSelectedAllergies((prev) =>
+      prev.includes(allergen)
+        ? prev.filter((a) => a !== allergen)
+        : [...prev, allergen]
+    );
+  };
+
+  const toggleDietaryPreference = (preference: DietaryPreference) => {
+    setSelectedDietaryPreferences((prev) =>
+      prev.includes(preference)
+        ? prev.filter((p) => p !== preference)
+        : [...prev, preference]
+    );
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -81,7 +124,9 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
         diningDollars: parseFloat(diningDollars) || 0,
         realDollars: parseFloat(realDollars) || 0
       },
-      location
+      location,
+      allergies: selectedAllergies,
+      dietaryPreferences: selectedDietaryPreferences
     };
     
     onSubmit(preferences);
@@ -280,6 +325,60 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
               ))}
             </SelectContent>
           </Select>
+        </div>
+
+        <div>
+          <h2 className="flex items-center gap-2 mb-4">
+            <AlertCircle className="w-5 h-5" />
+            Allergies
+          </h2>
+          <p className="text-sm text-muted-foreground mb-3">
+            Select any allergies to avoid meals containing these ingredients
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            {allergenOptions.map((option) => (
+              <div key={option.value} className="flex items-center space-x-2">
+                <Checkbox
+                  id={`allergen-${option.value}`}
+                  checked={selectedAllergies.includes(option.value)}
+                  onCheckedChange={() => toggleAllergen(option.value)}
+                />
+                <label
+                  htmlFor={`allergen-${option.value}`}
+                  className="text-sm cursor-pointer"
+                >
+                  {option.label}
+                </label>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="flex items-center gap-2 mb-4">
+            <Leaf className="w-5 h-5" />
+            Dietary Preferences
+          </h2>
+          <p className="text-sm text-muted-foreground mb-3">
+            Select dietary preferences - only meals matching ALL selected preferences will be shown
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            {dietaryPreferenceOptions.map((option) => (
+              <div key={option.value} className="flex items-center space-x-2">
+                <Checkbox
+                  id={`dietary-${option.value}`}
+                  checked={selectedDietaryPreferences.includes(option.value)}
+                  onCheckedChange={() => toggleDietaryPreference(option.value)}
+                />
+                <label
+                  htmlFor={`dietary-${option.value}`}
+                  className="text-sm cursor-pointer"
+                >
+                  {option.label}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
 
         <Button type="submit" className="w-full">

@@ -187,3 +187,14 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Animation delays for loading screen */
+@layer utilities {
+  .delay-100 {
+    animation-delay: 150ms;
+  }
+  
+  .delay-200 {
+    animation-delay: 300ms;
+  }
+}

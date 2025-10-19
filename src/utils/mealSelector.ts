@@ -9,7 +9,10 @@ import {
   MealComponent,
   Macros,
   MealTime,
-  ComponentCategory
+  ComponentCategory,
+  Dish,
+  Allergen,
+  DietaryPreference
 } from '../types';
 import { mockDiningLocations } from '../data/mockData';
 
@@ -114,8 +117,11 @@ export function findOptimalMealPlans(preferences: UserPreferences, maxPlans: num
     return scoreA - scoreB;
   });
 
+  // Remove duplicate meal plans (same meals with different payment types)
+  const uniquePlans = removeDuplicateMealPlans(validPlans);
+
   // Return up to maxPlans meal plans
-  return validPlans.slice(0, maxPlans);
+  return uniquePlans.slice(0, maxPlans);
 }
 
 /**
@@ -148,7 +154,9 @@ function generateMealOptions(
     } else {
       // Restaurant - add individual dishes
       const restaurant = location as Restaurant;
-      const dishes = restaurant.dishes.filter((d) => d.mealTimes.includes(mealTime));
+      const dishes = restaurant.dishes.filter((d) => 
+        d.mealTimes.includes(mealTime) && isDishAcceptable(d, preferences)
+      );
 
       for (const dish of dishes) {
         // Try each available payment option
@@ -224,8 +232,13 @@ function generateStationCombinations(
 ): SelectedMeal[] {
   const validMeals: SelectedMeal[] = [];
 
+  // Filter components based on allergies and dietary preferences
+  const acceptableComponents = station.components.filter(component => 
+    isComponentAcceptable(component, preferences)
+  );
+
   // Group components by category
-  const componentsByCategory = groupComponentsByCategory(station.components);
+  const componentsByCategory = groupComponentsByCategory(acceptableComponents);
 
   // Generate valid combinations based on global rules
   const combinations = generateValidCombinations(componentsByCategory, targetMacros);
@@ -491,4 +504,140 @@ function isWithinBudget(used: Budget, available: Budget): boolean {
     used.diningDollars <= available.diningDollars &&
     used.realDollars <= available.realDollars
   );
+}
+
+/**
+ * Check if a dish contains any of the user's allergens
+ */
+function containsAllergen(allergens: Allergen[], userAllergens: Allergen[]): boolean {
+  if (userAllergens.length === 0) return false;
+  return allergens.some(allergen => userAllergens.includes(allergen));
+}
+
+/**
+ * Check if a dish/component meets ALL of the user's dietary preferences
+ */
+function meetsDietaryPreferences(
+  itemPreferences: DietaryPreference[],
+  userPreferences: DietaryPreference[]
+): boolean {
+  if (userPreferences.length === 0) return true;
+  // Item must have ALL of the user's dietary preferences
+  return userPreferences.every(pref => itemPreferences.includes(pref));
+}
+
+/**
+ * Check if a dish is acceptable based on user's allergies and dietary preferences
+ */
+function isDishAcceptable(dish: Dish, preferences: UserPreferences): boolean {
+  // Reject if contains allergens
+  if (containsAllergen(dish.allergens, preferences.allergies)) {
+    return false;
+  }
+  
+  // Reject if doesn't meet dietary preferences
+  if (!meetsDietaryPreferences(dish.dietaryPreferences, preferences.dietaryPreferences)) {
+    return false;
+  }
+  
+  return true;
+}
+
+/**
+ * Check if a meal component is acceptable based on user's allergies and dietary preferences
+ */
+function isComponentAcceptable(component: MealComponent, preferences: UserPreferences): boolean {
+  // Reject if contains allergens
+  if (containsAllergen(component.allergens, preferences.allergies)) {
+    return false;
+  }
+  
+  // Reject if doesn't meet dietary preferences
+  if (!meetsDietaryPreferences(component.dietaryPreferences, preferences.dietaryPreferences)) {
+    return false;
+  }
+  
+  return true;
+}
+
+/**
+ * Generate a unique signature for a selected meal (ignoring payment type)
+ * This allows us to identify duplicate meals with different payment methods
+ */
+function getMealSignature(meal: SelectedMeal): string {
+  const locationId = meal.location.id;
+  
+  if (meal.dish) {
+    // Restaurant meal - use location + dish ID
+    return `${locationId}:${meal.dish.id}`;
+  } else if (meal.selectedComponents) {
+    // Dining hall meal - use location + sorted component IDs
+    const componentIds = meal.selectedComponents
+      .map(c => c.id)
+      .sort()
+      .join(',');
+    return `${locationId}:${componentIds}`;
+  }
+  
+  return locationId;
+}
+
+/**
+ * Generate a unique signature for a daily meal plan (ignoring payment types)
+ */
+function getMealPlanSignature(plan: DailyMealPlan): string {
+  const breakfastSig = getMealSignature(plan.breakfast);
+  const lunchSig = getMealSignature(plan.lunch);
+  const dinnerSig = getMealSignature(plan.dinner);
+  
+  return `${breakfastSig}|${lunchSig}|${dinnerSig}`;
+}
+
+/**
+ * Remove duplicate meal plans (same meals with different payment types)
+ * Priority: Keep plans with less realDollars, then less diningDollars, then first encountered
+ */
+function removeDuplicateMealPlans(plans: DailyMealPlan[]): DailyMealPlan[] {
+  const signatureMap = new Map<string, DailyMealPlan[]>();
+  
+  // Group plans by their meal signature
+  for (const plan of plans) {
+    const signature = getMealPlanSignature(plan);
+    if (!signatureMap.has(signature)) {
+      signatureMap.set(signature, []);
+    }
+    signatureMap.get(signature)!.push(plan);
+  }
+  
+  // For each group of duplicate plans, keep only the best one
+  const uniquePlans: DailyMealPlan[] = [];
+  
+  for (const duplicates of signatureMap.values()) {
+    if (duplicates.length === 1) {
+      uniquePlans.push(duplicates[0]);
+    } else {
+      // Sort duplicates by payment preference:
+      // 1. Prefer less realDollars (ascending)
+      // 2. Then prefer less diningDollars (ascending)
+      // 3. Then keep first (stable sort)
+      const sorted = duplicates.sort((a, b) => {
+        // Compare realDollars (prefer less)
+        if (a.budgetUsed.realDollars !== b.budgetUsed.realDollars) {
+          return a.budgetUsed.realDollars - b.budgetUsed.realDollars;
+        }
+        
+        // Compare diningDollars (prefer less)
+        if (a.budgetUsed.diningDollars !== b.budgetUsed.diningDollars) {
+          return a.budgetUsed.diningDollars - b.budgetUsed.diningDollars;
+        }
+        
+        // Keep first (no change in order)
+        return 0;
+      });
+      
+      uniquePlans.push(sorted[0]);
+    }
+  }
+  
+  return uniquePlans;
 }

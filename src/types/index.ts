@@ -27,6 +27,8 @@ export interface UserPreferences {
   budget: Budget;
   location: string;
   radius?: number;
+  allergies: Allergen[];
+  dietaryPreferences: DietaryPreference[];
 }
 
 export type MealTime = 'breakfast' | 'lunch' | 'dinner';
