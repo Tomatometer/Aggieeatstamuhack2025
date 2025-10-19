@@ -119,7 +119,7 @@ export function DailyMealPlanComponent({ mealPlan, dietGoals, onBack }: DailyMea
       </div>
 
       {/* Daily Totals Summary */}
-      <Card className="p-6 mb-6 bg-primary/5">
+     <Card className="p-6 mb-6">
         <h3 className="mb-4">Daily Totals</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <div className="text-center">
@@ -179,25 +179,25 @@ export function DailyMealPlanComponent({ mealPlan, dietGoals, onBack }: DailyMea
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {mealPlan.budgetUsed.mealSwipes > 0 && (
-              <div className="text-center p-2 bg-background rounded">
+              <div className="text-center p-2 bg-[#D6D3C4] rounded">
                 <p className="text-xs text-muted-foreground mb-1">Meal Swipes</p>
                 <p className="text-sm">{mealPlan.budgetUsed.mealSwipes}</p>
               </div>
             )}
             {mealPlan.budgetUsed.maroonMeals > 0 && (
-              <div className="text-center p-2 bg-background rounded">
+              <div className="text-center p-2 bg-[#D6D3C4] rounded">
                 <p className="text-xs text-muted-foreground mb-1">Maroon Meals</p>
                 <p className="text-sm">{mealPlan.budgetUsed.maroonMeals}</p>
               </div>
             )}
             {mealPlan.budgetUsed.diningDollars > 0 && (
-              <div className="text-center p-2 bg-background rounded">
+              <div className="text-center p-2 bg-[#D6D3C4] rounded">
                 <p className="text-xs text-muted-foreground mb-1">Dining Dollars</p>
                 <p className="text-sm">${mealPlan.budgetUsed.diningDollars.toFixed(2)}</p>
               </div>
             )}
             {mealPlan.budgetUsed.realDollars > 0 && (
-              <div className="text-center p-2 bg-background rounded">
+              <div className="text-center p-2 bg-[#D6D3C4] rounded">
                 <p className="text-xs text-muted-foreground mb-1">Real Dollars</p>
                 <p className="text-sm">${mealPlan.budgetUsed.realDollars.toFixed(2)}</p>
               </div>
@@ -237,19 +237,19 @@ export function DailyMealPlanComponent({ mealPlan, dietGoals, onBack }: DailyMea
             </div>
 
             <div className="grid grid-cols-4 gap-3 mt-4">
-              <div className="text-center p-3 bg-muted rounded">
+              <div className="text-center p-3 rounded bg-[#D6D3C4]">
                 <p className="text-xs text-muted-foreground mb-1">Calories</p>
                 <p className="text-sm">{meal.totalMacros.calories}</p>
               </div>
-              <div className="text-center p-3 bg-muted rounded">
+              <div className="text-center p-3 bg-[#D6D3C4] rounded">
                 <p className="text-xs text-muted-foreground mb-1">Protein</p>
                 <p className="text-sm">{meal.totalMacros.protein}g</p>
               </div>
-              <div className="text-center p-3 bg-muted rounded">
+              <div className="text-center p-3 bg-[#D6D3C4] rounded">
                 <p className="text-xs text-muted-foreground mb-1">Carbs</p>
                 <p className="text-sm">{meal.totalMacros.carbs}g</p>
               </div>
-              <div className="text-center p-3 bg-muted rounded">
+              <div className="text-center p-3 bg-[#D6D3C4] rounded">
                 <p className="text-xs text-muted-foreground mb-1">Fats</p>
                 <p className="text-sm">{meal.totalMacros.fats}g</p>
               </div>
