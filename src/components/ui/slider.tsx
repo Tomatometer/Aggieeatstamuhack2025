@@ -4,7 +4,7 @@ import * as React from "react";
 import * as SliderPrimitive from "@radix-ui/react-slider@1.2.3";
 
 import { cn } from "./utils";
-import dogImage from 'figma:asset/84b0c4a2593ba85c8541d254945af92881b9f7aa.png';
+import dogImage from '../../assets/Reville.png';
 
 function Slider({
   className,

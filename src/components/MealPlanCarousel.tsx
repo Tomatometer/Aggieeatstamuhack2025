@@ -201,25 +201,25 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {mealPlan.budgetUsed.mealSwipes > 0 && (
-              <div className="text-center p-2 bg-background rounded">
+              <div className="text-center p-2 bg-[#D6D3C4] rounded">
                 <p className="text-xs mb-1" style={{ color: '#000000' }}>Meal Swipes</p>
                 <p className="text-sm" style={{ color: '#000000' }}>{mealPlan.budgetUsed.mealSwipes}</p>
               </div>
             )}
             {mealPlan.budgetUsed.maroonMeals > 0 && (
-              <div className="text-center p-2 bg-background rounded">
+              <div className="text-center p-2 bg-[#D6D3C4] rounded">
                 <p className="text-xs mb-1" style={{ color: '#000000' }}>Maroon Meals</p>
                 <p className="text-sm" style={{ color: '#000000' }}>{mealPlan.budgetUsed.maroonMeals}</p>
               </div>
             )}
             {mealPlan.budgetUsed.diningDollars > 0 && (
-              <div className="text-center p-2 bg-background rounded">
+              <div className="text-center p-2 bg-[#D6D3C4] rounded">
                 <p className="text-xs mb-1" style={{ color: '#000000' }}>Dining Dollars</p>
                 <p className="text-sm" style={{ color: '#000000' }}>${mealPlan.budgetUsed.diningDollars.toFixed(2)}</p>
               </div>
             )}
             {mealPlan.budgetUsed.realDollars > 0 && (
-              <div className="text-center p-2 bg-background rounded">
+              <div className="text-center p-2 bg-[#D6D3C4] rounded">
                 <p className="text-xs mb-1" style={{ color: '#000000' }}>Real Dollars</p>
                 <p className="text-sm" style={{ color: '#000000' }}>${mealPlan.budgetUsed.realDollars.toFixed(2)}</p>
               </div>
@@ -259,19 +259,19 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
             </div>
 
             <div className="grid grid-cols-4 gap-3 mt-4">
-              <div className="text-center p-3 bg-muted rounded">
+              <div className="text-center p-3 bg-[#D6D3C4] rounded">
                 <p className="text-xs mb-1" style={{ color: '#000000' }}>Calories</p>
                 <p className="text-sm" style={{ color: '#000000' }}>{meal.totalMacros.calories}</p>
               </div>
-              <div className="text-center p-3 bg-muted rounded">
+              <div className="text-center p-3 bg-[#D6D3C4] rounded">
                 <p className="text-xs mb-1" style={{ color: '#000000' }}>Protein</p>
                 <p className="text-sm" style={{ color: '#000000' }}>{meal.totalMacros.protein}g</p>
               </div>
-              <div className="text-center p-3 bg-muted rounded">
+              <div className="text-center p-3 bg-[#D6D3C4] rounded">
                 <p className="text-xs mb-1" style={{ color: '#000000' }}>Carbs</p>
                 <p className="text-sm" style={{ color: '#000000' }}>{meal.totalMacros.carbs}g</p>
               </div>
-              <div className="text-center p-3 bg-muted rounded">
+              <div className="text-center p-3 bg-[#D6D3C4] rounded">
                 <p className="text-xs mb-1" style={{ color: '#000000' }}>Fats</p>
                 <p className="text-sm" style={{ color: '#000000' }}>{meal.totalMacros.fats}g</p>
               </div>
