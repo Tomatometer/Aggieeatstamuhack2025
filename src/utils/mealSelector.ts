@@ -455,7 +455,7 @@ function calculateMacroScore(plan: DailyMealPlan, preferences: UserPreferences):
   const fatsDiff = Math.abs(plan.totalFats - preferences.dietGoals.fats);
 
   // Weighted score (protein and calories are more important)
-  return caloriesDiff * 0.4 + proteinDiff * 0.3 + carbsDiff * 0.2 + fatsDiff * 0.1;
+  return caloriesDiff * 0.4 + proteinDiff * 0.3 + carbsDiff * 0.2 + fatsDiff * 0.2;
 }
 
 /**
