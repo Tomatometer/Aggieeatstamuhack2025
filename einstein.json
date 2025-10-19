@@ -647,4 +647,447 @@
       macros: { calories: 5, protein: 0, carbs: 0, fats: 0 },
       allergens: [],
       dietaryPreferences: ['vegetarian', 'vegan', 'glutenFree'],
-      payment
+      paymentCosts: {
+        diningDollars: 2.50,
+        realDollars: 2.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-coffee-2',
+      name: 'Cold Brew - Classic',
+      description: 'Classic cold brew coffee',
+      macros: { calories: 0, protein: 0, carbs: 0, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegetarian', 'vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 2.75,
+        realDollars: 2.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-coffee-3',
+      name: 'Cold Brew - Vanilla Cream',
+      description: 'Cold brew with vanilla cream',
+      macros: { calories: 190, protein: 0, carbs: 26, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 3.50,
+        realDollars: 3.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-coffee-4',
+      name: 'Cold Brew - Caramel Cream',
+      description: 'Cold brew with caramel cream',
+      macros: { calories: 210, protein: 0, carbs: 32, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 3.50,
+        realDollars: 3.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-coffee-5',
+      name: 'Cold Brew - Chocolate Cream',
+      description: 'Cold brew with chocolate cream',
+      macros: { calories: 200, protein: 0, carbs: 28, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 3.50,
+        realDollars: 3.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-coffee-6',
+      name: 'Cold Brew Shake - Vanilla',
+      description: 'Cold brew shake with vanilla flavor',
+      macros: { calories: 350, protein: 0, carbs: 48, fats: 14 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 4.25,
+        realDollars: 4.25
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-coffee-7',
+      name: 'Cold Brew Shake - Caramel',
+      description: 'Cold brew shake with caramel flavor',
+      macros: { calories: 390, protein: 0, carbs: 54, fats: 16 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 4.25,
+        realDollars: 4.25
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-coffee-8',
+      name: 'Cold Brew Shake - Chocolate',
+      description: 'Cold brew shake with chocolate flavor',
+      macros: { calories: 380, protein: 0, carbs: 52, fats: 15 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 4.25,
+        realDollars: 4.25
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // BEVERAGES - LATTES
+    {
+      id: 'eb-latte-1',
+      name: 'Latte',
+      description: 'Classic hot or iced latte',
+      macros: { calories: 140, protein: 0, carbs: 12, fats: 5 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 3.50,
+        realDollars: 3.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-latte-2',
+      name: 'Mocha',
+      description: 'Latte with chocolate flavor',
+      macros: { calories: 350, protein: 0, carbs: 32, fats: 14 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 4.00,
+        realDollars: 4.00
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-latte-3',
+      name: 'Caramel Macchiato',
+      description: 'Latte with caramel and espresso',
+      macros: { calories: 370, protein: 0, carbs: 34, fats: 14 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 4.00,
+        realDollars: 4.00
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-latte-4',
+      name: 'Chai Tea Latte',
+      description: 'Chai tea with steamed milk',
+      macros: { calories: 230, protein: 0, carbs: 26, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 3.75,
+        realDollars: 3.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // BEVERAGES - TEA & SMOOTHIE
+    {
+      id: 'eb-tea-1',
+      name: 'Hot Tea',
+      description: 'Assorted hot tea selection',
+      macros: { calories: 0, protein: 0, carbs: 0, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegetarian', 'vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 2.50,
+        realDollars: 2.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-tea-2',
+      name: 'Iced Tea',
+      description: 'Assorted iced tea selection',
+      macros: { calories: 0, protein: 0, carbs: 0, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegetarian', 'vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 2.50,
+        realDollars: 2.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'eb-smoothie-1',
+      name: 'Strawberry Banana Smoothie',
+      description: 'Fresh strawberry and banana smoothie',
+      macros: { calories: 280, protein: 0, carbs: 62, fats: 1 },
+      allergens: [],
+      dietaryPreferences: ['vegetarian', 'vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 4.50,
+        realDollars: 4.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // SWEETS & PASTRIES
+    {
+      id: 'eb-sweet-1',
+      name: 'Avocado Toast',
+      description: 'Fresh avocado on toasted bagel',
+      macros: { calories: 400, protein: 11, carbs: 61, fats: 12 },
+      allergens: ['wheat'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 6.50,
+        realDollars: 6.50
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'eb-sweet-2',
+      name: 'Cinnamon Twist',
+      description: 'Crispy cinnamon pastry',
+      macros: { calories: 360, protein: 4, carbs: 50, fats: 16 },
+      allergens: ['wheat', 'dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 3.75,
+        realDollars: 3.75
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'eb-sweet-3',
+      name: 'Coffee Cake - Chocolate Chip',
+      description: 'Rich chocolate chip coffee cake',
+      macros: { calories: 550, protein: 4, carbs: 81, fats: 25 },
+      allergens: ['wheat', 'dairy', 'eggs'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 4.75,
+        realDollars: 4.75
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'eb-sweet-4',
+      name: 'Cookie - Heavenly Chocolate Chip',
+      description: 'Premium chocolate chip cookie',
+      macros: { calories: 460, protein: 5, carbs: 58, fats: 24 },
+      allergens: ['wheat', 'dairy', 'eggs'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 3.50,
+        realDollars: 3.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'eb-sweet-5',
+      name: 'Croissant - Plain',
+      description: 'Buttery plain croissant',
+      macros: { calories: 390, protein: 8, carbs: 41, fats: 22 },
+      allergens: ['wheat', 'dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 3.75,
+        realDollars: 3.75
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'eb-sweet-6',
+      name: 'Croissant - Chocolate',
+      description: 'Buttery croissant with chocolate',
+      macros: { calories: 310, protein: 6, carbs: 33, fats: 17 },
+      allergens: ['wheat', 'dairy', 'eggs'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 4.00,
+        realDollars: 4.00
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'eb-sweet-7',
+      name: 'Muffin - Blueberry',
+      description: 'Fresh blueberry muffin',
+      macros: { calories: 450, protein: 5, carbs: 55, fats: 23 },
+      allergens: ['wheat', 'dairy', 'eggs'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 3.95,
+        realDollars: 3.95
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'eb-sweet-8',
+      name: 'Muffin - Cinnamon Chip',
+      description: 'Cinnamon muffin with chips',
+      macros: { calories: 540, protein: 5, carbs: 69, fats: 27 },
+      allergens: ['wheat', 'dairy', 'eggs'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 4.25,
+        realDollars: 4.25
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'eb-sweet-9',
+      name: 'Strudel - Cinnamon Walnut',
+      description: 'Cinnamon strudel with walnuts',
+      macros: { calories: 640, protein: 10, carbs: 71, fats: 35 },
+      allergens: ['wheat', 'dairy', 'treeNuts'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 4.75,
+        realDollars: 4.75
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    // BREAKFAST EXTRAS
+    {
+      id: 'eb-breakfast-extra-1',
+      name: 'Shmearful - Plain',
+      description: 'Individual-sized plain cream cheese portion',
+      macros: { calories: 80, protein: 2, carbs: 10, fats: 3.5 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 1.50,
+        realDollars: 1.50
+      },
+      mealTimes: ['breakfast']
+    },
+    {
+      id: 'eb-breakfast-extra-2',
+      name: 'Shmearful - Asiago',
+      description: 'Individual-sized Asiago cream cheese portion',
+      macros: { calories: 90, protein: 3, carbs: 10, fats: 4 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 1.75,
+        realDollars: 1.75
+      },
+      mealTimes: ['breakfast']
+    },
+    {
+      id: 'eb-breakfast-extra-3',
+      name: 'Shmearful - French Toast',
+      description: 'Individual-sized French toast cream cheese portion',
+      macros: { calories: 100, protein: 2, carbs: 15, fats: 3.5 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 1.75,
+        realDollars: 1.75
+      },
+      mealTimes: ['breakfast']
+    },
+    {
+      id: 'eb-breakfast-extra-4',
+      name: 'Shmearful - Chocolate Chip Cheesecake',
+      description: 'Individual-sized chocolate chip cheesecake cream cheese portion',
+      macros: { calories: 90, protein: 2, carbs: 12, fats: 3.5 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 1.75,
+        realDollars: 1.75
+      },
+      mealTimes: ['breakfast']
+    },
+    // SOUPS
+    {
+      id: 'eb-soup-1',
+      name: 'Chicken Noodle Soup',
+      description: 'Classic chicken noodle soup',
+      macros: { calories: 110, protein: 8, carbs: 12, fats: 2.5 },
+      allergens: ['wheat'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 4.50,
+        realDollars: 4.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'eb-soup-2',
+      name: 'Broccoli Cheese Soup',
+      description: 'Creamy broccoli cheese soup',
+      macros: { calories: 160, protein: 5, carbs: 14, fats: 17 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 4.75,
+        realDollars: 4.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'eb-soup-3',
+      name: 'Vegetarian Chile Soup',
+      description: 'Hearty vegetarian chile soup',
+      macros: { calories: 160, protein: 6, carbs: 28, fats: 2 },
+      allergens: [],
+      dietaryPreferences: ['vegetarian', 'vegan'],
+      paymentCosts: {
+        diningDollars: 4.75,
+        realDollars: 4.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    // YOGURT PARFAITS
+    {
+      id: 'eb-parfait-1',
+      name: 'Fruit & Yogurt Parfait',
+      description: 'Fresh fruit with creamy yogurt',
+      macros: { calories: 200, protein: 8, carbs: 38, fats: 2 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 4.95,
+        realDollars: 4.95
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'eb-parfait-2',
+      name: 'Greek Yogurt Parfait with Honey',
+      description: 'Greek yogurt with honey',
+      macros: { calories: 270, protein: 16, carbs: 49, fats: 2.5 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 5.50,
+        realDollars: 5.50
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    // FOUNTAIN BEVERAGES
+    {
+      id: 'eb-fountain-1',
+      name: 'Fountain Drink',
+      description: 'Various fountain drink options',
+      macros: { calories: 150, protein: 0, carbs: 40, fats: 0 },
+      allergens: [],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 2.25,
+        realDollars: 2.25
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    }
+  ]
+}
