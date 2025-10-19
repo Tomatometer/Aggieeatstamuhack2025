@@ -1,457 +1,553 @@
+// RESTAURANT: Shake Smart - TCU
 {
-  "status": "success",
-  "request_time": "2025-10-18T12:00:00Z",
-  "location": {
-    "id": "shake-smart-tcu-001",
-    "name": "Shake Smart - TCU",
-    "address": "3005 Stadium Dr, Fort Worth, TX 76109",
-    "venue": "Recreation Center",
-    "date": "2025-10-18"
-  },
-  "periods": [
+  id: 'rest-shake-smart-tcu',
+  name: 'Shake Smart',
+  location: 'TCU Recreation Center',
+  address: '3005 Stadium Dr, Fort Worth, TX 76109',
+  isDiningHall: false,
+  description: 'Student-founded concept specializing in protein shakes, acai bowls, cold brew, and healthy meal options',
+  dishes: [
+    // CLASSIC PROTEIN SHAKES
     {
-      "id": "all-day",
-      "name": "All Day",
-      "start_time": "07:00:00",
-      "end_time": "22:00:00"
-    }
-  ],
-  "menu": {
-    "periods": {
-      "all-day": {
-        "categories": [
-          {
-            "id": "protein-shakes",
-            "name": "Protein Shakes",
-            "sort_order": 1,
-            "description": "At least 30g of protein per shake. Made with organic agave nectar.",
-            "subcategories": [
-              {
-                "id": "classic-shakes",
-                "name": "Classic Shakes",
-                "items": [
-                  {
-                    "id": "vanilla-thrilla",
-                    "name": "Vanilla Thrilla",
-                    "description": "The bean that gets you lean!",
-                    "base_calories": "350",
-                    "protein": "30g+",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  },
-                  {
-                    "id": "chocolate-shake",
-                    "name": "Chocolate",
-                    "description": "Classic chocolate protein shake",
-                    "base_calories": "360",
-                    "protein": "30g+",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  },
-                  {
-                    "id": "strawberry-shake",
-                    "name": "Strawberry",
-                    "description": "Fresh strawberry protein shake",
-                    "base_calories": "340",
-                    "protein": "30g+",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  },
-                  {
-                    "id": "peanut-butter-shake",
-                    "name": "Peanut Butter",
-                    "description": "Rich peanut butter protein shake",
-                    "base_calories": "420",
-                    "protein": "32g+",
-                    "allergens": ["dairy", "peanuts"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  },
-                  {
-                    "id": "cookies-cream-shake",
-                    "name": "Cookies & Cream",
-                    "description": "Cookies and cream protein shake",
-                    "base_calories": "380",
-                    "protein": "30g+",
-                    "allergens": ["dairy", "wheat", "gluten"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  }
-                ]
-              },
-              {
-                "id": "green-shakes",
-                "name": "Green Shakes",
-                "description": "Shakes with added spinach and superfoods",
-                "items": [
-                  {
-                    "id": "green-machine",
-                    "name": "Green Machine",
-                    "description": "Spinach, banana, pineapple, and vanilla protein",
-                    "base_calories": "330",
-                    "protein": "30g+",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  },
-                  {
-                    "id": "tropical-green",
-                    "name": "Tropical Green",
-                    "description": "Spinach, mango, pineapple, and vanilla protein",
-                    "base_calories": "340",
-                    "protein": "30g+",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  }
-                ]
-              },
-              {
-                "id": "exotic-shakes",
-                "name": "Exotic Shakes",
-                "description": "Unique flavor combinations",
-                "items": [
-                  {
-                    "id": "perfect-10",
-                    "name": "Perfect 10",
-                    "description": "One of our most popular protein shakes",
-                    "base_calories": "370",
-                    "protein": "30g+",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  },
-                  {
-                    "id": "acai-berry-shake",
-                    "name": "Acai Berry",
-                    "description": "Acai, mixed berries, and vanilla protein",
-                    "base_calories": "350",
-                    "protein": "30g+",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  },
-                  {
-                    "id": "pitaya-passion",
-                    "name": "Pitaya Passion",
-                    "description": "Dragon fruit, strawberry, and vanilla protein",
-                    "base_calories": "345",
-                    "protein": "30g+",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian", "high-protein"],
-                    "customizable": true
-                  }
-                ]
-              }
-            ],
-            "customization_options": {
-              "add_ins": [
-                {
-                  "id": "peanut-butter",
-                  "name": "Peanut Butter",
-                  "calories_added": "100",
-                  "allergens": ["peanuts"]
-                },
-                {
-                  "id": "almond-butter",
-                  "name": "Almond Butter",
-                  "calories_added": "100",
-                  "allergens": ["tree nuts"]
-                },
-                {
-                  "id": "spinach",
-                  "name": "Spinach",
-                  "calories_added": "5",
-                  "allergens": []
-                },
-                {
-                  "id": "chia-seeds",
-                  "name": "Chia Seeds",
-                  "calories_added": "60",
-                  "allergens": []
-                },
-                {
-                  "id": "superfood",
-                  "name": "Superfood",
-                  "calories_added": "15",
-                  "allergens": []
-                },
-                {
-                  "id": "banana",
-                  "name": "Banana",
-                  "calories_added": "105",
-                  "allergens": []
-                },
-                {
-                  "id": "blueberries",
-                  "name": "Blueberries",
-                  "calories_added": "45",
-                  "allergens": []
-                },
-                {
-                  "id": "pineapple",
-                  "name": "Pineapple",
-                  "calories_added": "40",
-                  "allergens": []
-                },
-                {
-                  "id": "pitaya",
-                  "name": "Pitaya (Dragon Fruit)",
-                  "calories_added": "30",
-                  "allergens": []
-                }
-              ],
-              "modifications": [
-                {
-                  "id": "no-agave",
-                  "name": "No Agave",
-                  "calories_reduced": "120",
-                  "description": "Remove organic agave sweetener"
-                },
-                {
-                  "id": "half-agave",
-                  "name": "Half Agave",
-                  "calories_reduced": "60",
-                  "description": "Reduce agave sweetener by 50%"
-                },
-                {
-                  "id": "almond-milk",
-                  "name": "Almond Milk",
-                  "calories_reduced": "20-40",
-                  "description": "Substitute with almond milk"
-                },
-                {
-                  "id": "make-it-a-bowl",
-                  "name": "Make It A Bowl",
-                  "calories_added": "150",
-                  "description": "Turn any shake into a bowl topped with granola"
-                }
-              ]
-            }
-          },
-          {
-            "id": "acai-bowls",
-            "name": "Organic Acai Bowls",
-            "sort_order": 2,
-            "description": "Scooped and blended acai bowls with various toppings",
-            "items": [
-              {
-                "id": "rawcai-bowl",
-                "name": "Rawcai",
-                "description": "Scoops of organic acai and strawberry topped with granola, banana slices, chia and coconut flakes",
-                "base_calories": "380",
-                "protein": "8g",
-                "allergens": [],
-                "dietary_flags": ["vegan", "organic"]
-              },
-              {
-                "id": "raw-pb-bowl",
-                "name": "Raw-PB",
-                "description": "Scoops of organic acai topped with granola, banana slices, dark chocolate and peanut butter",
-                "base_calories": "480",
-                "protein": "12g",
-                "allergens": ["peanuts"],
-                "dietary_flags": ["vegan", "organic"]
-              },
-              {
-                "id": "buzz-bowl",
-                "name": "The Buzz Bowl",
-                "description": "Scoops of organic acai, pitaya and pineapple topped with granola, coconut flakes and bee pollen",
-                "base_calories": "360",
-                "protein": "7g",
-                "allergens": [],
-                "dietary_flags": ["vegetarian", "organic"]
-              },
-              {
-                "id": "organic-acai-bowl",
-                "name": "Organic Acai Bowl",
-                "description": "Organic acai, strawberry, apple juice and protein topped with granola, coconut flakes and banana slices",
-                "base_calories": "420",
-                "protein": "30g",
-                "allergens": ["dairy"],
-                "dietary_flags": ["vegetarian", "organic", "high-protein"]
-              },
-              {
-                "id": "pba-bowl",
-                "name": "PB&A",
-                "description": "Organic acai, strawberry, peanut butter, almond milk and protein topped with granola, dark chocolate and banana slices",
-                "base_calories": "520",
-                "protein": "32g",
-                "allergens": ["peanuts", "dairy"],
-                "dietary_flags": ["vegetarian", "organic", "high-protein"]
-              },
-              {
-                "id": "dragon-bowl",
-                "name": "Dragon Bowl",
-                "description": "Pitaya, pineapple, OJ and vanilla protein topped with granola, chia and coconut flakes",
-                "base_calories": "410",
-                "protein": "30g",
-                "allergens": ["dairy"],
-                "dietary_flags": ["vegetarian", "organic", "high-protein"]
-              }
-            ]
-          },
-          {
-            "id": "cold-brew",
-            "name": "Cold Brew Coffee",
-            "sort_order": 3,
-            "items": [
-              {
-                "id": "classic-cold-brew",
-                "name": "Classic Cold Brew",
-                "description": "Smooth cold brew coffee",
-                "calories": "5",
-                "size_options": ["12oz", "16oz", "20oz"],
-                "allergens": [],
-                "dietary_flags": ["vegan"]
-              },
-              {
-                "id": "vanilla-cold-brew",
-                "name": "Vanilla Cold Brew",
-                "description": "Cold brew with vanilla",
-                "calories": "45",
-                "size_options": ["12oz", "16oz", "20oz"],
-                "allergens": [],
-                "dietary_flags": ["vegan"]
-              },
-              {
-                "id": "mocha-cold-brew",
-                "name": "Mocha Cold Brew",
-                "description": "Cold brew with chocolate",
-                "calories": "60",
-                "size_options": ["12oz", "16oz", "20oz"],
-                "allergens": [],
-                "dietary_flags": ["vegan"]
-              },
-              {
-                "id": "caramel-cold-brew",
-                "name": "Caramel Cold Brew",
-                "description": "Cold brew with caramel",
-                "calories": "50",
-                "size_options": ["12oz", "16oz", "20oz"],
-                "allergens": [],
-                "dietary_flags": ["vegan"]
-              }
-            ]
-          },
-          {
-            "id": "oatmeal-overnight-oats",
-            "name": "Oatmeal & Overnight Oats",
-            "sort_order": 4,
-            "items": [
-              {
-                "id": "wholly-oatmeal",
-                "name": "Wholly Oatmeal",
-                "description": "Hot oatmeal with your choice of toppings",
-                "base_calories": "300",
-                "protein": "10g",
-                "allergens": ["gluten"],
-                "dietary_flags": ["vegetarian"],
-                "topping_options": ["banana", "berries", "honey", "brown sugar", "cinnamon", "nuts"]
-              },
-              {
-                "id": "overnight-oats-original",
-                "name": "Overnight Oats - Original",
-                "description": "Cold soaked oats ready to eat",
-                "calories": "320",
-                "protein": "12g",
-                "allergens": ["gluten", "dairy"],
-                "dietary_flags": ["vegetarian"]
-              },
-              {
-                "id": "overnight-oats-pb",
-                "name": "Overnight Oats - Peanut Butter",
-                "description": "Cold soaked oats with peanut butter",
-                "calories": "420",
-                "protein": "16g",
-                "allergens": ["gluten", "dairy", "peanuts"],
-                "dietary_flags": ["vegetarian"]
-              },
-              {
-                "id": "overnight-oats-berry",
-                "name": "Overnight Oats - Berry",
-                "description": "Cold soaked oats with mixed berries",
-                "calories": "340",
-                "protein": "12g",
-                "allergens": ["gluten", "dairy"],
-                "dietary_flags": ["vegetarian"]
-              }
-            ]
-          },
-          {
-            "id": "food-items",
-            "name": "Food Items",
-            "sort_order": 5,
-            "items": [
-              {
-                "id": "pb-banana-sandwich",
-                "name": "Peanut Butter & Banana Sandwich",
-                "description": "All-natural peanut butter and banana on whole wheat",
-                "calories": "380",
-                "protein": "14g",
-                "allergens": ["peanuts", "wheat", "gluten"],
-                "dietary_flags": ["vegetarian"]
-              },
-              {
-                "id": "turks-matoes-wrap",
-                "name": "Turks and Matoes Wrap",
-                "description": "Turkey wrap with pesto, tomatoes, and spinach",
-                "calories": "420",
-                "protein": "28g",
-                "allergens": ["wheat", "gluten", "dairy"],
-                "dietary_flags": []
-              },
-              {
-                "id": "greek-yogurt",
-                "name": "Greek Yogurt",
-                "description": "Plain or flavored Greek yogurt",
-                "calories": "150",
-                "protein": "15g",
-                "allergens": ["dairy"],
-                "dietary_flags": ["vegetarian", "high-protein"]
-              },
-              {
-                "id": "protein-balls",
-                "name": "Protein Balls",
-                "description": "Energy bites with oats and protein",
-                "calories": "180",
-                "protein": "8g",
-                "allergens": ["gluten", "tree nuts"],
-                "dietary_flags": ["vegetarian"]
-              }
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "metadata": {
-    "brand": "Shake Smart",
-    "description": "Student-founded concept created for on-the-go college lifestyle. Specializing in protein shakes, acai bowls, cold brew, and healthy meal options.",
-    "nutrition_notes": [
-      "At least 30g of protein in each shake",
-      "Made with organic agave nectar (can be removed or reduced)",
-      "Customizable ingredients available",
-      "Agave contains approximately 60 calories per tablespoon (2 tbsp used per shake)",
-      "Any smoothie can be made into a bowl"
-    ],
-    "dietary_accommodations": ["Vegan options available", "Lactose-free modifications", "Gluten-aware options"],
-    "hours": {
-      "monday": "07:00 AM - 10:00 PM",
-      "tuesday": "07:00 AM - 10:00 PM",
-      "wednesday": "07:00 AM - 10:00 PM",
-      "thursday": "07:00 AM - 10:00 PM",
-      "friday": "07:00 AM - 09:00 PM",
-      "saturday": "09:00 AM - 09:00 PM",
-      "sunday": "09:00 AM - 09:00 PM"
+      id: 'ss-shake-1',
+      name: 'Vanilla Thrilla',
+      description: 'The bean that gets you lean! Classic vanilla protein shake made with organic agave nectar',
+      macros: { calories: 350, protein: 30, carbs: 45, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 6.95,
+        realDollars: 6.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
     },
-    "contact": {
-      "phone": "(512) 222-8915",
-      "website": "https://shakesmart.com"
+    {
+      id: 'ss-shake-2',
+      name: 'Chocolate',
+      description: 'Classic chocolate protein shake made with organic agave nectar',
+      macros: { calories: 360, protein: 30, carbs: 46, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 6.95,
+        realDollars: 6.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
     },
-    "copyright": "© 2025 Shake Smart, Inc. All Rights Reserved"
-  }
+    {
+      id: 'ss-shake-3',
+      name: 'Strawberry',
+      description: 'Fresh strawberry protein shake made with organic agave nectar',
+      macros: { calories: 340, protein: 30, carbs: 44, fats: 7 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 6.95,
+        realDollars: 6.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-shake-4',
+      name: 'Peanut Butter',
+      description: 'Rich peanut butter protein shake made with organic agave nectar',
+      macros: { calories: 420, protein: 32, carbs: 48, fats: 14 },
+      allergens: ['dairy', 'peanuts'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 7.45,
+        realDollars: 7.45
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-shake-5',
+      name: 'Cookies & Cream',
+      description: 'Cookies and cream protein shake made with organic agave nectar',
+      macros: { calories: 380, protein: 30, carbs: 48, fats: 10 },
+      allergens: ['dairy', 'wheat', 'gluten'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 6.95,
+        realDollars: 6.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // GREEN SHAKES
+    {
+      id: 'ss-shake-6',
+      name: 'Green Machine',
+      description: 'Spinach, banana, pineapple, and vanilla protein shake with organic agave nectar',
+      macros: { calories: 330, protein: 30, carbs: 42, fats: 7 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 6.95,
+        realDollars: 6.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-shake-7',
+      name: 'Tropical Green',
+      description: 'Spinach, mango, pineapple, and vanilla protein shake with organic agave nectar',
+      macros: { calories: 340, protein: 30, carbs: 43, fats: 7 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 6.95,
+        realDollars: 6.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // EXOTIC SHAKES
+    {
+      id: 'ss-shake-8',
+      name: 'Perfect 10',
+      description: 'One of our most popular protein shakes made with organic agave nectar',
+      macros: { calories: 370, protein: 30, carbs: 47, fats: 9 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 6.95,
+        realDollars: 6.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-shake-9',
+      name: 'Acai Berry',
+      description: 'Acai, mixed berries, and vanilla protein shake with organic agave nectar',
+      macros: { calories: 350, protein: 30, carbs: 45, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 7.25,
+        realDollars: 7.25
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-shake-10',
+      name: 'Pitaya Passion',
+      description: 'Dragon fruit, strawberry, and vanilla protein shake with organic agave nectar',
+      macros: { calories: 345, protein: 30, carbs: 44, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 7.25,
+        realDollars: 7.25
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // ACAI BOWLS
+    {
+      id: 'ss-bowl-1',
+      name: 'Rawcai',
+      description: 'Scoops of organic acai and strawberry topped with granola, banana slices, chia and coconut flakes',
+      macros: { calories: 380, protein: 8, carbs: 58, fats: 12 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'organic'],
+      paymentCosts: {
+        diningDollars: 7.95,
+        realDollars: 7.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-bowl-2',
+      name: 'Raw-PB',
+      description: 'Scoops of organic acai topped with granola, banana slices, dark chocolate and peanut butter',
+      macros: { calories: 480, protein: 12, carbs: 55, fats: 20 },
+      allergens: ['peanuts'],
+      dietaryPreferences: ['vegan', 'organic'],
+      paymentCosts: {
+        diningDollars: 8.45,
+        realDollars: 8.45
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-bowl-3',
+      name: 'The Buzz Bowl',
+      description: 'Scoops of organic acai, pitaya and pineapple topped with granola, coconut flakes and bee pollen',
+      macros: { calories: 360, protein: 7, carbs: 56, fats: 11 },
+      allergens: [],
+      dietaryPreferences: ['vegetarian', 'organic'],
+      paymentCosts: {
+        diningDollars: 7.95,
+        realDollars: 7.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-bowl-4',
+      name: 'Organic Acai Bowl',
+      description: 'Organic acai, strawberry, apple juice and protein topped with granola, coconut flakes and banana slices',
+      macros: { calories: 420, protein: 30, carbs: 54, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'organic', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 8.95,
+        realDollars: 8.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-bowl-5',
+      name: 'PB&A',
+      description: 'Organic acai, strawberry, peanut butter, almond milk and protein topped with granola, dark chocolate and banana slices',
+      macros: { calories: 520, protein: 32, carbs: 58, fats: 16 },
+      allergens: ['peanuts', 'dairy'],
+      dietaryPreferences: ['vegetarian', 'organic', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 9.45,
+        realDollars: 9.45
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-bowl-6',
+      name: 'Dragon Bowl',
+      description: 'Pitaya, pineapple, OJ and vanilla protein topped with granola, chia and coconut flakes',
+      macros: { calories: 410, protein: 30, carbs: 52, fats: 9 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'organic', 'highProtein'],
+      paymentCosts: {
+        diningDollars: 8.95,
+        realDollars: 8.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // COLD BREW COFFEE
+    {
+      id: 'ss-coffee-1',
+      name: 'Classic Cold Brew',
+      description: 'Smooth cold brew coffee',
+      macros: { calories: 5, protein: 0, carbs: 0, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 3.50,
+        realDollars: 3.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-coffee-2',
+      name: 'Vanilla Cold Brew',
+      description: 'Cold brew with vanilla flavoring',
+      macros: { calories: 45, protein: 0, carbs: 10, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 3.95,
+        realDollars: 3.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-coffee-3',
+      name: 'Mocha Cold Brew',
+      description: 'Cold brew with chocolate flavoring',
+      macros: { calories: 60, protein: 0, carbs: 12, fats: 1 },
+      allergens: ['dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 3.95,
+        realDollars: 3.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-coffee-4',
+      name: 'Caramel Cold Brew',
+      description: 'Cold brew with caramel flavoring',
+      macros: { calories: 50, protein: 0, carbs: 11, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 3.95,
+        realDollars: 3.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // OATMEAL & OVERNIGHT OATS
+    {
+      id: 'ss-oats-1',
+      name: 'Wholly Oatmeal',
+      description: 'Hot oatmeal with your choice of toppings',
+      macros: { calories: 300, protein: 10, carbs: 52, fats: 5 },
+      allergens: ['gluten'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 5.45,
+        realDollars: 5.45
+      },
+      mealTimes: ['breakfast']
+    },
+    {
+      id: 'ss-oats-2',
+      name: 'Overnight Oats - Original',
+      description: 'Cold soaked oats ready to eat',
+      macros: { calories: 320, protein: 12, carbs: 48, fats: 7 },
+      allergens: ['gluten', 'dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 5.95,
+        realDollars: 5.95
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'ss-oats-3',
+      name: 'Overnight Oats - Peanut Butter',
+      description: 'Cold soaked oats with peanut butter',
+      macros: { calories: 420, protein: 16, carbs: 52, fats: 14 },
+      allergens: ['gluten', 'dairy', 'peanuts'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 6.45,
+        realDollars: 6.45
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    {
+      id: 'ss-oats-4',
+      name: 'Overnight Oats - Berry',
+      description: 'Cold soaked oats with mixed berries',
+      macros: { calories: 340, protein: 12, carbs: 50, fats: 7 },
+      allergens: ['gluten', 'dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 5.95,
+        realDollars: 5.95
+      },
+      mealTimes: ['breakfast', 'lunch']
+    },
+    // FOOD ITEMS
+    {
+      id: 'ss-food-1',
+      name: 'Peanut Butter & Banana Sandwich',
+      description: 'All-natural peanut butter and banana on whole wheat',
+      macros: { calories: 380, protein: 14, carbs: 48, fats: 12 },
+      allergens: ['peanuts', 'wheat', 'gluten'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 5.75,
+        realDollars: 5.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-food-2',
+      name: 'Turks and Matoes Wrap',
+      description: 'Turkey wrap with pesto, tomatoes, and spinach',
+      macros: { calories: 420, protein: 28, carbs: 44, fats: 13 },
+      allergens: ['wheat', 'gluten', 'dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 7.95,
+        realDollars: 7.95
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'ss-food-3',
+      name: 'Greek Yogurt',
+      description: 'Plain or flavored Greek yogurt',
+      macros: { calories: 150, protein: 15, carbs: 12, fats: 3 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'highProtein', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 4.95,
+        realDollars: 4.95
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-food-4',
+      name: 'Protein Balls',
+      description: 'Energy bites with oats and protein',
+      macros: { calories: 180, protein: 8, carbs: 20, fats: 7 },
+      allergens: ['gluten', 'treeNuts'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 3.50,
+        realDollars: 3.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // SHAKE CUSTOMIZATIONS / ADD-INS
+    {
+      id: 'ss-addon-1',
+      name: 'Add Peanut Butter',
+      description: 'Add peanut butter to any shake',
+      macros: { calories: 100, protein: 4, carbs: 4, fats: 8 },
+      allergens: ['peanuts'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-addon-2',
+      name: 'Add Almond Butter',
+      description: 'Add almond butter to any shake',
+      macros: { calories: 100, protein: 4, carbs: 4, fats: 9 },
+      allergens: ['treeNuts'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-addon-3',
+      name: 'Add Spinach',
+      description: 'Add fresh spinach to any shake',
+      macros: { calories: 5, protein: 1, carbs: 1, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-addon-4',
+      name: 'Add Chia Seeds',
+      description: 'Add chia seeds to any shake',
+      macros: { calories: 60, protein: 2, carbs: 5, fats: 4 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-addon-5',
+      name: 'Add Superfood',
+      description: 'Add superfood powder to any shake',
+      macros: { calories: 15, protein: 1, carbs: 2, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-addon-6',
+      name: 'Add Banana',
+      description: 'Add banana to any shake',
+      macros: { calories: 105, protein: 1, carbs: 27, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-addon-7',
+      name: 'Add Blueberries',
+      description: 'Add blueberries to any shake',
+      macros: { calories: 45, protein: 1, carbs: 11, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-addon-8',
+      name: 'Add Pineapple',
+      description: 'Add pineapple to any shake',
+      macros: { calories: 40, protein: 0, carbs: 10, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-addon-9',
+      name: 'Add Pitaya (Dragon Fruit)',
+      description: 'Add pitaya (dragon fruit) to any shake',
+      macros: { calories: 30, protein: 1, carbs: 7, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 1.00,
+        realDollars: 1.00
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    // MODIFICATIONS
+    {
+      id: 'ss-mod-1',
+      name: 'Remove Agave',
+      description: 'Remove organic agave nectar from any shake (saves 120 calories)',
+      macros: { calories: -120, protein: 0, carbs: -30, fats: 0 },
+      allergens: [],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-mod-2',
+      name: 'Half Agave',
+      description: 'Reduce agave nectar by 50% (saves 60 calories)',
+      macros: { calories: -60, protein: 0, carbs: -15, fats: 0 },
+      allergens: [],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-mod-3',
+      name: 'Almond Milk',
+      description: 'Substitute with almond milk (saves 20-40 calories)',
+      macros: { calories: -30, protein: 2, carbs: -2, fats: -2 },
+      allergens: ['treeNuts'],
+      dietaryPreferences: ['vegan'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    },
+    {
+      id: 'ss-mod-4',
+      name: 'Make It A Bowl',
+      description: 'Turn any shake into a bowl topped with granola',
+      macros: { calories: 150, protein: 4, carbs: 24, fats: 5 },
+      allergens: ['gluten'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 1.50,
+        realDollars: 1.50
+      },
+      mealTimes: ['breakfast', 'lunch', 'dinner']
+    }
+  ]
 }
