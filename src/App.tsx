@@ -1,32 +1,32 @@
 import { useState } from 'react';
 import { DietGoalsForm } from './components/DietGoalsForm';
-import { DailyMealPlanComponent } from './components/DailyMealPlan';
+import { MealPlanCarousel } from './components/MealPlanCarousel';
 import { UserPreferences, DailyMealPlan } from './types';
-import { findOptimalMealPlan } from './utils/mealSelector';
+import { findOptimalMealPlans } from './utils/mealSelector';
 import { Utensils } from 'lucide-react';
 import { Button } from './components/ui/button';
 
 export default function App() {
   const [preferences, setPreferences] = useState<UserPreferences | null>(null);
-  const [mealPlan, setMealPlan] = useState<DailyMealPlan | null>(null);
+  const [mealPlans, setMealPlans] = useState<DailyMealPlan[]>([]);
   const [showNoResults, setShowNoResults] = useState(false);
 
   const handlePreferencesSubmit = (newPreferences: UserPreferences) => {
     setPreferences(newPreferences);
-    const plan = findOptimalMealPlan(newPreferences);
+    const plans = findOptimalMealPlans(newPreferences, 5);
     
-    if (plan) {
-      setMealPlan(plan);
+    if (plans.length > 0) {
+      setMealPlans(plans);
       setShowNoResults(false);
     } else {
-      setMealPlan(null);
+      setMealPlans([]);
       setShowNoResults(true);
     }
   };
 
   const handleBack = () => {
     // Don't clear preferences - just reset the view state
-    setMealPlan(null);
+    setMealPlans([]);
     setShowNoResults(false);
   };
 
@@ -45,14 +45,14 @@ export default function App() {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        {!mealPlan && !showNoResults ? (
+        {mealPlans.length === 0 && !showNoResults ? (
           <DietGoalsForm 
             onSubmit={handlePreferencesSubmit} 
             initialPreferences={preferences}
           />
-        ) : mealPlan ? (
-          <DailyMealPlanComponent
-            mealPlan={mealPlan}
+        ) : mealPlans.length > 0 ? (
+          <MealPlanCarousel
+            mealPlans={mealPlans}
             dietGoals={preferences.dietGoals}
             onBack={handleBack}
           />

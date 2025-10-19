@@ -27,8 +27,19 @@ const GLOBAL_DINING_HALL_MEAL_RULES = {
 /**
  * Finds the optimal combination of 3 meals (breakfast, lunch, dinner) 
  * that matches the user's diet goals, macro thresholds, and budget constraints.
+ * Returns a single meal plan (for backward compatibility).
  */
 export function findOptimalMealPlan(preferences: UserPreferences): DailyMealPlan | null {
+  const plans = findOptimalMealPlans(preferences, 1);
+  return plans.length > 0 ? plans[0] : null;
+}
+
+/**
+ * Finds up to N optimal combinations of 3 meals (breakfast, lunch, dinner) 
+ * that match the user's diet goals, macro thresholds, and budget constraints.
+ * Returns up to maxPlans meal plans, sorted by how closely they match the goals.
+ */
+export function findOptimalMealPlans(preferences: UserPreferences, maxPlans: number = 5): DailyMealPlan[] {
   // Filter locations by user preferences
   let filteredLocations = [...mockDiningLocations];
 
@@ -40,7 +51,7 @@ export function findOptimalMealPlan(preferences: UserPreferences): DailyMealPlan
   }
 
   if (filteredLocations.length === 0) {
-    return null;
+    return [];
   }
 
   // Generate meal options for each meal time
@@ -49,7 +60,7 @@ export function findOptimalMealPlan(preferences: UserPreferences): DailyMealPlan
   const dinnerOptions = generateMealOptions(filteredLocations, 'dinner', preferences);
 
   if (breakfastOptions.length === 0 || lunchOptions.length === 0 || dinnerOptions.length === 0) {
-    return null;
+    return [];
   }
 
   // Find all valid combinations that meet macro thresholds and budget
@@ -93,7 +104,7 @@ export function findOptimalMealPlan(preferences: UserPreferences): DailyMealPlan
   }
 
   if (validPlans.length === 0) {
-    return null;
+    return [];
   }
 
   // Sort by how close to macro goals (best match first)
@@ -103,7 +114,8 @@ export function findOptimalMealPlan(preferences: UserPreferences): DailyMealPlan
     return scoreA - scoreB;
   });
 
-  return validPlans[0];
+  // Return up to maxPlans meal plans
+  return validPlans.slice(0, maxPlans);
 }
 
 /**
