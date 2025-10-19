@@ -159,8 +159,8 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-all ${
                 index === currentIndex
-                  ? 'bg-primary w-8'
-                  : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  ? 'bg-[#ffffff] w-8'
+                  : 'bg-[#ffffff] hover:bg-muted-foreground/50'
               }`}
               aria-label={`Go to plan ${index + 1}`}
             />
@@ -172,22 +172,22 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
       <Card className="p-6 mb-6" style={{ backgroundColor: '#707070' }}>
         <h3 className="mb-4" style={{ color: '#000000' }}>Daily Totals</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div className="text-center">
+          <div className="text-center rounded bg-[#aeaeb0]">
             <p className="text-sm mb-1" style={{ color: '#000000' }}>Calories</p>
             <p className="text-lg" style={{ color: '#000000' }}>{mealPlan.totalCalories}</p>
             <p className="text-xs" style={{ color: '#000000' }}>Goal: {dietGoals.calories}</p>
           </div>
-          <div className="text-center">
+          <div className="text-center rounded bg-[#aeaeb0]">
             <p className="text-sm mb-1" style={{ color: '#000000' }}>Protein</p>
             <p className="text-lg" style={{ color: '#000000' }}>{mealPlan.totalProtein}g</p>
             <p className="text-xs" style={{ color: '#000000' }}>Goal: {dietGoals.protein}g</p>
           </div>
-          <div className="text-center">
+          <div className="text-center rounded bg-[#aeaeb0]">
             <p className="text-sm mb-1" style={{ color: '#000000' }}>Carbs</p>
             <p className="text-lg" style={{ color: '#000000' }}>{mealPlan.totalCarbs}g</p>
             <p className="text-xs" style={{ color: '#000000' }}>Goal: {dietGoals.carbs}g</p>
           </div>
-          <div className="text-center">
+          <div className="text-center rounded bg-[#aeaeb0]">
             <p className="text-sm mb-1" style={{ color: '#000000' }}>Fats</p>
             <p className="text-lg" style={{ color: '#000000' }}>{mealPlan.totalFats}g</p>
             <p className="text-xs" style={{ color: '#000000' }}>Goal: {dietGoals.fats}g</p>

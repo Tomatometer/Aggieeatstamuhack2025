@@ -107,7 +107,7 @@ export function DailyMealPlanComponent({ mealPlan, dietGoals, onBack }: DailyMea
 
   return (
     <div className="max-w-4xl mx-auto">
-      <Button variant="ghost" onClick={onBack} className="mb-6">
+      <Button variant="ghost" onClick={onBack} className="">
         ← Change Preferences
       </Button>
 

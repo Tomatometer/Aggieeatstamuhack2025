@@ -123,7 +123,7 @@ export default function App() {
 
       <footer className="border-t mt-12">
         <div className="container mx-auto px-4 py-6 text-center text-sm" style={{ 'color': '#000000'}}>
-          <p>Aggie Eats - Meal planning created by Aggies, for Aggies</p>
+          <p style={{ color: '#FFFFFF' }}>Aggie Eats - Meal planning created by Aggies, for Aggies</p>
         </div>
       </footer>
     </div>
