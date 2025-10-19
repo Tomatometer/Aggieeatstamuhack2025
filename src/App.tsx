@@ -44,14 +44,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b">
+    <div className="min-h-screen" style={{ backgroundColor: '#500000' }}>
+      <header style={{ backgroundColor: '#500000', color: '#FFFFFF', borderBottom: '2px solid #000000' }}>
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center gap-3">
-            <Utensils className="w-8 h-8" />
-            <h1>AggieEats!</h1>
+            <Utensils className="w-8 h-8" style={{ color: '#FFFFFF' }} />
+            <h1 className="font-bold" style={{ color: '#FFFFFF', fontSize: '2.5rem' }}>AggieEats!</h1>
           </div>
-          <p className="text-muted-foreground mt-2">
+          <p className="mt-2" style={{ color: '#FFFFFF' }}>
             Find the perfect 3-meal plan that matches your daily macro goals. Gig - Em!
           </p>
         </div>
@@ -64,21 +64,21 @@ export default function App() {
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Loader2 className="w-8 h-8 text-primary animate-spin" />
               </div>
-              <h2 className="mb-2">Finding Your Perfect Meals</h2>
-              <p className="text-muted-foreground">
+              <h2 className="mb-2" style={{ color: '#D6D3C4' }}>Finding Your Perfect Meals</h2>
+              <p style={{ color: '#D6D3C4' }}>
                 Analyzing dining options and calculating optimal combinations...
               </p>
             </div>
             <div className="space-y-3 max-w-md mx-auto">
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-3 text-sm" style={{ color: '#D6D3C4' }}>
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 <span>Filtering by location and budget</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-3 text-sm" style={{ color: '#D6D3C4' }}>
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-100" />
                 <span>Matching meals to your macro goals</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-3 text-sm" style={{ color: '#D6D3C4' }}>
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-200" />
                 <span>Creating optimal 3-meal combinations</span>
               </div>
@@ -99,14 +99,14 @@ export default function App() {
           <div className="max-w-2xl mx-auto text-center py-12">
             <div className="mb-6">
               <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-                <Utensils className="w-8 h-8 text-muted-foreground" />
+                <Utensils className="w-8 h-8" style={{ color: '#D6D3C4' }} />
               </div>
-              <h2 className="mb-2">No Meals Found</h2>
-              <p className="text-muted-foreground">
+              <h2 className="mb-2" style={{ color: '#D6D3C4' }}>No Meals Found</h2>
+              <p style={{ color: '#D6D3C4' }}>
                 Sorry, there are no meals within your preferences. Please try adjusting your filters.
               </p>
             </div>
-            <div className="space-y-2 text-sm text-muted-foreground mb-6">
+            <div className="space-y-2 text-sm mb-6" style={{ color: '#D6D3C4' }}>
               <p>Try these adjustments:</p>
               <ul className="list-disc list-inside space-y-1">
                 <li>Increase your macro thresholds to allow more flexibility</li>

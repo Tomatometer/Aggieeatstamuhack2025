@@ -72,23 +72,23 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
       // Dining Hall meal with components
       return (
         <>
-          <h4>Build Your {meal.mealTime.charAt(0).toUpperCase() + meal.mealTime.slice(1)}</h4>
+          <h4 style={{ color: '#000000' }}>Build Your {meal.mealTime.charAt(0).toUpperCase() + meal.mealTime.slice(1)}</h4>
           <div className="mt-4 p-4 bg-muted/50 rounded-lg">
-            <h5 className="text-sm mb-3 flex items-center gap-2">
+            <h5 className="text-sm mb-3 flex items-center gap-2" style={{ color: '#000000' }}>
               <UtensilsCrossed className="w-4 h-4" />
               Your Selections
             </h5>
             <div className="space-y-3">
               {Object.entries(groupComponentsByStation(meal.selectedComponents)).map(([station, components]) => (
                 <div key={station}>
-                  <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1.5">
+                  <p className="text-xs uppercase tracking-wide mb-1.5" style={{ color: '#000000' }}>
                     {station}
                   </p>
                   <div className="space-y-1">
                     {components.map(component => (
                       <div key={component.id} className="flex justify-between items-center text-sm">
-                        <span>{component.name}</span>
-                        <span className="text-xs text-muted-foreground">
+                        <span style={{ color: '#000000' }}>{component.name}</span>
+                        <span className="text-xs" style={{ color: '#000000' }}>
                           {component.macros.calories}cal • {component.macros.protein}p • {component.macros.carbs}c • {component.macros.fats}f
                         </span>
                       </div>
@@ -104,8 +104,8 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
       // Restaurant dish
       return (
         <>
-          <h4>{meal.dish.name}</h4>
-          <p className="text-sm text-muted-foreground mt-1">{meal.dish.description}</p>
+          <h4 style={{ color: '#000000' }}>{meal.dish.name}</h4>
+          <p className="text-sm mt-1" style={{ color: '#000000' }}>{meal.dish.description}</p>
         </>
       );
     }
@@ -114,14 +114,14 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
 
   return (
     <div className="max-w-4xl mx-auto">
-      <Button variant="ghost" onClick={onBack} className="mb-6">
+      <Button variant="ghost" onClick={onBack} className="mb-6" style={{ color: '#D6D3C4' }}>
         ← Change Preferences
       </Button>
 
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h2 className="mb-2">Your Daily Meal Plans</h2>
-          <p className="text-muted-foreground">
+          <h2 className="mb-2" style={{ color: '#D6D3C4' }}>Your Daily Meal Plans</h2>
+          <p style={{ color: '#D6D3C4' }}>
             {mealPlans.length} plan{mealPlans.length !== 1 ? 's' : ''} optimized to meet your macro goals and budget
           </p>
         </div>
@@ -135,7 +135,7 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
             >
               <ChevronLeft className="w-4 h-4" />
             </Button>
-            <span className="text-sm text-muted-foreground min-w-[60px] text-center">
+            <span className="text-sm min-w-[60px] text-center" style={{ color: '#D6D3C4' }}>
               {currentIndex + 1} of {mealPlans.length}
             </span>
             <Button
@@ -169,59 +169,59 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
       )}
 
       {/* Daily Totals Summary */}
-      <Card className="p-6 mb-6 bg-primary/5">
-        <h3 className="mb-4">Daily Totals</h3>
+      <Card className="p-6 mb-6" style={{ backgroundColor: '#707070' }}>
+        <h3 className="mb-4" style={{ color: '#000000' }}>Daily Totals</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-1">Calories</p>
-            <p className="text-lg">{mealPlan.totalCalories}</p>
-            <p className="text-xs text-muted-foreground">Goal: {dietGoals.calories}</p>
+            <p className="text-sm mb-1" style={{ color: '#000000' }}>Calories</p>
+            <p className="text-lg" style={{ color: '#000000' }}>{mealPlan.totalCalories}</p>
+            <p className="text-xs" style={{ color: '#000000' }}>Goal: {dietGoals.calories}</p>
           </div>
           <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-1">Protein</p>
-            <p className="text-lg">{mealPlan.totalProtein}g</p>
-            <p className="text-xs text-muted-foreground">Goal: {dietGoals.protein}g</p>
+            <p className="text-sm mb-1" style={{ color: '#000000' }}>Protein</p>
+            <p className="text-lg" style={{ color: '#000000' }}>{mealPlan.totalProtein}g</p>
+            <p className="text-xs" style={{ color: '#000000' }}>Goal: {dietGoals.protein}g</p>
           </div>
           <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-1">Carbs</p>
-            <p className="text-lg">{mealPlan.totalCarbs}g</p>
-            <p className="text-xs text-muted-foreground">Goal: {dietGoals.carbs}g</p>
+            <p className="text-sm mb-1" style={{ color: '#000000' }}>Carbs</p>
+            <p className="text-lg" style={{ color: '#000000' }}>{mealPlan.totalCarbs}g</p>
+            <p className="text-xs" style={{ color: '#000000' }}>Goal: {dietGoals.carbs}g</p>
           </div>
           <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-1">Fats</p>
-            <p className="text-lg">{mealPlan.totalFats}g</p>
-            <p className="text-xs text-muted-foreground">Goal: {dietGoals.fats}g</p>
+            <p className="text-sm mb-1" style={{ color: '#000000' }}>Fats</p>
+            <p className="text-lg" style={{ color: '#000000' }}>{mealPlan.totalFats}g</p>
+            <p className="text-xs" style={{ color: '#000000' }}>Goal: {dietGoals.fats}g</p>
           </div>
         </div>
 
         <div className="border-t pt-4">
           <div className="flex items-center gap-2 mb-3">
-            <CreditCard className="w-4 h-4 text-muted-foreground" />
-            <h4>Budget Used</h4>
+            <CreditCard className="w-4 h-4" style={{ color: '#000000' }} />
+            <h4 style={{ color: '#000000' }}>Budget Used</h4>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {mealPlan.budgetUsed.mealSwipes > 0 && (
               <div className="text-center p-2 bg-background rounded">
-                <p className="text-xs text-muted-foreground mb-1">Meal Swipes</p>
-                <p className="text-sm">{mealPlan.budgetUsed.mealSwipes}</p>
+                <p className="text-xs mb-1" style={{ color: '#000000' }}>Meal Swipes</p>
+                <p className="text-sm" style={{ color: '#000000' }}>{mealPlan.budgetUsed.mealSwipes}</p>
               </div>
             )}
             {mealPlan.budgetUsed.maroonMeals > 0 && (
               <div className="text-center p-2 bg-background rounded">
-                <p className="text-xs text-muted-foreground mb-1">Maroon Meals</p>
-                <p className="text-sm">{mealPlan.budgetUsed.maroonMeals}</p>
+                <p className="text-xs mb-1" style={{ color: '#000000' }}>Maroon Meals</p>
+                <p className="text-sm" style={{ color: '#000000' }}>{mealPlan.budgetUsed.maroonMeals}</p>
               </div>
             )}
             {mealPlan.budgetUsed.diningDollars > 0 && (
               <div className="text-center p-2 bg-background rounded">
-                <p className="text-xs text-muted-foreground mb-1">Dining Dollars</p>
-                <p className="text-sm">${mealPlan.budgetUsed.diningDollars.toFixed(2)}</p>
+                <p className="text-xs mb-1" style={{ color: '#000000' }}>Dining Dollars</p>
+                <p className="text-sm" style={{ color: '#000000' }}>${mealPlan.budgetUsed.diningDollars.toFixed(2)}</p>
               </div>
             )}
             {mealPlan.budgetUsed.realDollars > 0 && (
               <div className="text-center p-2 bg-background rounded">
-                <p className="text-xs text-muted-foreground mb-1">Real Dollars</p>
-                <p className="text-sm">${mealPlan.budgetUsed.realDollars.toFixed(2)}</p>
+                <p className="text-xs mb-1" style={{ color: '#000000' }}>Real Dollars</p>
+                <p className="text-sm" style={{ color: '#000000' }}>${mealPlan.budgetUsed.realDollars.toFixed(2)}</p>
               </div>
             )}
           </div>
@@ -231,13 +231,13 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
       {/* Individual Meals */}
       <div className="space-y-4">
         {meals.map(({ time, meal }) => (
-          <Card key={time} className="p-6">
+          <Card key={time} className="p-6" style={{ backgroundColor: '#707070' }}>
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-3 flex-1">
                 {getMealIcon(time)}
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="capitalize">{time}</h3>
+                    <h3 className="capitalize" style={{ color: '#000000' }}>{time}</h3>
                     <Badge variant="secondary" className="text-xs">
                       {meal.location.name}
                     </Badge>
@@ -260,20 +260,20 @@ export function MealPlanCarousel({ mealPlans, dietGoals, onBack }: MealPlanCarou
 
             <div className="grid grid-cols-4 gap-3 mt-4">
               <div className="text-center p-3 bg-muted rounded">
-                <p className="text-xs text-muted-foreground mb-1">Calories</p>
-                <p className="text-sm">{meal.totalMacros.calories}</p>
+                <p className="text-xs mb-1" style={{ color: '#000000' }}>Calories</p>
+                <p className="text-sm" style={{ color: '#000000' }}>{meal.totalMacros.calories}</p>
               </div>
               <div className="text-center p-3 bg-muted rounded">
-                <p className="text-xs text-muted-foreground mb-1">Protein</p>
-                <p className="text-sm">{meal.totalMacros.protein}g</p>
+                <p className="text-xs mb-1" style={{ color: '#000000' }}>Protein</p>
+                <p className="text-sm" style={{ color: '#000000' }}>{meal.totalMacros.protein}g</p>
               </div>
               <div className="text-center p-3 bg-muted rounded">
-                <p className="text-xs text-muted-foreground mb-1">Carbs</p>
-                <p className="text-sm">{meal.totalMacros.carbs}g</p>
+                <p className="text-xs mb-1" style={{ color: '#000000' }}>Carbs</p>
+                <p className="text-sm" style={{ color: '#000000' }}>{meal.totalMacros.carbs}g</p>
               </div>
               <div className="text-center p-3 bg-muted rounded">
-                <p className="text-xs text-muted-foreground mb-1">Fats</p>
-                <p className="text-sm">{meal.totalMacros.fats}g</p>
+                <p className="text-xs mb-1" style={{ color: '#000000' }}>Fats</p>
+                <p className="text-sm" style={{ color: '#000000' }}>{meal.totalMacros.fats}g</p>
               </div>
             </div>
           </Card>

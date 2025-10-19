@@ -56,7 +56,7 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
 
   // Macro threshold states (percentage)
   const [caloriesThreshold, setCaloriesThreshold] = useState([
-    initialPreferences?.macroThresholds.calories || 10
+    initialPreferences?.macroThresholds.calories || 15
   ]);
   const [proteinThreshold, setProteinThreshold] = useState([
     initialPreferences?.macroThresholds.protein || 15
@@ -133,7 +133,7 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
   };
 
   return (
-    <Card className="p-6 max-w-3xl mx-auto">
+    <Card className="p-6 max-w-3xl mx-auto" style={{ backgroundColor: '#707070' }}>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <h2 className="flex items-center gap-2 mb-4">
@@ -142,43 +142,47 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
           </h2>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="calories">Calories</Label>
+              <Label htmlFor="calories" className="mb-2 block">Calories</Label>
               <Input
                 id="calories"
                 type="number"
                 value={calories}
                 onChange={(e) => setCalories(e.target.value)}
                 placeholder="2000"
+                style={{ backgroundColor: '#D6D3C4' }}
               />
             </div>
             <div>
-              <Label htmlFor="protein">Protein (g)</Label>
+              <Label htmlFor="protein" className="mb-2 block">Protein (g)</Label>
               <Input
                 id="protein"
                 type="number"
                 value={protein}
                 onChange={(e) => setProtein(e.target.value)}
                 placeholder="150"
+                style={{ backgroundColor: '#D6D3C4' }}
               />
             </div>
             <div>
-              <Label htmlFor="carbs">Carbs (g)</Label>
+              <Label htmlFor="carbs" className="mb-2 block">Carbs (g)</Label>
               <Input
                 id="carbs"
                 type="number"
                 value={carbs}
                 onChange={(e) => setCarbs(e.target.value)}
                 placeholder="200"
+                style={{ backgroundColor: '#D6D3C4' }}
               />
             </div>
             <div>
-              <Label htmlFor="fats">Fats (g)</Label>
+              <Label htmlFor="fats" className="mb-2 block">Fats (g)</Label>
               <Input
                 id="fats"
                 type="number"
                 value={fats}
                 onChange={(e) => setFats(e.target.value)}
                 placeholder="65"
+                style={{ backgroundColor: '#D6D3C4' }}
               />
             </div>
           </div>
@@ -252,33 +256,35 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
           </h2>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="mealSwipes">Meal Swipes</Label>
+              <Label htmlFor="mealSwipes" className="mb-2 block">Meal Swipes</Label>
               <Input
                 id="mealSwipes"
                 type="number"
                 value={mealSwipes}
                 onChange={(e) => setMealSwipes(e.target.value)}
                 placeholder="2"
+                style={{ backgroundColor: '#D6D3C4' }}
               />
               <p className="text-xs text-muted-foreground mt-1">
                 Unlimited dining hall access
               </p>
             </div>
             <div>
-              <Label htmlFor="maroonMeals">Maroon Meals</Label>
+              <Label htmlFor="maroonMeals" className="mb-2 block">Maroon Meals</Label>
               <Input
                 id="maroonMeals"
                 type="number"
                 value={maroonMeals}
                 onChange={(e) => setMaroonMeals(e.target.value)}
                 placeholder="1"
+                style={{ backgroundColor: '#D6D3C4' }}
               />
               <p className="text-xs text-muted-foreground mt-1">
                 Uses 1 Meal Swipe for specific items
               </p>
             </div>
             <div>
-              <Label htmlFor="diningDollars">Dining Dollars ($)</Label>
+              <Label htmlFor="diningDollars" className="mb-2 block">Dining Dollars ($)</Label>
               <Input
                 id="diningDollars"
                 type="number"
@@ -286,13 +292,14 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
                 value={diningDollars}
                 onChange={(e) => setDiningDollars(e.target.value)}
                 placeholder="20.00"
+                style={{ backgroundColor: '#D6D3C4' }}
               />
               <p className="text-xs text-muted-foreground mt-1">
                 Campus retail locations only
               </p>
             </div>
             <div>
-              <Label htmlFor="realDollars">Real Dollars ($)</Label>
+              <Label htmlFor="realDollars" className="mb-2 block">Real Dollars ($)</Label>
               <Input
                 id="realDollars"
                 type="number"
@@ -300,6 +307,7 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
                 value={realDollars}
                 onChange={(e) => setRealDollars(e.target.value)}
                 placeholder="15.00"
+                style={{ backgroundColor: '#D6D3C4' }}
               />
               <p className="text-xs text-muted-foreground mt-1">
                 Accepted everywhere
@@ -314,7 +322,7 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
             Location Preference
           </h2>
           <Select value={location} onValueChange={setLocation}>
-            <SelectTrigger>
+            <SelectTrigger style={{ backgroundColor: '#D6D3C4' }}>
               <SelectValue placeholder="Select location" />
             </SelectTrigger>
             <SelectContent>
@@ -332,7 +340,7 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
             <AlertCircle className="w-5 h-5" />
             Allergies
           </h2>
-          <p className="text-sm text-muted-foreground mb-3">
+          <p className="text-sm mb-3" style={{ color: '#000000' }}>
             Select any allergies to avoid meals containing these ingredients
           </p>
           <div className="grid grid-cols-2 gap-3">
@@ -359,7 +367,7 @@ export function DietGoalsForm({ onSubmit, initialPreferences }: DietGoalsFormPro
             <Leaf className="w-5 h-5" />
             Dietary Preferences
           </h2>
-          <p className="text-sm text-muted-foreground mb-3">
+          <p className="text-sm mb-3" style={{ color: '#000000' }}>
             Select dietary preferences - only meals matching ALL selected preferences will be shown
           </p>
           <div className="grid grid-cols-2 gap-3">
