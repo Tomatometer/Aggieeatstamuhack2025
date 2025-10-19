@@ -1,318 +1,527 @@
+// RESTAURANT: Spin 'N Stone - Pizzas Made Your Way
 {
-  "status": "success",
-  "request_time": "2025-10-18T12:00:00Z",
-  "location": {
-    "id": "spinstone-001",
-    "name": "Spin 'N Stone",
-    "tagline": "Pizzas Made Your Way",
-    "date": "2025-10-18"
-  },
-  "periods": [
+  id: 'rest-spin-n-stone',
+  name: 'Spin \'N Stone',
+  location: 'Various',
+  isDiningHall: false,
+  tagline: 'Pizzas Made Your Way',
+  description: 'Build your perfect pizza with your choice of sauce, cheese, toppings, and drizzle',
+  dishes: [
+    // CHEESE PIZZA
     {
-      "id": "all-day",
-      "name": "All Day",
-      "start_time": "11:00:00",
-      "end_time": "22:00:00"
+      id: 'sns-pizza-1',
+      name: 'Cheese Pizza',
+      description: 'Fresh pizza with sauce and cheese - customize with your choice of toppings',
+      macros: { calories: 280, protein: 12, carbs: 36, fats: 9 },
+      allergens: ['wheat', 'gluten', 'dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 6.45,
+        realDollars: 6.45
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    // 1 TOPPING PIZZAS
+    {
+      id: 'sns-pizza-2',
+      name: '1 Topping Pizza',
+      description: 'Fresh pizza with sauce, cheese, and 1 topping of your choice',
+      macros: { calories: 320, protein: 13, carbs: 38, fats: 12 },
+      allergens: ['wheat', 'gluten', 'dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 7.49,
+        realDollars: 7.49
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    // BUILD YOUR OWN - UP TO 4 TOPPINGS
+    {
+      id: 'sns-pizza-3',
+      name: 'Build Your Own Pizza',
+      description: 'Create your perfect pizza with sauce, cheese, and up to 4 toppings',
+      macros: { calories: 380, protein: 15, carbs: 42, fats: 16 },
+      allergens: ['wheat', 'gluten', 'dairy'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 8.85,
+        realDollars: 8.85
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    // SAUCES
+    {
+      id: 'sns-sauce-1',
+      name: 'Red Sauce',
+      description: 'Classic tomato-based red sauce',
+      macros: { calories: 40, protein: 2, carbs: 8, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-sauce-2',
+      name: 'White Sauce',
+      description: 'Creamy white sauce made with cream and cheese',
+      macros: { calories: 120, protein: 4, carbs: 6, fats: 9 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-sauce-3',
+      name: 'Zesty Red Sauce',
+      description: 'Spicy tomato-based red sauce with added kick',
+      macros: { calories: 50, protein: 2, carbs: 9, fats: 1 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-sauce-4',
+      name: 'Pesto Sauce',
+      description: 'Basil pesto sauce with garlic and nuts',
+      macros: { calories: 150, protein: 5, carbs: 5, fats: 13 },
+      allergens: ['dairy', 'treeNuts'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    // CHEESES
+    {
+      id: 'sns-cheese-1',
+      name: 'Vegan Cheese',
+      description: 'Dairy-free vegan cheese option',
+      macros: { calories: 80, protein: 6, carbs: 2, fats: 6 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-cheese-2',
+      name: 'Parmesan Cheese',
+      description: 'Classic parmesan cheese',
+      macros: { calories: 110, protein: 10, carbs: 1, fats: 7 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-cheese-3',
+      name: 'Ricotta Cheese',
+      description: 'Creamy ricotta cheese',
+      macros: { calories: 90, protein: 8, carbs: 3, fats: 5 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-cheese-4',
+      name: 'Mozzarella Cheese',
+      description: 'Fresh mozzarella cheese',
+      macros: { calories: 85, protein: 7, carbs: 1, fats: 7 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-cheese-5',
+      name: 'House Blend Cheese',
+      description: 'House special blend of multiple cheeses',
+      macros: { calories: 100, protein: 8, carbs: 2, fats: 8 },
+      allergens: ['dairy'],
+      dietaryPreferences: ['vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    // MEAT TOPPINGS
+    {
+      id: 'sns-meat-1',
+      name: 'Applewood Bacon',
+      description: 'Smoky applewood smoked bacon',
+      macros: { calories: 80, protein: 6, carbs: 0, fats: 6 },
+      allergens: [],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-meat-2',
+      name: 'Pepperoni',
+      description: 'Sliced pepperoni',
+      macros: { calories: 110, protein: 5, carbs: 1, fats: 9 },
+      allergens: [],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-meat-3',
+      name: 'Salami',
+      description: 'Sliced salami',
+      macros: { calories: 120, protein: 6, carbs: 1, fats: 10 },
+      allergens: [],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-meat-4',
+      name: 'Meatball',
+      description: 'Italian style meatballs',
+      macros: { calories: 140, protein: 8, carbs: 4, fats: 10 },
+      allergens: ['wheat', 'gluten'],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 1.00,
+        realDollars: 1.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-meat-5',
+      name: 'Black Forest Ham',
+      description: 'Premium black forest ham',
+      macros: { calories: 60, protein: 10, carbs: 1, fats: 2 },
+      allergens: [],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-meat-6',
+      name: 'Smoked Chicken',
+      description: 'Smoked chicken breast',
+      macros: { calories: 50, protein: 10, carbs: 0, fats: 1 },
+      allergens: [],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-meat-7',
+      name: 'Italian Sausage',
+      description: 'Italian seasoned sausage',
+      macros: { calories: 130, protein: 7, carbs: 2, fats: 10 },
+      allergens: [],
+      dietaryPreferences: [],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    // VEGETABLE TOPPINGS - RAW
+    {
+      id: 'sns-veggie-raw-1',
+      name: 'Cherry Tomato',
+      description: 'Fresh cherry tomatoes',
+      macros: { calories: 5, protein: 0, carbs: 1, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-raw-2',
+      name: 'Red Onions',
+      description: 'Fresh red onions',
+      macros: { calories: 8, protein: 0, carbs: 2, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-raw-3',
+      name: 'Black Olives',
+      description: 'Fresh black olives',
+      macros: { calories: 35, protein: 0, carbs: 2, fats: 3 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-raw-4',
+      name: 'Spinach',
+      description: 'Fresh spinach leaves',
+      macros: { calories: 3, protein: 0, carbs: 1, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-raw-5',
+      name: 'Kalamata Olives',
+      description: 'Kalamata olives',
+      macros: { calories: 40, protein: 0, carbs: 2, fats: 4 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-raw-6',
+      name: 'Jalapeños',
+      description: 'Fresh jalapeño peppers',
+      macros: { calories: 4, protein: 0, carbs: 1, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-raw-7',
+      name: 'Green Peppers',
+      description: 'Fresh green bell peppers',
+      macros: { calories: 6, protein: 0, carbs: 1, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-raw-8',
+      name: 'Banana Peppers',
+      description: 'Fresh banana peppers',
+      macros: { calories: 4, protein: 0, carbs: 1, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    // VEGETABLE TOPPINGS - ROASTED
+    {
+      id: 'sns-veggie-roasted-1',
+      name: 'Red Peppers',
+      description: 'Roasted red bell peppers',
+      macros: { calories: 20, protein: 1, carbs: 4, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-roasted-2',
+      name: 'Red Potatoes',
+      description: 'Roasted red potatoes',
+      macros: { calories: 35, protein: 1, carbs: 8, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-roasted-3',
+      name: 'Broccolini',
+      description: 'Roasted broccolini',
+      macros: { calories: 15, protein: 2, carbs: 3, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-roasted-4',
+      name: 'Garlic',
+      description: 'Roasted garlic cloves',
+      macros: { calories: 15, protein: 1, carbs: 3, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.50,
+        realDollars: 0.50
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-roasted-5',
+      name: 'Mixed Mushrooms',
+      description: 'Roasted mixed mushrooms',
+      macros: { calories: 12, protein: 1, carbs: 2, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-veggie-roasted-6',
+      name: 'Caramelized Onion',
+      description: 'Sweet caramelized onions',
+      macros: { calories: 30, protein: 1, carbs: 7, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.75,
+        realDollars: 0.75
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    // DRIZZLES
+    {
+      id: 'sns-drizzle-1',
+      name: 'BBQ Sauce Drizzle',
+      description: 'Smoky barbecue sauce drizzle',
+      macros: { calories: 45, protein: 0, carbs: 11, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-drizzle-2',
+      name: 'Balsamic Glaze Drizzle',
+      description: 'Rich balsamic vinegar glaze',
+      macros: { calories: 35, protein: 0, carbs: 8, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-drizzle-3',
+      name: 'Sriracha Drizzle',
+      description: 'Spicy sriracha sauce drizzle',
+      macros: { calories: 30, protein: 0, carbs: 7, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-drizzle-4',
+      name: 'Olive Oil Drizzle',
+      description: 'Premium extra virgin olive oil drizzle',
+      macros: { calories: 120, protein: 0, carbs: 0, fats: 14 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-drizzle-5',
+      name: 'Oregano Drizzle',
+      description: 'Oregano seasoning drizzle',
+      macros: { calories: 5, protein: 0, carbs: 1, fats: 0 },
+      allergens: [],
+      dietaryPreferences: ['vegan', 'vegetarian', 'glutenFree'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
+    },
+    {
+      id: 'sns-drizzle-6',
+      name: 'Basil Pesto Drizzle',
+      description: 'Aromatic basil pesto drizzle',
+      macros: { calories: 110, protein: 2, carbs: 4, fats: 10 },
+      allergens: ['dairy', 'treeNuts'],
+      dietaryPreferences: ['vegetarian'],
+      paymentCosts: {
+        diningDollars: 0.00,
+        realDollars: 0.00
+      },
+      mealTimes: ['lunch', 'dinner']
     }
-  ],
-  "menu": {
-    "periods": {
-      "all-day": {
-        "categories": [
-          {
-            "id": "create-your-own",
-            "name": "Create Your Own",
-            "sort_order": 1,
-            "description": "Build your perfect pizza with your choice of sauce, cheese, toppings, and drizzle",
-            "pricing": [
-              {
-                "id": "cheese-only",
-                "name": "Cheese Pizza",
-                "price": 6.45,
-                "description": "Cheese only"
-              },
-              {
-                "id": "one-topping",
-                "name": "1 Topping Pizza",
-                "price": 7.49,
-                "description": "Cheese + 1 topping"
-              },
-              {
-                "id": "build-your-own",
-                "name": "Build Your Own",
-                "price": 8.85,
-                "description": "Up to 4 toppings"
-              }
-            ],
-            "subcategories": [
-              {
-                "id": "sauces",
-                "name": "Choose Your Sauce",
-                "calories": "40-250 cals",
-                "required": true,
-                "items": [
-                  {
-                    "id": "red-sauce",
-                    "name": "Red",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian"]
-                  },
-                  {
-                    "id": "white-sauce",
-                    "name": "White",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian"]
-                  },
-                  {
-                    "id": "zesty-red",
-                    "name": "Zesty Red",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian"]
-                  },
-                  {
-                    "id": "pesto",
-                    "name": "Pesto",
-                    "allergens": ["dairy", "tree-nuts"],
-                    "dietary_flags": ["vegetarian"]
-                  }
-                ]
-              },
-              {
-                "id": "cheeses",
-                "name": "Choose Your Cheese",
-                "calories": "20-250 cals",
-                "required": true,
-                "items": [
-                  {
-                    "id": "vegan-cheese",
-                    "name": "Vegan",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian"]
-                  },
-                  {
-                    "id": "parmesan",
-                    "name": "Parmesan",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian"]
-                  },
-                  {
-                    "id": "ricotta",
-                    "name": "Ricotta",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian"]
-                  },
-                  {
-                    "id": "mozzarella",
-                    "name": "Mozzarella",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian"]
-                  },
-                  {
-                    "id": "house-blend",
-                    "name": "House Blend",
-                    "allergens": ["dairy"],
-                    "dietary_flags": ["vegetarian"]
-                  }
-                ]
-              },
-              {
-                "id": "toppings-meats",
-                "name": "Meats",
-                "calories": "0-360 cals",
-                "max_selections": 4,
-                "items": [
-                  {
-                    "id": "applewood-bacon",
-                    "name": "Applewood Bacon",
-                    "allergens": [],
-                    "dietary_flags": []
-                  },
-                  {
-                    "id": "pepperoni",
-                    "name": "Pepperoni",
-                    "allergens": [],
-                    "dietary_flags": []
-                  },
-                  {
-                    "id": "salami",
-                    "name": "Salami",
-                    "allergens": [],
-                    "dietary_flags": []
-                  },
-                  {
-                    "id": "meatball",
-                    "name": "Meatball",
-                    "allergens": ["wheat", "gluten"],
-                    "dietary_flags": []
-                  },
-                  {
-                    "id": "black-forest-ham",
-                    "name": "Black Forest Ham",
-                    "allergens": [],
-                    "dietary_flags": []
-                  },
-                  {
-                    "id": "smoked-chicken",
-                    "name": "Smoked Chicken",
-                    "allergens": [],
-                    "dietary_flags": []
-                  },
-                  {
-                    "id": "italian-sausage",
-                    "name": "Italian Sausage",
-                    "allergens": [],
-                    "dietary_flags": []
-                  }
-                ]
-              },
-              {
-                "id": "toppings-veggies-raw",
-                "name": "Veggies - Raw",
-                "calories": "0-360 cals",
-                "max_selections": 4,
-                "items": [
-                  {
-                    "id": "cherry-tomato",
-                    "name": "Cherry Tomato",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "red-onions",
-                    "name": "Red Onions",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "black-olives",
-                    "name": "Black Olives",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "spinach",
-                    "name": "Spinach",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "kalamata-olives",
-                    "name": "Kalamata Olives",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "jalapenos",
-                    "name": "Jalapeños",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "green-peppers",
-                    "name": "Green Peppers",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "banana-peppers",
-                    "name": "Banana Peppers",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  }
-                ]
-              },
-              {
-                "id": "toppings-veggies-roasted",
-                "name": "Veggies - Roasted",
-                "calories": "0-360 cals",
-                "max_selections": 4,
-                "items": [
-                  {
-                    "id": "red-peppers",
-                    "name": "Red Peppers",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "red-potatoes",
-                    "name": "Red Potatoes",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "broccolini",
-                    "name": "Broccolini",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "garlic",
-                    "name": "Garlic",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "mixed-mushrooms",
-                    "name": "Mixed Mushrooms",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "caramelized-onion",
-                    "name": "Caramelized Onion",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  }
-                ]
-              },
-              {
-                "id": "drizzles",
-                "name": "Choose Your Drizzle",
-                "calories": "0-240 cals",
-                "required": false,
-                "items": [
-                  {
-                    "id": "bbq-sauce",
-                    "name": "BBQ Sauce",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian"]
-                  },
-                  {
-                    "id": "balsamic-glaze",
-                    "name": "Balsamic Glaze",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian"]
-                  },
-                  {
-                    "id": "sriracha",
-                    "name": "Sriracha",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian"]
-                  },
-                  {
-                    "id": "olive-oil",
-                    "name": "Olive Oil",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "oregano",
-                    "name": "Oregano",
-                    "allergens": [],
-                    "dietary_flags": ["vegan", "vegetarian", "gluten-free"]
-                  },
-                  {
-                    "id": "basil-pesto",
-                    "name": "Basil Pesto",
-                    "allergens": ["dairy", "tree-nuts"],
-                    "dietary_flags": ["vegetarian"]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    }
-  }
+  ]
 }
